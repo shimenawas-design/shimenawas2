@@ -9,7 +9,8 @@
 | [03_release_schedule.md](03_release_schedule.md) | 年間公開スケジュール（1本ずつ／季節は旬の3〜4週前） | 公開順・時期の決定 |
 | [04_titles.md](04_titles.md) | タイトル一覧＋曲名案（コピペ用） | タイトル欄・テロップ |
 | [05_publish_checklist.md](05_publish_checklist.md) | 1本ごとの公開チェックリスト | 制作〜公開〜検証 |
-| [06_image_prompts.md](06_image_prompts.md) | 動画用 画像プロンプト（全10曲×各5枚） | サムネ・動画背景の画像生成 |
+| [06_image_prompts.md](06_image_prompts.md) | 動画用 画像プロンプト（共通＋個別に分離） | 中身の確認・編集用 |
+| [07_image_prompts_merged.md](07_image_prompts_merged.md) | 画像プロンプト統合版（共通接尾を連結済み・そのまま貼れる） | 画像生成にコピペ即使用 |
 
 ## 最重要ルール（全曲共通）
 **0秒からフル音量でメロディが鳴る。イントロの溜め・フェードイン・環境音スタートは禁止。**
