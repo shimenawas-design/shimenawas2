@@ -1,0 +1,22 @@
+■ 竹林の朝｜動画用 画像プロンプト（5枚）
+Geminiに1つずつ貼って生成 → この曲のフォルダに保存してください。
+─────────────────────────────
+
+【1】
+Arashiyama bamboo grove in the morning, sunbeams filtering through tall green stalks, soft mist, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【2】
+close view of bamboo stalks with dappled morning light, cool green shade and warm sun streaks, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【3】
+winding path through a bamboo forest, komorebi light spots on the ground, fresh and serene, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【4】
+low angle looking up through bamboo canopy toward a bright warm sky, green and gold, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【5】
+bamboo grove edge meeting a mossy stone lantern, morning light, calm green tones, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+─────────────────────────────
+ネガティブプロンプト（対応ツールで併用）:
+people, person, human, character, text, watermark, logo, fantasy elements, glowing spirits, floating islands, oversaturated neon

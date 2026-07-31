@@ -1,0 +1,22 @@
+■ 雨の日の京都｜動画用 画像プロンプト（5枚）
+Geminiに1つずつ貼って生成 → この曲のフォルダに保存してください。
+─────────────────────────────
+
+【1】
+rainy Kyoto machiya street at dusk, wet stone pavement reflecting warm lantern light, gentle rain, distant blue-grey sky, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【2】
+close view of a wooden latticed machiya window with raindrops on the glass, warm interior glow behind, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【3】
+narrow Kyoto alley in the rain, paper umbrellas leaning by a doorway, puddles catching amber light, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【4】
+view from under an eave, rain dripping from the roof, blurred lantern-lit street beyond, cool blue rain and warm light, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【5】
+rain falling on a temple garden, wet moss and stone lantern, soft grey mist, one warm window in the background, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+─────────────────────────────
+ネガティブプロンプト（対応ツールで併用）:
+people, person, human, character, text, watermark, logo, fantasy elements, glowing spirits, floating islands, oversaturated neon
