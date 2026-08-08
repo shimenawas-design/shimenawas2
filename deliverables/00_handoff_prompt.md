@@ -49,6 +49,14 @@
 - 狙う検索：Japanese LoFi / Fantasy LoFi / Japanese Study Music / Reading Music / AI Work Music / Programming Music / Deep Focus / ChatGPT Music / Claude Music / Gemini Music / Cursor Music / Fantasy Music / Ambient Music
 - タグは毎回 英語7割・日本語3割
 
+## 【採用トレンド】シネマティック・スコア層（2026）
+2026年トレンド検討の結果、**「シネマティック・スコア層」を正式採用**（他の候補＝生きた背景/用途ティア/季節版は今回見送り、世界観の一点強化を優先）。
+- 意味：LoFiを「映画のサウンドトラック」へ。**奥行きと物語**を足す。音量や劇的さではない。作業/読書/睡眠BGMとして"感じるが前に出ない"（restrained cinematic）。
+- 共通楽器に足す：温かい弦パッド／静かなスウェル／ドローン／広いホールリバーブ。
+- Suno追記：`cinematic Japanese lofi, warm cinematic strings, subtle orchestral swells, emotional narrative arc, spacious wooden-hall reverb, deep atmospheric pad, felt not foreground, restrained and calm, immersive, soft dynamic swell, no dramatic peaks, no loud transients`
+- 画像追記：`cinematic depth of field, volumetric moonlight, atmospheric haze, dust motes in light, film still`
+- 適用：月夜の図書館以降の新標準。既存20曲は作り直さず包み直し優先。詳細は `08_cinematic_direction.md`。
+
 ## チャンネル戦略（1000本前提）
 シリーズ→10曲→3時間版→8時間版→ライブ配信→季節版→ベスト版まで展開。
 ※ただし登録3人の現段階では**まず月夜の図書館10曲で「型」を確立→検証→複製**。派生フォーマットは型が固まってから（早期に広げると薄まる）。
@@ -86,6 +94,7 @@
 - `04_titles.md`：写実シリーズのタイトル一覧＋曲名案
 - `05_publish_checklist.md`：1本ごとの公開チェックリスト
 - `06_image_prompts.md` / `07_image_prompts_merged.md`：写実シリーズの画像プロンプト（分離版／統合版）
+- `08_cinematic_direction.md`：シネマティック・スコア層の仕様（採用トレンド。Suno/画像への追記・情緒アーク・品質チェック）
 - `per_folder_prompts/`：写実10曲ぶんの曲名＝フォルダ名の画像プロンプト.txt（全10曲・各5枚 完成）
 ※これらは「窓辺の四季」棟としてブランドに取り込む前提。サムネにロゴ帯＋額装を後乗せする方針。
 
