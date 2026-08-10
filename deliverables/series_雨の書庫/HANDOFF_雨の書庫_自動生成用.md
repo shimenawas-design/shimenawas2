@@ -53,13 +53,14 @@ rain lofi, japanese lofi, rain sounds, study music, sleep music, deep focus, rea
 
 # ■ 画像 共通サフィックス（各画像の場面行に連結）
 ```
-Japanese fantasy anime background art, no people, no text, endless wooden library with ceiling-high bookshelves, shoji windows with rain, moss garden, wet stone, including the signature hexagonal Japanese lantern (wood and washi, warm amber glow with a blue core, a thin crescent moon on the paper, silver fittings), blue-grey and amber palette, cinematic depth of field, volumetric light, atmospheric haze, film still, ultra detailed, 16:9
+Japanese fantasy anime background art, no people, no text, endless wooden library with ceiling-high bookshelves, shoji windows with rain, moss garden, wet stone, blue-grey and amber palette, cinematic depth of field, volumetric light, atmospheric haze, film still, ultra detailed, 16:9
 ```
 # ■ 共通ネガティブ
 ```
 people, person, human, text, watermark, logo, sunny, bright daylight, steampunk, neon, oversaturated, cluttered
 ```
 ※サムネ画像（各曲1番）だけ末尾に `clear empty negative space on the left third for title text` を足す。
+※**看板ランタンは生成に含めない。** 生成後に**固定ランタンPNGを後付けオーバーレイ**で毎回同じ位置に合成する（絵のブレ防止）。プロンプト内に出る "lantern/灯り" は情景の灯りであり、ブランドの固定ランタンではない。
 
 # ■ SEO改善 共通
 世界観を先頭・SEO用途語（Rain/Sleep/Focus）を後ろ。サムネ文字は左3分の1＋明朝＋ランタン。0秒フル音量で維持率↑。雨は巨大検索なのでタイトル/タグに rain / rain sounds を必ず含める。公開2週間後に検索キーワードを反映。
@@ -322,7 +323,7 @@ Exclude: vocals, heavy storm, aggressive drums, EDM, bright cheerful tones.
 ```
 【画像5枚】
 ```
-1（サムネ兼用）The signature hexagonal lantern glowing warm in the foreground of the rainy library, soft rain on windows behind, bookshelves in warm shadow,
+1（サムネ兼用）A warm hanging paper lantern glowing softly in the foreground of the rainy library, soft rain on windows behind, bookshelves in warm shadow,
 2（別角度）A hanging lantern swaying gently, rain-lit windows beyond, warm pooled light,
 3（窓辺の席）A window seat lit only by the warm lantern, gentle rain outside, an open book,
 4（書架/回廊）A corridor lit by a line of warm lanterns, gentle rain on the glass, cozy depth,

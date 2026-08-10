@@ -103,6 +103,7 @@ Japanese fantasy anime background art, no people, no text, wooden Japanese fanta
 people, person, human, text, watermark, logo, steampunk, western locomotive, brass gears, victorian, machinery, modern train, neon, oversaturated, cluttered
 ```
 ※サムネ兼用の画像（各曲の画像1）だけ、末尾に `clear empty negative space on the left third for title text` を足す。
+※**看板ランタンは生成に含めない。** 生成後に**固定ランタンPNGを後付けオーバーレイ**で毎回同じ位置に合成する（絵のブレ防止）。プロンプト内の "paper lanterns/lantern light" は情景の灯り（提灯の車両等）であり、ブランドの固定ランタンではない。
 
 # ■ SEO改善 共通
 - タイトルは世界観を先頭・英語SEO用途語を後ろ。サムネ文字は左3分の1＋明朝＋「音楽図書館」ロゴ帯を固定。

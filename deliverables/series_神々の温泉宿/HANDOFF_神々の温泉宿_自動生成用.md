@@ -53,13 +53,14 @@ sleep music, japanese lofi, relaxing music, healing music, onsen, deep sleep, me
 
 # ■ 画像 共通サフィックス（各画像の場面行に連結）
 ```
-Japanese fantasy anime background art, no people, no text, a wooden fantasy hot-spring inn at night, rising steam, moonlit open-air bath, tatami rooms, veranda, including the signature hexagonal Japanese lantern (wood and washi, warm amber glow with a blue core, a thin crescent moon on the paper, silver fittings), warm amber and deep blue palette, cinematic depth of field, volumetric moonlight, soft steam haze, film still, ultra detailed, 16:9
+Japanese fantasy anime background art, no people, no text, a wooden fantasy hot-spring inn at night, rising steam, moonlit open-air bath, tatami rooms, veranda, warm amber and deep blue palette, cinematic depth of field, volumetric moonlight, soft steam haze, film still, ultra detailed, 16:9
 ```
 # ■ 共通ネガティブ
 ```
 people, person, human, text, watermark, logo, daytime, harsh light, steampunk, neon, oversaturated, cluttered, modern hotel
 ```
 ※サムネ画像（各曲1番）だけ末尾に `clear empty negative space on the left third for title text` を足す。
+※**看板ランタンは生成に含めない。** 生成後に**固定ランタンPNGを後付けオーバーレイ**で毎回同じ位置に合成する（絵のブレ防止）。プロンプト内に出る "lantern/灯り" は情景の灯りであり、ブランドの固定ランタンではない。
 
 # ■ SEO改善 共通
 世界観を先頭・SEO用途語（Sleep/Relax/Healing）を後ろ。サムネ文字は左3分の1＋明朝＋ランタン。0秒フル音量（やわらかく）で維持率↑。睡眠は長時間再生が付きやすい＝滞在時間の武器。タイトル/タグに sleep / relax / onsen を必ず含める。公開2週間後に検索キーワード反映。
