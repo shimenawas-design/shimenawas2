@@ -33,7 +33,7 @@ LoFiを「映画のサウンドトラック」へ。奥行きと物語を足す�
 # ■ Suno 共通ルール
 - 必ず `Begins immediately with` から開始。最初5秒が命。10秒以内に世界観完成。
 - 構成：0〜2秒＝風・ページをめくる音・鈴・篠笛／2〜5秒＝メインメロディ／4〜5秒＝LoFi Beat・Bass。
-- 共通楽器：篠笛・琴・尺八・琵琶・木魚・鈴・優しい太鼓・LoFi Beat・Warm Bass・Warm Analog Vinyl。ボーカルなし。
+- 共通楽器：篠笛・琴・尺八・琵琶・**三味線**・木魚・鈴・優しい太鼓・LoFi Beat・Warm Bass・Warm Analog Vinyl。ボーカルなし。（※三味線＝YouTube検索実証ワード。数曲に1回、他の弦楽器の代わりにフィーチャーすると良い）
 - 必ず入れる：`Avoid long ambient-only intros. Avoid slow build-up. Keep the first 10 seconds emotionally engaging while remaining calm and immersive.`
 - 列車の音響設計（やわらかいレールのリズム・遠い汽笛・風）は前に出しすぎない。
 
@@ -91,7 +91,7 @@ and travel through a world of Japanese fantasy until dawn.
 
 # ■ タグ 共通（英語7割・日本語3割。曲ごとに1〜2語を場面語に差し替え可）
 ```
-japanese lofi, fantasy lofi, night train lofi, train journey music, lofi hip hop, japanese study music, reading music, ai work music, deep focus, programming music, ambient music, sleep music, chill beats, relaxing music, 幻想和風lofi, 作業用bgm, 異界列車, 和風bgm
+japanese lofi, fantasy lofi, night train lofi, train journey music, lofi hip hop, japanese study music, reading music, ai work music, deep focus, programming music, ambient music, sleep music, chill beats, relaxing music, japanese traditional music, 幻想和風lofi, 作業用bgm, 異界列車, 和風bgm, ノスタルジック bgm 和風, クラシック和風アレンジ, 三味線
 ```
 
 # ■ 画像 共通サフィックス（各画像の場面行の末尾に必ず連結）

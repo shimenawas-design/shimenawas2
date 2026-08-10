@@ -20,7 +20,7 @@
 
 # ■ 音の方向（全曲共通）
 幻想和風LoFi × 和楽器の質感 × 温かいノスタルジー × 控えめシネマティック。
-- 65〜70 BPM。琴・尺八・篠笛・琵琶・鈴・木魚＋LoFi Beat・Warm Bass・Warm Analog Vinyl。ボーカルなし。
+- 65〜70 BPM。琴・尺八・篠笛・琵琶・**三味線**・鈴・木魚＋LoFi Beat・Warm Bass・Warm Analog Vinyl。ボーカルなし。（※三味線＝YouTube検索実証ワード。数曲に1回、他の弦楽器の代わりにフィーチャーすると良い）
 - 弦パッド/ドローン/広いリバーブは薄く（restrained cinematic）。
 - **雨音をやや主役に（ただし柔らかく、メロディの前に出しすぎない）**。
 - **0秒フル音量**（無音/フェードイン禁止）＝ループ継ぎ目が自然。シームレスループ前提（Booth転用可）。
@@ -48,7 +48,7 @@ Let the rain and the old books keep you company until deep in the night.
 
 # ■ タグ共通（英7:日3。曲ごとに雨の強弱語を1〜2差し替え）
 ```
-rain lofi, japanese lofi, rain sounds, study music, sleep music, deep focus, reading music, ai work music, lofi hip hop, ambient rain, relaxing rain, fantasy lofi, 幻想和風lofi, 作業用bgm, 雨の書庫, 雨の音
+rain lofi, japanese lofi, rain sounds, study music, sleep music, deep focus, reading music, ai work music, lofi hip hop, ambient rain, relaxing rain, fantasy lofi, japanese traditional music, 幻想和風lofi, 作業用bgm, 雨の書庫, 雨の音, ノスタルジック bgm 和風, クラシック和風アレンジ, 三味線
 ```
 
 # ■ 画像 共通サフィックス（各画像の場面行に連結）
