@@ -17,6 +17,9 @@ MAX_STOP_PCT = 7.0  # §5.3 損切り幅の上限（エントリー価格比）
 MAX_POSITION_PCT = 25.0  # §1.1 1銘柄あたり建玉の上限（運用資金比）
 MIN_RR = 1.5  # §6.1 最低リスクリワード
 
+# 境界値ちょうど（損切り幅7.00%など）が浮動小数点誤差で超過判定されないための許容誤差
+EPS = 1e-9
+
 
 def main() -> int:
     p = argparse.ArgumentParser(
@@ -31,6 +34,13 @@ def main() -> int:
     p.add_argument("-s", "--stop", type=float, required=True, help="損切り価格（円）")
     p.add_argument("-t", "--target", type=float, help="目標価格（円、任意）")
     p.add_argument("-u", "--unit", type=int, default=100, help="単元株数（既定 100）")
+    p.add_argument(
+        "-m",
+        "--max-position",
+        type=float,
+        default=MAX_POSITION_PCT,
+        help=f"1銘柄あたり建玉の上限（%%、既定 {MAX_POSITION_PCT:.0f}）。5銘柄構成なら 15",
+    )
     a = p.parse_args()
 
     if a.stop >= a.entry:
@@ -55,7 +65,7 @@ def main() -> int:
     print("-" * 40)
 
     warnings = []
-    if stop_pct > MAX_STOP_PCT:
+    if stop_pct > MAX_STOP_PCT + EPS:
         warnings.append(
             f"損切り幅が {stop_pct:.2f}% で上限 {MAX_STOP_PCT}% を超過 → §5.3 によりこのトレードは見送り"
         )
@@ -75,11 +85,11 @@ def main() -> int:
             f"実際のリスク額    : {actual_risk:>15,.0f} 円  "
             f"(資金比 {actual_risk / a.capital * 100:.2f} %)"
         )
-        max_cost = a.capital * MAX_POSITION_PCT / 100
-        if cost > max_cost:
+        max_cost = a.capital * a.max_position / 100
+        if cost > max_cost + EPS:
             warnings.append(
                 f"必要資金 {cost:,.0f} 円が1銘柄の建玉上限 {max_cost:,.0f} 円"
-                f"（資金の{MAX_POSITION_PCT:.0f}%）を超過 → §1.3 によりこの銘柄は見送り"
+                f"（資金の{a.max_position:.0f}%）を超過 → §1.3 によりこの銘柄は見送り"
                 "（株数を減らして損切りを浅くしてはいけない）"
             )
 

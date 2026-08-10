@@ -11,6 +11,7 @@
 | [`docs/swing-trading-rules.md`](docs/swing-trading-rules.md) | 売買ルール本体（資金管理・環境フィルタ・エントリー・損切り・利確・記録） |
 | [`docs/sbi-setup.md`](docs/sbi-setup.md) | SBI証券での執行設定、S株を選ぶ理由、20年前からの制度変更点 |
 | [`docs/trade-journal-template.csv`](docs/trade-journal-template.csv) | トレード記録のテンプレート |
+| [`docs/watchlist-template.csv`](docs/watchlist-template.csv) | 見送った候補の記録テンプレート（検証サンプルを増やすため） |
 | [`tools/position_size.py`](tools/position_size.py) | 発注株数の計算とルール抵触チェック |
 | [`tools/review_journal.py`](tools/review_journal.py) | トレード記録の集計（期待値・勝率・遵守率など） |
 | [`tools/min_capital.py`](tools/min_capital.py) | 単元株（100株）運用に必要な資金の逆算 |
@@ -45,12 +46,18 @@ python3 tools/min_capital.py --prices 1500,3000,5000 --risk 1.0
 |---|---|
 | 運用資金 | 200,000円 |
 | 同時保有の合計リスク上限 | 5.0%（10,000円） |
-| 同時保有銘柄数 | 3銘柄 |
-| 1トレードあたりリスク | 1.65%（3,300円） |
-| 1銘柄あたり建玉上限 | 50,000円 |
 | 建玉総額の上限 | 150,000円（残り25%は現金） |
 | 損切り幅の上限 | 7% |
 | 保有期間 | 最大10営業日 |
+
+枠の分割は2構成。Phase 1 は A、Phase 2 で B に移行する。
+
+| | 構成A | 構成B |
+|---|---|---|
+| 同時保有銘柄数 | 3銘柄 | 5銘柄 |
+| 1トレードあたりリスク | 1.65%（3,300円） | 1.00%（2,000円） |
+| 1銘柄あたり建玉上限 | 50,000円 | 30,000円 |
+| コマンド | `-r 1.65 -m 25` | `-r 1.0 -m 15` |
 
 ## 注意
 
