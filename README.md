@@ -13,6 +13,7 @@
 | [`docs/trade-journal-template.csv`](docs/trade-journal-template.csv) | トレード記録のテンプレート |
 | [`tools/position_size.py`](tools/position_size.py) | 発注株数の計算とルール抵触チェック |
 | [`tools/review_journal.py`](tools/review_journal.py) | トレード記録の集計（期待値・勝率・遵守率など） |
+| [`tools/min_capital.py`](tools/min_capital.py) | 単元株（100株）運用に必要な資金の逆算 |
 
 いずれも依存パッケージなし（Python 3.8+）。
 
@@ -30,6 +31,12 @@ python3 tools/position_size.py -c 200000 -r 1.65 -e 2980 -s 2772 -t 3300 -u 1
 
 ```bash
 python3 tools/review_journal.py my-journal.csv --from 2026-08-01 --to 2026-08-31
+```
+
+### 単元株に必要な資金を調べる
+
+```bash
+python3 tools/min_capital.py --prices 1500,3000,5000 --risk 1.0
 ```
 
 ## 現在の運用パラメータ
