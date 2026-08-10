@@ -1,0 +1,2 @@
+entry_date,code,name,setup,entry_price,shares,stop_price,target_price,risk_amount,planned_rr,exit_date,exit_price,pnl_yen,pnl_r,rule_compliance,market_regime,note
+2026-08-10,7203,トヨタ自動車,A,2500,100,2350,2800,15000,2.00,2026-08-18,2680,18000,1.20,Y,25MA_up,記入例：25日線タッチ後の陽線でエントリー。+1Rで半分利確、残りは10日線割れで手仕舞い
