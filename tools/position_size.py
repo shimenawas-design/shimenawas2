@@ -12,8 +12,9 @@
 import argparse
 import sys
 
-# ルール上の制約（docs/swing-trading-rules.md）
-MAX_STOP_PCT = 8.0  # §5.2 損切り幅の上限（エントリー価格比）
+# ルール上の制約（docs/swing-trading-rules.md v0.2）
+MAX_STOP_PCT = 7.0  # §5.3 損切り幅の上限（エントリー価格比）
+MAX_POSITION_PCT = 25.0  # §1.1 1銘柄あたり建玉の上限（運用資金比）
 MIN_RR = 1.5  # §6.1 最低リスクリワード
 
 
@@ -56,7 +57,7 @@ def main() -> int:
     warnings = []
     if stop_pct > MAX_STOP_PCT:
         warnings.append(
-            f"損切り幅が {stop_pct:.2f}% で上限 {MAX_STOP_PCT}% を超過 → §5.2 によりこのトレードは見送り"
+            f"損切り幅が {stop_pct:.2f}% で上限 {MAX_STOP_PCT}% を超過 → §5.3 によりこのトレードは見送り"
         )
 
     if shares == 0:
@@ -74,9 +75,11 @@ def main() -> int:
             f"実際のリスク額    : {actual_risk:>15,.0f} 円  "
             f"(資金比 {actual_risk / a.capital * 100:.2f} %)"
         )
-        if cost > a.capital:
+        max_cost = a.capital * MAX_POSITION_PCT / 100
+        if cost > max_cost:
             warnings.append(
-                f"必要資金 {cost:,.0f} 円が運用資金を超過 → §1.3 によりこの銘柄は見送り"
+                f"必要資金 {cost:,.0f} 円が1銘柄の建玉上限 {max_cost:,.0f} 円"
+                f"（資金の{MAX_POSITION_PCT:.0f}%）を超過 → §1.3 によりこの銘柄は見送り"
                 "（株数を減らして損切りを浅くしてはいけない）"
             )
 
