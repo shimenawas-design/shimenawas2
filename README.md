@@ -15,6 +15,7 @@
 
 - [x] ステップ1〜3：市場調査 / 生データ抽出 / スタンプ設計図40個
 - [x] ステップ4：画像生成用プロンプトの型を構築 → `docs/step4_prompt_design.md`
+- [x] ステップ4.1：v1をGeminiで実測 → 写実的すぎて不採用。型をv2（スタイライズ3Dアイコン）へ改訂
 - [ ] ステップ5：画像生成 → 背景透過 → テキスト合成
 - [ ] ステップ6：LINE Creators Market 申請
 
@@ -23,6 +24,7 @@
 ```
 data/stamps_40.json          40個の設計図（日本語文言 + 英語SUBJECT）
 scripts/build_prompts.py     設計図からプロンプトを組み立てる
+prompts/gemini.md            Gemini用 40本
 prompts/midjourney.txt       Midjourney用 40本
 prompts/dalle3.md            DALL-E 3 / GPT Image用 40本
 prompts/stable_diffusion.txt Stable Diffusion用 40本（Positive/Negative分離）
@@ -36,4 +38,4 @@ docs/step4_prompt_design.md  プロンプトの型の設計思想と運用ルー
 python3 scripts/build_prompts.py
 ```
 
-`data/stamps_40.json` を編集して再実行すれば、3エンジン分のプロンプトが更新される。
+`data/stamps_40.json` を編集して再実行すれば、4エンジン分のプロンプトが更新される。

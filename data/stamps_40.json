@@ -14,13 +14,15 @@
       "id": 2,
       "jp_text": "全通します",
       "concept_ja": "連結されたチェーンが画面奥から手前へ続く",
-      "subject_en": "a heavy steel roller chain of identical connected links running from deep in the background straight toward the viewer, endless repetition, strong one point perspective"
+      "subject_en": "a heavy steel roller chain of identical connected links running from deep in the background straight toward the viewer, endless repetition, strong one point perspective",
+      "negative_exceptions": ["cropped object", "cut off edges", "object touching the frame"]
     },
     {
       "id": 3,
       "jp_text": "供給過多で死ぬ",
       "concept_ja": "パイプから大量の潤滑油が溢れ、水没しかける歯車",
-      "subject_en": "thick amber lubricant oil gushing out of a burst pipe and flooding a steel gear that is almost fully submerged, viscous overflowing liquid"
+      "subject_en": "thick amber lubricant oil gushing out of a burst pipe and flooding a steel gear that is almost fully submerged, viscous overflowing liquid",
+      "negative_exceptions": ["pipes in the background"]
     },
     {
       "id": 4,
@@ -185,7 +187,8 @@
       "id": 30,
       "jp_text": "物販待機列",
       "concept_ja": "コンベアの上で等間隔に並び運ばれる無数のナット",
-      "subject_en": "countless identical hex nuts carried along a conveyor belt at perfectly equal intervals, a long orderly queue receding into the distance"
+      "subject_en": "countless identical hex nuts carried along a conveyor belt at perfectly equal intervals, a long orderly queue receding into the distance",
+      "negative_exceptions": ["cropped object", "cut off edges", "object touching the frame"]
     },
     {
       "id": 31,
@@ -197,7 +200,8 @@
       "id": 32,
       "jp_text": "夜行バスで帰る",
       "concept_ja": "暗闇のレール上を淡々と進む無人の搬送用台車",
-      "subject_en": "an unmanned automated transport cart rolling quietly along a rail through pitch darkness, one lonely small headlamp, night"
+      "subject_en": "one small unmanned automated transport cart on a short piece of rail, dark charcoal body, a single small warm glowing headlamp on the front, quietly rolling alone, the whole cart fits in frame",
+      "negative_exceptions": ["low contrast"]
     },
     {
       "id": 33,
@@ -247,7 +251,8 @@
       "id": 40,
       "jp_text": "今日も推しが生きていることに感謝",
       "concept_ja": "高い天井の水銀灯が静かに無人の現場を照らす",
-      "subject_en": "a mercury vapor lamp high on a factory ceiling quietly illuminating a vast deserted plant floor at night, silent empty wide space, single pool of light"
+      "subject_en": "one single industrial mercury vapor lamp hanging from a short ceiling pipe, its dome shade casting a soft warm cone of light straight downward, the lamp alone, quiet and still",
+      "negative_exceptions": ["factory environment"]
     }
   ]
 }

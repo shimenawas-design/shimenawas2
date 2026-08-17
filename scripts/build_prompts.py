@@ -19,49 +19,65 @@ OUT = ROOT / "prompts"
 # 固定ブロック（40枚共通・絶対に変更しない）
 # ---------------------------------------------------------------------------
 
-# [1] MEDIUM: 3DCGレンダーであることを最初に宣言する（画風の支配力が最も強い位置）
+# [1] MEDIUM: 画風の支配力が最も強い位置。
+#     v1 では "catalog product shot / octane render / 8k" と書いたため、
+#     AIが「工業製品のリアル写真」を正しく生成してしまい、370x320 に縮小すると
+#     判別不能・透過不能・サムネイル一覧で区別不能という三重の不合格になった。
+#     写実をやめ、スタイライズされた3Dアイコンに転換する。
 MEDIUM = (
-    "3DCG product render, industrial machine part photographed like a catalog product shot"
+    "simple stylized 3D icon, clean minimal 3D render of a vinyl toy miniature, "
+    "chunky simplified geometry, bold readable silhouette, messenger sticker art"
 )
 
-# [2] TONE: 「無感情・無機質」を担保する。擬人化を全力で禁止する。
+# [2] TONE: 「無感情・無機質」は維持。ただし全面グレーは禁止し、差し色を1点だけ入れる。
 TONE = (
-    "cold emotionless inorganic object, absolutely no face and no eyes, "
-    "not anthropomorphized, not a mascot, deadpan and lifeless, "
-    "machined steel and matte aluminum, brushed metal surfaces, subtle scratches and machining marks"
+    "an industrial machine part, cold emotionless inorganic object, "
+    "absolutely no face and no eyes, not anthropomorphized, not a mascot, deadpan and lifeless, "
+    "simplified matte metal with smooth soft gray shading, minimal surface detail, "
+    "one single vivid orange accent color used sparingly on the focal point, "
+    "strong value contrast between the object and the background"
 )
 
-# [3] COMPOSITION: 【厳守ルール】テキストを上に置くため、上部35%を強制的に空ける。
-#     同じ意味の指示を 3 通りの言い回しで重ねるのが、構図指示を効かせる最大のコツ。
+# [3] COMPOSITION: 【厳守ルール】上部35%の確保 + スタンプとして成立する「閉じた輪郭」。
+#     v1 では被写体がフレーム外へ続いてしまい、背景透過に必要なシルエットが得られなかった。
 COMPOSITION = (
+    "one single isolated object, the entire object fits completely inside the frame "
+    "with clear margin on every side, nothing is cropped and nothing touches the edges, "
     "the object sits entirely in the lower two thirds of the frame, "
     "wide empty headroom across the top 35 percent of the image, "
     "nothing at all in the upper area, generous negative space above the subject reserved for a caption, "
     "centered horizontally, slightly low camera angle looking at the object"
 )
 
-# [4] LIGHTING
+# [4] LIGHTING: 被写界深度は捨てる。縮小時にボケは情報の損失にしかならない。
 LIGHTING = (
-    "soft large softbox studio lighting, gentle rim light, crisp contact shadow, "
-    "shallow depth of field"
+    "soft even studio lighting, gentle ambient occlusion, one simple soft drop shadow directly under the object, "
+    "everything in sharp focus, no depth of field blur"
 )
 
-# [5] BACKGROUND: 後工程で透過PNGに抜くため、フラットな無地に固定する。
+# [5] BACKGROUND: キーイングで抜くため、純白のフラット背景に固定する。
 BACKGROUND = (
-    "plain flat seamless light gray studio background, clean and empty, "
-    "subject clearly isolated from the background"
+    "pure flat white background, completely empty, no environment, no floor, no walls, no machinery behind, "
+    "the object floats cleanly, die cut sticker style with crisp clean edges"
 )
 
-# [6] QUALITY
-QUALITY = "physically based rendering, octane render, ultra detailed, 8k, sharp focus"
+# [6] QUALITY: 「高精細」ではなく「縮小に耐える」を品質の定義にする。
+QUALITY = (
+    "simple and bold, minimal detail, high contrast, thick clean edges, "
+    "instantly readable when shrunk down to 370x320 pixels, iconic and graphic"
+)
 
-# [7] NEGATIVE: 文字は後から合成するので、AIには一切描かせない。
+# [7] NEGATIVE: 文字は後から合成するので一切描かせない。写実化とトリミングも全力で潰す。
 NEGATIVE = [
     "text", "letters", "words", "captions", "watermark", "signature", "logo",
     "numbers",
     "human", "person", "face", "eyes", "mouth", "hands",
-    "cute character", "mascot", "anime", "illustration", "2d",
-    "cluttered background", "busy background", "props", "multiple panels",
+    "cute character", "mascot", "anime",
+    "photorealistic", "photograph", "hyperrealistic", "octane render", "8k", "macro", "close up",
+    "cropped object", "cut off edges", "object touching the frame",
+    "cluttered machinery", "hoses", "wires", "pipes in the background", "factory environment",
+    "gray background", "gradient background", "busy background", "low contrast", "monochrome",
+    "tiny details", "fine surface texture", "depth of field", "bokeh",
     "border", "frame", "vignette",
 ]
 
@@ -74,11 +90,15 @@ SPEC = {
 
 
 def negatives_for(stamp: dict) -> list[str]:
-    """図面系など、数字が画に必要な数枚だけ numbers をネガティブから外す。"""
-    neg = list(NEGATIVE)
+    """被写体そのものがネガティブ語と衝突する数枚だけ、該当語を外す。
+
+    例: 03「供給過多で死ぬ」はパイプが主役なので "pipes in the background" を外す。
+        29「詳細なレポ助かる」は寸法数値が主役なので "numbers" を外す。
+    """
+    dropped = set(stamp.get("negative_exceptions", []))
     if stamp.get("allow_numbers"):
-        neg.remove("numbers")
-    return neg
+        dropped.add("numbers")
+    return [n for n in NEGATIVE if n not in dropped]
 
 
 def core(stamp: dict) -> str:
@@ -107,6 +127,34 @@ def dalle3(stamp: dict) -> str:
         f"Lighting: {LIGHTING}. Background: {BACKGROUND}. Quality: {QUALITY}. "
         "Do not render any text, letters, words or logos anywhere in the image. "
         "Do not add a border or frame. Aspect ratio 37:32 (wide)."
+    )
+
+
+def gemini(stamp: dict) -> str:
+    """Gemini 系は用途を先に宣言すると絵柄が一気に安定する。
+
+    「これはメッセージアプリのスタンプだ」と最初に言い切るのが最大のレバー。
+    これを言わないと、工業製品のリアル写真を作りに行ってしまう。
+    """
+    return (
+        "This image is a sticker for a messaging app. It will be displayed at only "
+        "370x320 pixels, so it must be extremely simple, bold and instantly readable at that tiny size. "
+        "It is NOT a photograph and NOT a realistic product render.\n\n"
+        f"Draw a {MEDIUM} of {stamp['subject_en']}.\n\n"
+        f"Style: {TONE}.\n"
+        f"Composition (this is the most important requirement): {COMPOSITION}.\n"
+        f"Lighting: {LIGHTING}.\n"
+        f"Background: {BACKGROUND}.\n"
+        f"Quality target: {QUALITY}.\n\n"
+        "Absolute rules:\n"
+        "- Keep the top 35 percent of the image completely empty. A Japanese caption will be "
+        "placed there later, so nothing may appear in that area.\n"
+        "- Show the whole object. Never crop it or let it touch the edges of the frame.\n"
+        "- Do not draw any text, letters, words, numbers or logos.\n"
+        "- Do not draw any background machinery, hoses, pipes, floor or factory interior. "
+        "The background must be plain white and totally empty.\n"
+        "- Do not make it photorealistic.\n"
+        "Aspect ratio: 37:32 (slightly wider than tall)."
     )
 
 
@@ -143,6 +191,13 @@ def main() -> None:
         lines.append(f"```\n{dalle3(s)}\n```")
     (OUT / "dalle3.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
+    # --- Gemini -----------------------------------------------------------
+    lines = [f"# Gemini 用プロンプト（{data['project']}）\n"]
+    for s in stamps:
+        lines.append(f"\n## {s['id']:02d}. {s['jp_text']}\n\n> {s['concept_ja']}\n")
+        lines.append(f"```\n{gemini(s)}\n```")
+    (OUT / "gemini.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
     # --- メイン画像 / タブ画像 ---------------------------------------------
     hero = next(s for s in stamps if s["id"] == 8)   # 尊い… = 世界観を最も象徴する1枚
     tab = next(s for s in stamps if s["id"] == 1)    # 実質無料 = 最もシンプルで縮小に強い
@@ -157,7 +212,7 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    print(f"generated {len(stamps)} prompts x 3 engines -> {OUT}")
+    print(f"generated {len(stamps)} prompts x 4 engines -> {OUT}")
 
 
 if __name__ == "__main__":
