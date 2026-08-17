@@ -1,0 +1,253 @@
+{
+  "project": "推し活スラング × 無感情な工業用オブジェクト",
+  "target": "推し活・現場通い界隈（全通／実質無料などのスラングを日常使用する熱狂的ファン層）",
+  "art_direction": "無感情な工業用オブジェクト（ボルト・歯車など）の3DCG風",
+  "layout_rule": "テキストは必ず上側。イラストは下側。生成時は上部35%を空白として確保する。",
+  "stamps": [
+    {
+      "id": 1,
+      "jp_text": "実質無料",
+      "concept_ja": "大きな六角ボルトが1本、無機質に直立",
+      "subject_en": "one single oversized hexagonal steel bolt standing perfectly upright and motionless, dead straight, absolutely still"
+    },
+    {
+      "id": 2,
+      "jp_text": "全通します",
+      "concept_ja": "連結されたチェーンが画面奥から手前へ続く",
+      "subject_en": "a heavy steel roller chain of identical connected links running from deep in the background straight toward the viewer, endless repetition, strong one point perspective"
+    },
+    {
+      "id": 3,
+      "jp_text": "供給過多で死ぬ",
+      "concept_ja": "パイプから大量の潤滑油が溢れ、水没しかける歯車",
+      "subject_en": "thick amber lubricant oil gushing out of a burst pipe and flooding a steel gear that is almost fully submerged, viscous overflowing liquid"
+    },
+    {
+      "id": 4,
+      "jp_text": "人権がない",
+      "concept_ja": "赤く錆びついてポツンと転がるワッシャー",
+      "subject_en": "a single small heavily red rusted washer lying abandoned and alone on a bare concrete floor, forgotten, tiny in a wide empty space"
+    },
+    {
+      "id": 5,
+      "jp_text": "喜んでATMになります",
+      "concept_ja": "プレス機がゆっくり下がりプレスする直前",
+      "subject_en": "the ram of a massive hydraulic press descending slowly, frozen one instant before it crushes the workpiece below, immense mechanical pressure"
+    },
+    {
+      "id": 6,
+      "jp_text": "顔が良い",
+      "concept_ja": "ノギスがピカピカのベアリング球の直径を測る",
+      "subject_en": "a stainless steel vernier caliper precisely measuring the diameter of a flawless mirror polished ball bearing, chrome reflections"
+    },
+    {
+      "id": 7,
+      "jp_text": "推ししか勝たん",
+      "concept_ja": "巨大なモーターが力強く回転",
+      "subject_en": "a huge industrial electric motor spinning at full power, rotational motion blur on the shaft, overwhelming torque"
+    },
+    {
+      "id": 8,
+      "jp_text": "尊い…",
+      "concept_ja": "祭壇のように積まれたナットの中央に輝く金色のボルト",
+      "subject_en": "steel hex nuts stacked into an altar like pedestal with one radiant golden bolt enshrined at the center, holy backlight and god rays"
+    },
+    {
+      "id": 9,
+      "jp_text": "限界オタク",
+      "concept_ja": "金属疲労で真っ二つに割れる寸前のスプリング",
+      "subject_en": "a coil spring stretched far past its limit, metal fatigue cracks spreading across it, one instant before it snaps in two"
+    },
+    {
+      "id": 10,
+      "jp_text": "現場（ここ）が世界の中心",
+      "concept_ja": "複雑なアセンブリ図面のど真ん中を指す赤い矢印",
+      "subject_en": "a bold red arrow pointing at the exact dead center of a complex mechanical assembly blueprint, flat top down view of the drawing",
+      "allow_numbers": true
+    },
+    {
+      "id": 11,
+      "jp_text": "遠征費は固定費",
+      "concept_ja": "規則正しく並んだ分厚い鋼鉄のブロック",
+      "subject_en": "thick heavy rectangular steel gauge blocks lined up in a perfectly regular row, identical spacing, immovable and unchanging"
+    },
+    {
+      "id": 12,
+      "jp_text": "チケ発（戦）行ってきます",
+      "concept_ja": "カチッとスイッチが入った瞬間のトグルスイッチ",
+      "subject_en": "an industrial metal toggle switch caught at the exact instant it clicks into the ON position, small indicator light igniting"
+    },
+    {
+      "id": 13,
+      "jp_text": "徳を積む",
+      "concept_ja": "ワッシャーを高く積み上げていくアームロボット",
+      "subject_en": "a robotic arm patiently stacking flat washers into a tall precarious tower, one washer held in the gripper"
+    },
+    {
+      "id": 14,
+      "jp_text": "軽率に沼落ち",
+      "concept_ja": "深いネジ穴へ真っ逆さまに落ちる一本のネジ",
+      "subject_en": "a single machine screw falling headfirst into a deep dark threaded bore hole, plunging straight down, bottomless darkness below"
+    },
+    {
+      "id": 15,
+      "jp_text": "マウントとってくる",
+      "concept_ja": "クレーンで吊るされた鉄骨が下のボルトを見下ろす",
+      "subject_en": "a massive steel H beam suspended from a crane hook looming high above one small bolt on the floor, extreme scale difference, low angle"
+    },
+    {
+      "id": 16,
+      "jp_text": "認知もらった",
+      "concept_ja": "センサーの赤いレーザーがリベットを捕捉",
+      "subject_en": "a red laser line from an industrial sensor locking precisely onto a single rivet, glowing scan beam in slight haze"
+    },
+    {
+      "id": 17,
+      "jp_text": "確定レス",
+      "concept_ja": "2つの歯車が完全に噛み合い激しく火花が散る",
+      "subject_en": "two steel gears meshing together in perfect engagement, violent orange sparks bursting from the contact point"
+    },
+    {
+      "id": 18,
+      "jp_text": "干された",
+      "concept_ja": "コンベアの脇に転がる不良品のピン",
+      "subject_en": "one rejected defective dowel pin fallen off to the side of a running conveyor belt, left behind out of the line"
+    },
+    {
+      "id": 19,
+      "jp_text": "円盤買います",
+      "concept_ja": "鏡面仕上げの美しい丸いディスクが光を反射",
+      "subject_en": "a beautiful perfectly round mirror finished metal disc catching and reflecting a sharp band of light, flawless surface"
+    },
+    {
+      "id": 20,
+      "jp_text": "積む",
+      "concept_ja": "フォークリフトが同じ部品のパレットを山積み",
+      "subject_en": "a forklift stacking pallets loaded with identical parts higher and higher, towering repetitive cargo stack"
+    },
+    {
+      "id": 21,
+      "jp_text": "多ステ",
+      "concept_ja": "同じCAD図面がプリンターから何枚も吐き出される",
+      "subject_en": "identical technical CAD drawings pouring out of a large format printer one after another, sheets piling up",
+      "allow_numbers": true
+    },
+    {
+      "id": 22,
+      "jp_text": "沸いた",
+      "concept_ja": "冷却水が沸騰しボコボコ泡立つタンク",
+      "subject_en": "coolant boiling violently in an open steel tank, big bubbles bursting, steam rising hard"
+    },
+    {
+      "id": 23,
+      "jp_text": "鍵開け",
+      "concept_ja": "頑丈なロック機構がガチャリと開く瞬間",
+      "subject_en": "a heavy duty steel lock mechanism at the exact moment the bolt retracts and unlatches, shackle popping open"
+    },
+    {
+      "id": 24,
+      "jp_text": "剥がし早すぎ",
+      "concept_ja": "エアダスターで勢いよく吹き飛ばされる木ねじ",
+      "subject_en": "a wood screw blasted violently sideways out of frame by a jet of compressed air from an air duster nozzle, motion streak"
+    },
+    {
+      "id": 25,
+      "jp_text": "自引きした",
+      "concept_ja": "クレーンゲームのアームのような機械が赤いボルトを掴む",
+      "subject_en": "a claw machine style robotic gripper clamping down on one bright red bolt among plain silver bolts, the moment of the catch"
+    },
+    {
+      "id": 26,
+      "jp_text": "買取します",
+      "concept_ja": "開いたままの空のジュラルミンケース",
+      "subject_en": "an empty aluminum duralumin flight case left wide open with hollow gray foam inserts inside, nothing in it, waiting"
+    },
+    {
+      "id": 27,
+      "jp_text": "交換希望",
+      "concept_ja": "2つの異なるギアが赤い回転矢印で入れ替わる図解",
+      "subject_en": "two different gears swapping places connected by a red circular exchange arrow, clean instructional diagram style"
+    },
+    {
+      "id": 28,
+      "jp_text": "抱き合わせ",
+      "concept_ja": "太い結束バンドでまとめられた複数のボルトとナット",
+      "subject_en": "an assorted bundle of bolts and nuts strapped tightly together by one thick black cable tie, forced into a single lot"
+    },
+    {
+      "id": 29,
+      "jp_text": "詳細なレポ助かる",
+      "concept_ja": "公差や寸法がびっしり書き込まれた複雑なCAD図面",
+      "subject_en": "an extremely dense technical CAD drawing packed edge to edge with dimension lines, tolerance callouts and section views, flat top down view",
+      "allow_numbers": true
+    },
+    {
+      "id": 30,
+      "jp_text": "物販待機列",
+      "concept_ja": "コンベアの上で等間隔に並び運ばれる無数のナット",
+      "subject_en": "countless identical hex nuts carried along a conveyor belt at perfectly equal intervals, a long orderly queue receding into the distance"
+    },
+    {
+      "id": 31,
+      "jp_text": "痛バ組む",
+      "concept_ja": "パンチングメタルに無数の小さなネジが打ち込まれている",
+      "subject_en": "a perforated metal panel densely studded with countless tiny screws driven into every hole, obsessively filled surface"
+    },
+    {
+      "id": 32,
+      "jp_text": "夜行バスで帰る",
+      "concept_ja": "暗闇のレール上を淡々と進む無人の搬送用台車",
+      "subject_en": "an unmanned automated transport cart rolling quietly along a rail through pitch darkness, one lonely small headlamp, night"
+    },
+    {
+      "id": 33,
+      "jp_text": "宿とった？",
+      "concept_ja": "仕切られたパーツボックスの空きスペース",
+      "subject_en": "a compartmentalized parts organizer box seen from above, every cell filled with parts except one conspicuously empty slot",
+      "allow_numbers": false
+    },
+    {
+      "id": 34,
+      "jp_text": "優勝した",
+      "concept_ja": "「合格」の緑色スタンプが押された金属板",
+      "subject_en": "a brushed metal inspection plate marked with a large green circular approval stamp containing a bold check mark symbol, no lettering"
+    },
+    {
+      "id": 35,
+      "jp_text": "語彙力消失",
+      "concept_ja": "バグを起こして文字化けした機械の液晶ディスプレイ",
+      "subject_en": "an industrial machine LCD panel glitching out, the display broken into scrambled colored glitch blocks and corrupted pixel noise, unreadable garbage, no legible characters"
+    },
+    {
+      "id": 36,
+      "jp_text": "しんどい（褒め言葉）",
+      "concept_ja": "万力でギリギリと締め上げられる鉄パイプ",
+      "subject_en": "a steel pipe clamped in a heavy bench vise and being crushed, the wall visibly deforming and buckling under pressure"
+    },
+    {
+      "id": 37,
+      "jp_text": "情緒不安定",
+      "concept_ja": "メーターの針が限界を振り切れ激しくブレる圧力計",
+      "subject_en": "an analog pressure gauge with the needle slammed hard past the red danger limit and vibrating wildly, needle motion blur, cracked glass",
+      "allow_numbers": true
+    },
+    {
+      "id": 38,
+      "jp_text": "大優勝",
+      "concept_ja": "金色に輝く超硬合金のエンドミルが後光を放つ",
+      "subject_en": "a gold titanium nitride coated carbide end mill standing vertically and radiating a divine halo of light, god rays, sacred glow"
+    },
+    {
+      "id": 39,
+      "jp_text": "命日（最高すぎて死ぬ）",
+      "concept_ja": "完全にショートして黒焦げになったヒューズ",
+      "subject_en": "a completely blown fuse, glass blackened with soot and the filament burnt through, a thin wisp of smoke still rising, total failure"
+    },
+    {
+      "id": 40,
+      "jp_text": "今日も推しが生きていることに感謝",
+      "concept_ja": "高い天井の水銀灯が静かに無人の現場を照らす",
+      "subject_en": "a mercury vapor lamp high on a factory ceiling quietly illuminating a vast deserted plant floor at night, silent empty wide space, single pool of light"
+    }
+  ]
+}
