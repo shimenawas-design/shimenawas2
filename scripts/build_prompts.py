@@ -38,6 +38,18 @@ TONE = (
     "strong value contrast between the object and the background"
 )
 
+# [2.5] STAGING: v2 の 01番テストで判明した課題への対策。
+#     技術要件を全部満たしても「ストック3D素材」にしか見えず、スタンプとして機能しなかった。
+#     原因は物体が何もしていないこと。感情を顔で出せない以上、
+#     感情は「その物体に今まさに起きている物理現象」でしか表現できない。
+#     よって全40枚を「事件の最高潮の一瞬」として演出することを固定ルールにする。
+STAGING = (
+    "the object is captured at the single most extreme peak instant of what is happening to it, "
+    "theatrical exaggerated cartoon physics, clear and obvious action, "
+    "slightly exaggerated proportions with the key feature oversized, "
+    "all of the drama comes from the physical state of the object itself and never from any facial expression"
+)
+
 # [3] COMPOSITION: 【厳守ルール】上部35%の確保 + スタンプとして成立する「閉じた輪郭」。
 #     v1 では被写体がフレーム外へ続いてしまい、背景透過に必要なシルエットが得られなかった。
 COMPOSITION = (
@@ -79,6 +91,7 @@ NEGATIVE = [
     "gray background", "gradient background", "busy background", "low contrast", "monochrome",
     "tiny details", "fine surface texture", "depth of field", "bokeh",
     "border", "frame", "vignette",
+    "static and lifeless pose", "nothing happening", "stock 3d asset", "clip art icon",
 ]
 
 # LINEスタンプ規格（W x H）
@@ -104,7 +117,7 @@ def negatives_for(stamp: dict) -> list[str]:
 def core(stamp: dict) -> str:
     """可変ブロック [SUBJECT] を固定ブロックで挟んだ本体。"""
     return ", ".join(
-        [MEDIUM, stamp["subject_en"], TONE, COMPOSITION, LIGHTING, BACKGROUND, QUALITY]
+        [MEDIUM, stamp["subject_en"], STAGING, TONE, COMPOSITION, LIGHTING, BACKGROUND, QUALITY]
     )
 
 
@@ -122,6 +135,7 @@ def dalle3(stamp: dict) -> str:
     """DALL-E 3 / GPT Image は命令文のほうが通る。禁止事項を文で明示する。"""
     return (
         f"Create a {MEDIUM} of {stamp['subject_en']}. "
+        f"Staging: {STAGING}. "
         f"Art direction: {TONE}. "
         f"Composition is critical: {COMPOSITION}. "
         f"Lighting: {LIGHTING}. Background: {BACKGROUND}. Quality: {QUALITY}. "
@@ -141,6 +155,7 @@ def gemini(stamp: dict) -> str:
         "370x320 pixels, so it must be extremely simple, bold and instantly readable at that tiny size. "
         "It is NOT a photograph and NOT a realistic product render.\n\n"
         f"Draw a {MEDIUM} of {stamp['subject_en']}.\n\n"
+        f"Staging (what makes or breaks this image): {STAGING}.\n"
         f"Style: {TONE}.\n"
         f"Composition (this is the most important requirement): {COMPOSITION}.\n"
         f"Lighting: {LIGHTING}.\n"
@@ -154,6 +169,7 @@ def gemini(stamp: dict) -> str:
         "- Do not draw any background machinery, hoses, pipes, floor or factory interior. "
         "The background must be plain white and totally empty.\n"
         "- Do not make it photorealistic.\n"
+        "- The object must clearly be in the middle of something happening. A static object just sitting there is a failure.\n"
         "Aspect ratio: 37:32 (slightly wider than tall)."
     )
 

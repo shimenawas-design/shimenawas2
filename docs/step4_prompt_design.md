@@ -1,4 +1,4 @@
-# ステップ4：画像生成用プロンプトの型（テンプレート）— v2
+# ステップ4：画像生成用プロンプトの型（テンプレート）— v3
 
 対象テスト案
 - ターゲット界隈：推し活・現場通い界隈
@@ -49,19 +49,60 @@ v2 では品質の定義そのものを差し替えた。
 
 ---
 
-## 2. プロンプトの型：7固定 + 1可変
+## 1.5 v2 の失敗ログ（表現の壁）
+
+Gemini で 01「実質無料」（六角ボルト1本）を生成。**技術要件は全項目クリア**した。
+
+| 観点 | 結果 |
+|---|---|
+| 上部余白 | ○（25〜30%確保） |
+| 370×320での判別 | ○ ボルトと分かる |
+| 閉じたシルエット | ○ |
+| 背景の抜きやすさ | ○ 純白 |
+| 差し色 | ○ オレンジのワッシャーが効いている |
+
+それでも **スタンプとしては不採用**。理由は技術ではなく表現。
+
+> **これは「アイコン」であって「スタンプ」ではない。**
+> ストックの3D素材と見分けがつかず、何も伝えていない。
+> 上に「実質無料」と乗せても、ボルトが何もしていないので文字と絵が反応しない。
+
+**学び：本企画では「無感情」と「無反応」を混同してはいけない。**
+顔で感情を出せない以上、感情は「その物体に今まさに起きている物理現象」でしか表現できない。
+何もしていない部品は、無感情なのではなく、ただの物体である。
+
+なお 01 番は 40 個中で最も静的な設計であり、表現力を測るテストとしては
+サンプル選択自体が不適切だった（テスト設計側のミス）。
+
+対策として **[2.5] STAGING ブロック** を新設した。
+
+```
+the object is captured at the single most extreme peak instant of what is happening to it,
+theatrical exaggerated cartoon physics, clear and obvious action,
+slightly exaggerated proportions with the key feature oversized,
+all of the drama comes from the physical state of the object itself
+and never from any facial expression
+```
+
+ネガティブにも `static and lifeless pose` / `nothing happening` / `stock 3d asset` /
+`clip art icon` を追加した。
+
+---
+
+## 2. プロンプトの型：8固定 + 1可変
 
 可変なのは `[SUBJECT]` のみ。残り6ブロックは40枚すべてで一字一句同じにする。
 
 ```
-[1 MEDIUM]      + [2 SUBJECT(可変)] + [3 TONE] + [4 COMPOSITION]
-+ [5 LIGHTING]  + [6 BACKGROUND]    + [7 QUALITY] + [8 PARAMETERS / NEGATIVE]
+[1 MEDIUM] + [2 SUBJECT(可変)] + [2.5 STAGING] + [3 TONE] + [4 COMPOSITION]
++ [5 LIGHTING] + [6 BACKGROUND] + [7 QUALITY] + [8 PARAMETERS / NEGATIVE]
 ```
 
 | # | ブロック | 役割 | v2での方針 |
 |---|---|---|---|
 | 1 | MEDIUM | 画風の支配権を最初に握る | **写実→スタイライズ3Dアイコンへ転換。** `simple stylized 3D icon, clean minimal 3D render of a vinyl toy miniature, chunky simplified geometry, bold readable silhouette, messenger sticker art` |
 | 2 | **SUBJECT** | **★ここだけ40通り差し替える** | `data/stamps_40.json` |
+| 2.5 | **STAGING** | **★「アイコン化」を防ぐ。事件の最高潮の一瞬として演出** | v3で新設。無感情と無反応の混同を潰す |
 | 3 | TONE | 無感情・無機質の担保 + 全面グレー回避 | 擬人化の全面禁止は維持。加えて `one single vivid orange accent color used sparingly on the focal point` で焦点色を1色だけ導入 |
 | 4 | **COMPOSITION** | **★上部35%確保 + 閉じた輪郭** | `the entire object fits completely inside the frame with clear margin on every side, nothing is cropped and nothing touches the edges` を追加 |
 | 5 | LIGHTING | 光を揃える | **被写界深度を捨てた。** 縮小時のボケは情報の損失にしかならない。`everything in sharp focus, no depth of field blur` |
@@ -143,11 +184,24 @@ Midjourney の `--style raw` は必須。付けないとMJが勝手に情緒的�
 
 主観で「良い/悪い」を決めない。以下を実測する。
 
-1. 生成画像を **370×320 px に縮小**して見る。ここで何の絵か分からなければ即不採用。
+### 技術ゲート（v2で通過済み）
+
+1. 生成画像を **370×320 px に縮小**して見る。何の絵か分からなければ即不採用。
 2. 96×74（タブサイズ）まで縮めて、**シルエットだけで**区別がつくか。
 3. 白背景・濃色背景の両方に置いて、沈まないか。
 4. 上部35%に文字帯を仮置きして、被写体と干渉しないか。
-5. 候補を5枚並べて、**一覧で区別がつくか**。これが最終関門。
+
+### 表現ゲート（v3で追加。ここが本番）
+
+5. **絵だけ見て「何かが起きている」と分かるか。** 分からなければ不採用。
+6. **文字を乗せたとき、文字と絵が反応するか。** ただ上下に並んでいるだけなら不採用。
+7. 候補を5枚並べて、**一覧で区別がつくか**。これが最終関門。
+
+### 絵柄そのものの棄却ライン
+
+37 / 39 / 9（物理現象が最も激しい3枚）でも表現ゲート 5・6 を通過しない場合、
+それはプロンプトの限界ではなく **テスト案（絵柄）そのものの棄却** として記録し、
+ステップ2へ戻って別の絵柄軸でギャップテストをやり直す。
 
 ---
 
