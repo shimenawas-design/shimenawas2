@@ -1,258 +1,380 @@
 {
-  "project": "推し活スラング × 無感情な工業用オブジェクト",
-  "target": "推し活・現場通い界隈（全通／実質無料などのスラングを日常使用する熱狂的ファン層）",
-  "art_direction": "無感情な工業用オブジェクト（ボルト・歯車など）の3DCG風",
-  "layout_rule": "テキストは必ず上側。イラストは下側。生成時は上部35%を空白として確保する。",
+  "project": "シフトうさぎ（A案：介護夜勤 × 目が死んだ白ウサギ）",
+  "target": "介護施設の夜勤スタッフ（特養・老健・グループホーム）",
+  "art_direction": "ゆるかわ系だが目が完全に死んでいる3頭身の白ウサギ",
+  "layout_rule": "テキストは画像の上側。キャラは下寄せ。生成時は上部30%を空白として確保する。",
+  "text_spec": {
+    "font_px": 36,
+    "max_chars_per_line": 9,
+    "line_height_px": 42,
+    "zone_top_px": 0,
+    "zone_bottom_px": 110,
+    "color": "#4A4A4A",
+    "stroke_px": 5,
+    "stroke_color": "#FFFFFF",
+    "font": "Zen Maru Gothic Bold (ZenMaruGothic-Bold.ttf / SIL OFL)"
+  },
   "stamps": [
     {
       "id": 1,
-      "jp_text": "実質無料",
-      "concept_ja": "大きな六角ボルトが1本、無機質に直立",
-      "subject_en": "one single oversized hexagonal steel bolt standing perfectly upright and motionless, dead straight, absolutely still"
+      "category": "挨拶・業務連絡",
+      "text": "おつかれさまです",
+      "lines": ["おつかれさまです"],
+      "action_en": "bowing slightly forward with one paw placed on its chest.",
+      "expression_en": "half-lidded lifeless eyes, mouth a flat horizontal line.",
+      "tags": ["おつかれ", "お疲れ様", "介護"]
     },
     {
       "id": 2,
-      "jp_text": "全通します",
-      "concept_ja": "連結されたチェーンが画面奥から手前へ続く",
-      "subject_en": "a heavy steel roller chain of identical connected links running from deep in the background straight toward the viewer, endless repetition, strong one point perspective",
-      "negative_exceptions": ["cropped object", "cut off edges", "object touching the frame"]
+      "category": "挨拶・業務連絡",
+      "text": "おはようございます",
+      "lines": ["おはようございます"],
+      "action_en": "standing tilted to one side, raising one paw in a small wave at chest height.",
+      "expression_en": "heavy drooping eyelids, suppressing a yawn, mouth slightly puckered.",
+      "tags": ["おはよう", "挨拶", "眠い"]
     },
     {
       "id": 3,
-      "jp_text": "供給過多で死ぬ",
-      "concept_ja": "パイプから大量の潤滑油が溢れ、水没しかける歯車",
-      "subject_en": "thick amber lubricant oil gushing out of a burst pipe and flooding a steel gear that is almost fully submerged, viscous overflowing liquid",
-      "negative_exceptions": ["pipes in the background"]
+      "category": "挨拶・業務連絡",
+      "text": "夜勤入ります",
+      "lines": ["夜勤入ります"],
+      "action_en": "standing straight, pointing at the blank white name badge on its chest with one paw.",
+      "expression_en": "blank resolute stare, completely dead eyes, mouth a flat line.",
+      "tags": ["出勤", "夜勤", "これから"]
     },
     {
       "id": 4,
-      "jp_text": "人権がない",
-      "concept_ja": "赤く錆びついてポツンと転がるワッシャー",
-      "subject_en": "a single small heavily red rusted washer lying abandoned and alone on a bare concrete floor, forgotten, tiny in a wide empty space"
+      "category": "挨拶・業務連絡",
+      "text": "明けました",
+      "lines": ["明けました"],
+      "action_en": "body melted and collapsed onto the floor like liquid, both arms limp and spread on the ground.",
+      "expression_en": "total emptiness, dot eyes staring down at an angle, mouth a tiny slack line.",
+      "tags": ["疲れた", "夜勤明け", "限界"]
     },
     {
       "id": 5,
-      "jp_text": "喜んでATMになります",
-      "concept_ja": "プレス機がゆっくり下がりプレスする直前",
-      "subject_en": "the ram of a massive hydraulic press descending slowly, frozen one instant before it crushes the workpiece below, immense mechanical pressure"
+      "category": "挨拶・業務連絡",
+      "text": "了解です",
+      "lines": ["了解です"],
+      "action_en": "making a small OK sign with one paw at chest height, body facing front.",
+      "expression_en": "half-lidded eyes, mouth pursed into a tiny \"n\" shape.",
+      "tags": ["了解", "OK", "わかった"]
     },
     {
       "id": 6,
-      "jp_text": "顔が良い",
-      "concept_ja": "ノギスがピカピカのベアリング球の直径を測る",
-      "subject_en": "a stainless steel vernier caliper precisely measuring the diameter of a flawless mirror polished ball bearing, chrome reflections"
+      "category": "挨拶・業務連絡",
+      "text": "ありがとうございます",
+      "lines": ["ありがとう", "ございます"],
+      "action_en": "both paws pressed together in front of its chest, leaning slightly forward.",
+      "expression_en": "dead eyes, but a faint upward curve at the corners of the mouth.",
+      "tags": ["ありがとう", "感謝", "助かる"]
     },
     {
       "id": 7,
-      "jp_text": "推ししか勝たん",
-      "concept_ja": "巨大なモーターが力強く回転",
-      "subject_en": "a huge industrial electric motor spinning at full power, rotational motion blur on the shaft, overwhelming torque"
+      "category": "挨拶・業務連絡",
+      "text": "すみません遅れます",
+      "lines": ["すみません遅れます"],
+      "action_en": "one paw held up flat beside its face, body shrunk and turned at an angle.",
+      "expression_en": "no eyebrows, dot eyes shifted to the side in panic, tiny open mouth.",
+      "tags": ["ごめん", "遅刻", "遅れる"]
     },
     {
       "id": 8,
-      "jp_text": "尊い…",
-      "concept_ja": "祭壇のように積まれたナットの中央に輝く金色のボルト",
-      "subject_en": "steel hex nuts stacked into an altar like pedestal with one radiant golden bolt enshrined at the center, holy backlight and god rays"
+      "category": "挨拶・業務連絡",
+      "text": "今から向かいます",
+      "lines": ["今から向かいます"],
+      "action_en": "seen from the side, running with one hind foot lifted, motion lines only horizontal.",
+      "expression_en": "half-lidded eyes looking forward, mouth a flat line.",
+      "tags": ["向かう", "今から", "急ぐ"]
     },
     {
       "id": 9,
-      "jp_text": "限界オタク",
-      "concept_ja": "金属疲労で真っ二つに割れる寸前のスプリング",
-      "subject_en": "a coil spring stretched far past its limit, metal fatigue cracks spreading across it, one instant before it snaps in two"
+      "category": "挨拶・業務連絡",
+      "text": "お先に失礼します",
+      "lines": ["お先に失礼します"],
+      "action_en": "seen from behind, walking away, raising one paw small in farewell.",
+      "expression_en": "face hidden from view, both ears drooping limply downward.",
+      "tags": ["おつかれ", "帰る", "退勤"]
     },
     {
       "id": 10,
-      "jp_text": "現場（ここ）が世界の中心",
-      "concept_ja": "複雑なアセンブリ図面のど真ん中を指す赤い矢印",
-      "subject_en": "a bold red arrow pointing at the exact dead center of a complex mechanical assembly blueprint, flat top down view of the drawing",
-      "allow_numbers": true
+      "category": "挨拶・業務連絡",
+      "text": "確認しました",
+      "lines": ["確認しました"],
+      "action_en": "holding a small clipboard at chest height with both paws, nodding.",
+      "expression_en": "half-lidded eyes, chin tucked in, mouth a flat line.",
+      "tags": ["確認", "了解", "チェック"]
     },
     {
       "id": 11,
-      "jp_text": "遠征費は固定費",
-      "concept_ja": "規則正しく並んだ分厚い鋼鉄のブロック",
-      "subject_en": "thick heavy rectangular steel gauge blocks lined up in a perfectly regular row, identical spacing, immovable and unchanging"
+      "category": "夜勤特化",
+      "text": "今夜ワンオペ",
+      "lines": ["今夜ワンオペ"],
+      "action_en": "standing alone and very small on a wide empty floor, generous empty space all around it.",
+      "expression_en": "flat frontal stare, all emotion drained, mouth a flat line.",
+      "tags": ["ひとり", "ワンオペ", "夜勤"]
     },
     {
       "id": 12,
-      "jp_text": "チケ発（戦）行ってきます",
-      "concept_ja": "カチッとスイッチが入った瞬間のトグルスイッチ",
-      "subject_en": "an industrial metal toggle switch caught at the exact instant it clicks into the ON position, small indicator light igniting"
+      "category": "夜勤特化",
+      "text": "センサー鳴りやまん",
+      "lines": ["センサー鳴りやまん"],
+      "action_en": "crouching down, both paws clamped over its ears; small jagged sound marks spread horizontally on both sides at body height only.",
+      "expression_en": "eyes squeezed tightly shut, mouth a trembling wavy line.",
+      "tags": ["うるさい", "センサー", "夜勤"]
     },
     {
       "id": 13,
-      "jp_text": "徳を積む",
-      "concept_ja": "ワッシャーを高く積み上げていくアームロボット",
-      "subject_en": "a robotic arm patiently stacking flat washers into a tall precarious tower, one washer held in the gripper"
+      "category": "夜勤特化",
+      "text": "巡視いってきます",
+      "lines": ["巡視いってきます"],
+      "action_en": "seen from the side, tiptoeing carefully while holding a small penlight low.",
+      "expression_en": "half-lidded eyes, mouth pressed tight.",
+      "tags": ["いってきます", "巡視", "見回り"]
     },
     {
       "id": 14,
-      "jp_text": "軽率に沼落ち",
-      "concept_ja": "深いネジ穴へ真っ逆さまに落ちる一本のネジ",
-      "subject_en": "a single machine screw falling headfirst into a deep dark threaded bore hole, plunging straight down, bottomless darkness below"
+      "category": "夜勤特化",
+      "text": "記録まだ真っ白",
+      "lines": ["記録まだ真っ白"],
+      "action_en": "holding a large blank sheet of paper and a pen with both paws, hands frozen and still.",
+      "expression_en": "dot eyes locked on the paper, fully expressionless.",
+      "tags": ["まだ", "記録", "終わらない"]
     },
     {
       "id": 15,
-      "jp_text": "マウントとってくる",
-      "concept_ja": "クレーンで吊るされた鉄骨が下のボルトを見下ろす",
-      "subject_en": "a massive steel H beam suspended from a crane hook looming high above one small bolt on the floor, extreme scale difference, low angle"
+      "category": "夜勤特化",
+      "text": "仮眠、取れんかった",
+      "lines": ["仮眠、取れんかった"],
+      "action_en": "sitting shallowly on a folding chair, upper body slumped sideways.",
+      "expression_en": "eyes rolled back into near-white, mouth hanging half open.",
+      "tags": ["眠い", "仮眠", "夜勤"]
     },
     {
       "id": 16,
-      "jp_text": "認知もらった",
-      "concept_ja": "センサーの赤いレーザーがリベットを捕捉",
-      "subject_en": "a red laser line from an industrial sensor locking precisely onto a single rivet, glowing scan beam in slight haze"
+      "category": "夜勤特化",
+      "text": "明けの3時間睡眠",
+      "lines": ["明けの3時間睡眠"],
+      "action_en": "standing, but the body folded into a sharp angle at the waist, only the feet planted on the ground.",
+      "expression_en": "heavy dark eye bags strongly emphasized, half-lidded, mouth a flat line.",
+      "tags": ["眠い", "寝不足", "夜勤明け"]
     },
     {
       "id": 17,
-      "jp_text": "確定レス",
-      "concept_ja": "2つの歯車が完全に噛み合い激しく火花が散る",
-      "subject_en": "two steel gears meshing together in perfect engagement, violent orange sparks bursting from the contact point"
+      "category": "夜勤特化",
+      "text": "今夜の面子、神",
+      "lines": ["今夜の面子、神"],
+      "action_en": "holding one small clenched fist in front of its chest, standing upright.",
+      "expression_en": "dead eyes, but both ears standing perked straight up — the only sign of joy.",
+      "tags": ["最高", "神", "夜勤"]
     },
     {
       "id": 18,
-      "jp_text": "干された",
-      "concept_ja": "コンベアの脇に転がる不良品のピン",
-      "subject_en": "one rejected defective dowel pin fallen off to the side of a running conveyor belt, left behind out of the line"
+      "category": "夜勤特化",
+      "text": "残業、確定しました",
+      "lines": ["残業、確定しました"],
+      "action_en": "glancing sideways up at a small wall clock, shoulders dropped completely.",
+      "expression_en": "half-lidded eyes, corners of the mouth turned down.",
+      "tags": ["帰れない", "残業", "詰んだ"]
     },
     {
       "id": 19,
-      "jp_text": "円盤買います",
-      "concept_ja": "鏡面仕上げの美しい丸いディスクが光を反射",
-      "subject_en": "a beautiful perfectly round mirror finished metal disc catching and reflecting a sharp band of light, flawless surface"
+      "category": "業務あるある",
+      "text": "トランスで腰やった",
+      "lines": ["トランスで腰やった"],
+      "action_en": "both paws pressed to its lower back, upper body locked sideways; small red radiating impact marks at waist height.",
+      "expression_en": "eyes screwed shut, teeth clenched.",
+      "tags": ["痛い", "腰痛", "介護"]
     },
     {
       "id": 20,
-      "jp_text": "積む",
-      "concept_ja": "フォークリフトが同じ部品のパレットを山積み",
-      "subject_en": "a forklift stacking pallets loaded with identical parts higher and higher, towering repetitive cargo stack"
+      "category": "業務あるある",
+      "text": "コール2つ同時は無理",
+      "lines": ["コール2つ", "同時は無理"],
+      "action_en": "both arms stretched out to opposite left and right sides, body torn in the middle.",
+      "expression_en": "dot eyes drifting apart in opposite directions, mouth a small wobbly line.",
+      "tags": ["無理", "ナースコール", "忙しい"]
     },
     {
       "id": 21,
-      "jp_text": "多ステ",
-      "concept_ja": "同じCAD図面がプリンターから何枚も吐き出される",
-      "subject_en": "identical technical CAD drawings pouring out of a large format printer one after another, sheets piling up",
-      "allow_numbers": true
+      "category": "業務あるある",
+      "text": "入浴介助、汗だく",
+      "lines": ["入浴介助、汗だく"],
+      "action_en": "a towel around its neck, sweat droplets flying sideways off its body horizontally.",
+      "expression_en": "half-lidded eyes, mouth open in an exhausted \"ha\".",
+      "tags": ["暑い", "入浴介助", "汗"]
     },
     {
       "id": 22,
-      "jp_text": "沸いた",
-      "concept_ja": "冷却水が沸騰しボコボコ泡立つタンク",
-      "subject_en": "coolant boiling violently in an open steel tank, big bubbles bursting, steam rising hard"
+      "category": "業務あるある",
+      "text": "オムツ交換ラッシュ",
+      "lines": ["オムツ交換ラッシュ"],
+      "action_en": "seen from the side, hurrying while carrying a big armful of folded towels.",
+      "expression_en": "half-lidded eyes fixed forward, zero emotion.",
+      "tags": ["忙しい", "介護", "ラッシュ"]
     },
     {
       "id": 23,
-      "jp_text": "鍵開け",
-      "concept_ja": "頑丈なロック機構がガチャリと開く瞬間",
-      "subject_en": "a heavy duty steel lock mechanism at the exact moment the bolt retracts and unlatches, shackle popping open"
+      "category": "業務あるある",
+      "text": "また起き上がってる",
+      "lines": ["また起き上がってる"],
+      "action_en": "both palms turned upward and spread lightly, stopped at shoulder height.",
+      "expression_en": "half-lidded eyes, mouth a small wavy line.",
+      "tags": ["また", "やっぱり", "介護"]
     },
     {
       "id": 24,
-      "jp_text": "剥がし早すぎ",
-      "concept_ja": "エアダスターで勢いよく吹き飛ばされる木ねじ",
-      "subject_en": "a wood screw blasted violently sideways out of frame by a jet of compressed air from an air duster nozzle, motion streak"
+      "category": "業務あるある",
+      "text": "検温まだ終わってない",
+      "lines": ["検温まだ", "終わってない"],
+      "action_en": "holding a single thermometer, body completely frozen in place.",
+      "expression_en": "dot eyes drifting off to the side.",
+      "tags": ["まだ", "検温", "終わらない"]
     },
     {
       "id": 25,
-      "jp_text": "自引きした",
-      "concept_ja": "クレーンゲームのアームのような機械が赤いボルトを掴む",
-      "subject_en": "a claw machine style robotic gripper clamping down on one bright red bolt among plain silver bolts, the moment of the catch"
+      "category": "業務あるある",
+      "text": "委員会の資料、できてません",
+      "lines": ["委員会の資料、", "できてません"],
+      "action_en": "seen from the side, frozen while holding a thick stack of documents between waist and chest height.",
+      "expression_en": "half-lidded eyes, gaze fully averted.",
+      "tags": ["ごめん", "資料", "無理"]
     },
     {
       "id": 26,
-      "jp_text": "買取します",
-      "concept_ja": "開いたままの空のジュラルミンケース",
-      "subject_en": "an empty aluminum duralumin flight case left wide open with hollow gray foam inserts inside, nothing in it, waiting"
+      "category": "業務あるある",
+      "text": "腰、そろそろ限界",
+      "lines": ["腰、そろそろ限界"],
+      "action_en": "one paw pressed to its lower back, body bent at the waist, the other paw braced against a wall.",
+      "expression_en": "no eyebrows, half-lidded, mouth pressed into a hard flat line.",
+      "tags": ["限界", "腰痛", "痛い"]
     },
     {
       "id": 27,
-      "jp_text": "交換希望",
-      "concept_ja": "2つの異なるギアが赤い回転矢印で入れ替わる図解",
-      "subject_en": "two different gears swapping places connected by a red circular exchange arrow, clean instructional diagram style"
+      "category": "愚痴・自虐",
+      "text": "人手、足りてます？（笑）",
+      "lines": ["人手、足りてます？", "（笑）"],
+      "action_en": "one paw held daintily near its mouth, head tilted slightly, elegant polite posture.",
+      "expression_en": "half-lidded dead eyes combined with a bright cheerful smiling mouth — maximum contrast.",
+      "tags": ["笑", "人手不足", "介護"]
     },
     {
       "id": 28,
-      "jp_text": "抱き合わせ",
-      "concept_ja": "太い結束バンドでまとめられた複数のボルトとナット",
-      "subject_en": "an assorted bundle of bolts and nuts strapped tightly together by one thick black cable tie, forced into a single lot"
+      "category": "愚痴・自虐",
+      "text": "有給って何ですか",
+      "lines": ["有給って何ですか"],
+      "action_en": "one empty open palm turned upward at chest height, body kept low in the frame.",
+      "expression_en": "dot eyes gazing vacantly upward, mouth slightly open.",
+      "tags": ["休みたい", "有給", "何ですか"]
     },
     {
       "id": 29,
-      "jp_text": "詳細なレポ助かる",
-      "concept_ja": "公差や寸法がびっしり書き込まれた複雑なCAD図面",
-      "subject_en": "an extremely dense technical CAD drawing packed edge to edge with dimension lines, tolerance callouts and section views, flat top down view",
-      "allow_numbers": true
+      "category": "愚痴・自虐",
+      "text": "心が無になりました",
+      "lines": ["心が無になりました"],
+      "action_en": "perfectly rigid standing pose, both arms pressed flat against its sides, zero movement.",
+      "expression_en": "dot eyes only — the mouth line is completely removed.",
+      "tags": ["疲れた", "虚無", "無"]
     },
     {
       "id": 30,
-      "jp_text": "物販待機列",
-      "concept_ja": "コンベアの上で等間隔に並び運ばれる無数のナット",
-      "subject_en": "countless identical hex nuts carried along a conveyor belt at perfectly equal intervals, a long orderly queue receding into the distance",
-      "negative_exceptions": ["cropped object", "cut off edges", "object touching the frame"]
+      "category": "愚痴・自虐",
+      "text": "笑顔だけは死んでない",
+      "lines": ["笑顔だけは", "死んでない"],
+      "action_en": "both paws cupped against its cheeks in a cute smiling pose.",
+      "expression_en": "a wide beaming happy smile on the mouth while the eyes stay completely dead and half-lidded.",
+      "tags": ["笑顔", "元気", "大丈夫"],
+      "is_hero": true
     },
     {
       "id": 31,
-      "jp_text": "痛バ組む",
-      "concept_ja": "パンチングメタルに無数の小さなネジが打ち込まれている",
-      "subject_en": "a perforated metal panel densely studded with countless tiny screws driven into every hole, obsessively filled surface"
+      "category": "愚痴・自虐",
+      "text": "もう帰りたい（始業5分）",
+      "lines": ["もう帰りたい", "（始業5分）"],
+      "action_en": "still wearing the name badge, body shifted half a step sideways toward a door.",
+      "expression_en": "half-lidded eyes, mouth in a small rounded pout.",
+      "tags": ["帰りたい", "もう無理", "眠い"]
     },
     {
       "id": 32,
-      "jp_text": "夜行バスで帰る",
-      "concept_ja": "暗闇のレール上を淡々と進む無人の搬送用台車",
-      "subject_en": "one small unmanned automated transport cart on a short piece of rail, dark charcoal body, a single small warm glowing headlamp on the front, quietly rolling alone, the whole cart fits in frame",
-      "negative_exceptions": ["low contrast"]
+      "category": "愚痴・自虐",
+      "text": "この給料でこの仕事",
+      "lines": ["この給料でこの仕事"],
+      "action_en": "holding a small envelope with both paws at chest height, looking down at it.",
+      "expression_en": "dot eyes fixed on the envelope, mouth perfectly straight.",
+      "tags": ["つらい", "給料", "安い"]
     },
     {
       "id": 33,
-      "jp_text": "宿とった？",
-      "concept_ja": "仕切られたパーツボックスの空きスペース",
-      "subject_en": "a compartmentalized parts organizer box seen from above, every cell filled with parts except one conspicuously empty slot",
-      "allow_numbers": false
+      "category": "愚痴・自虐",
+      "text": "私、何の仕事してたっけ",
+      "lines": ["私、何の仕事", "してたっけ"],
+      "action_en": "one paw on its head, tilting slightly; small question marks placed horizontally beside it at body height.",
+      "expression_en": "half-lidded eyes, completely out of focus.",
+      "tags": ["何だっけ", "忘れた", "混乱"]
     },
     {
       "id": 34,
-      "jp_text": "優勝した",
-      "concept_ja": "「合格」の緑色スタンプが押された金属板",
-      "subject_en": "a brushed metal inspection plate marked with a large green circular approval stamp containing a bold check mark symbol, no lettering"
+      "category": "愚痴・自虐",
+      "text": "数えるのやめました",
+      "lines": ["数えるのやめました"],
+      "action_en": "arms spread lightly, shoulders shrugged up to shoulder height.",
+      "expression_en": "half-lidded eyes, one corner of the mouth barely raised.",
+      "tags": ["もういい", "諦め", "数えない"]
     },
     {
       "id": 35,
-      "jp_text": "語彙力消失",
-      "concept_ja": "バグを起こして文字化けした機械の液晶ディスプレイ",
-      "subject_en": "an industrial machine LCD panel glitching out, the display broken into scrambled colored glitch blocks and corrupted pixel noise, unreadable garbage, no legible characters"
+      "category": "労い・連帯",
+      "text": "ナイス介助",
+      "lines": ["ナイス介助"],
+      "action_en": "giving a small thumbs-up at chest height.",
+      "expression_en": "half-lidded eyes, ears slightly perked.",
+      "tags": ["ナイス", "いいね", "さすが"]
     },
     {
       "id": 36,
-      "jp_text": "しんどい（褒め言葉）",
-      "concept_ja": "万力でギリギリと締め上げられる鉄パイプ",
-      "subject_en": "a steel pipe clamped in a heavy bench vise and being crushed, the wall visibly deforming and buckling under pressure"
+      "category": "労い・連帯",
+      "text": "生きて帰ろう",
+      "lines": ["生きて帰ろう"],
+      "action_en": "seen from the side, reaching one small paw out toward something off-frame.",
+      "expression_en": "half-lidded eyes, mouth firmly closed, serious.",
+      "tags": ["がんばろう", "生きよう", "夜勤"]
     },
     {
       "id": 37,
-      "jp_text": "情緒不安定",
-      "concept_ja": "メーターの針が限界を振り切れ激しくブレる圧力計",
-      "subject_en": "an analog pressure gauge with the needle slammed hard past the red danger limit and vibrating wildly, needle motion blur, cracked glass",
-      "allow_numbers": true
+      "category": "労い・連帯",
+      "text": "それは大変だったね",
+      "lines": ["それは大変だったね"],
+      "action_en": "leaning slightly forward, one paw extended in a comforting gesture.",
+      "expression_en": "no eyebrows, half-lidded, mouth in a small downturned curve.",
+      "tags": ["大変", "大丈夫？", "お疲れ"]
     },
     {
       "id": 38,
-      "jp_text": "大優勝",
-      "concept_ja": "金色に輝く超硬合金のエンドミルが後光を放つ",
-      "subject_en": "a gold titanium nitride coated carbide end mill standing vertically and radiating a divine halo of light, god rays, sacred glow"
+      "category": "労い・連帯",
+      "text": "無理しないでね",
+      "lines": ["無理しないでね"],
+      "action_en": "both paws lightly stacked in front of its chest, body tilted a little.",
+      "expression_en": "half-lidded eyes, faint upward curve of the mouth.",
+      "tags": ["無理しないで", "心配", "お大事に"]
     },
     {
       "id": 39,
-      "jp_text": "命日（最高すぎて死ぬ）",
-      "concept_ja": "完全にショートして黒焦げになったヒューズ",
-      "subject_en": "a completely blown fuse, glass blackened with soot and the filament burnt through, a thin wisp of smoke still rising, total failure"
+      "category": "労い・連帯",
+      "text": "ほんと助かった",
+      "lines": ["ほんと助かった"],
+      "action_en": "bowing deeply, both paws placed on its knees, upper body folded forward.",
+      "expression_en": "face angled down, only one half-lidded eye visible.",
+      "tags": ["助かった", "ありがとう", "感謝"]
     },
     {
       "id": 40,
-      "jp_text": "今日も推しが生きていることに感謝",
-      "concept_ja": "高い天井の水銀灯が静かに無人の現場を照らす",
-      "subject_en": "one single industrial mercury vapor lamp hanging from a short ceiling pipe, its dome shade casting a soft warm cone of light straight downward, the lamp alone, quiet and still",
-      "negative_exceptions": ["factory environment"]
+      "category": "労い・連帯",
+      "text": "お互い生き延びよう",
+      "lines": ["お互い生き延びよう"],
+      "action_en": "holding out a small fist at shoulder height as if offering a fist bump.",
+      "expression_en": "half-lidded eyes looking straight ahead, mouth a flat line.",
+      "tags": ["がんばろう", "お互い", "ファイト"]
     }
   ]
 }
