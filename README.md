@@ -12,6 +12,7 @@
 | [`docs/sbi-setup.md`](docs/sbi-setup.md) | SBI証券での執行設定、S株を選ぶ理由、20年前からの制度変更点 |
 | [`docs/trade-journal-template.csv`](docs/trade-journal-template.csv) | トレード記録のテンプレート |
 | [`docs/watchlist-template.csv`](docs/watchlist-template.csv) | 見送った候補の記録テンプレート（検証サンプルを増やすため） |
+| [`docs/review-external-methods.md`](docs/review-external-methods.md) | 外部手法のレビュー記録と改訂候補（その場でルールに取り込まないための保留簿） |
 | [`tools/position_size.py`](tools/position_size.py) | 発注株数の計算とルール抵触チェック |
 | [`tools/review_journal.py`](tools/review_journal.py) | トレード記録の集計（期待値・勝率・遵守率など） |
 | [`tools/min_capital.py`](tools/min_capital.py) | 単元株（100株）運用に必要な資金の逆算 |
