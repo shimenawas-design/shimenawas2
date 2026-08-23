@@ -60,6 +60,13 @@ Steady tempo, no vocals, no build-ups: made to stay in the background while you 
 ---
 
 ## 直近の状況（2026-08-23時点）
+
+> **⚠️ この節以降の内容は一部が更新されています。最新の計画は [release-plan.md](./release-plan.md)、市場調査は [market-research-2026-08.md](./market-research-2026-08.md) を参照。**
+> 特に変更されたのは次の3点：
+> - **Release Date が 2026/09/06 と判明**（延期せずこのまま公開する方針に決定）
+> - **シリーズ命名から `Background Process — ` プレフィックスを外す**方針に変更
+> - **環境音楽（Kankyō Ongaku）風は「他があまりやっていない質感」ではない** — 2026年時点で競合が最も厚い部類であることが調査で判明
+
 - `Idle Loop`（Level Trim名義）をRouteNoteに提出完了。現在**「In Review（審査中）」**（UPC: 5064115821122）。
 - 配信モデルは「Distribute Free（無料配布・ロイヤリティ85%）」を選択。
 - 提出前に見つかった問題と対処：
