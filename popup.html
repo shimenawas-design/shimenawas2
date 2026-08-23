@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+  popup.html
+  ---------------------------------------------------------------------
+  拡張機能のアイコンをクリックしたときに表示される小さなウィンドウ
+  （ポップアップ）のHTMLです。
+  デザインは Canva のような、少し遊び心のあるグラデーション背景と
+  丸みを帯びたカード風のUIを意識しています。
+-->
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gemini画像一括ダウンローダー</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- ヘッダー部分：アイコンとタイトル -->
+      <header class="app__header">
+        <div class="app__logo">✨</div>
+        <div>
+          <h1 class="app__title">Gemini 画像 一括DL</h1>
+          <p class="app__subtitle">生成画像をまとめて保存</p>
+        </div>
+      </header>
+
+      <!-- メインの操作エリア -->
+      <main class="app__body">
+        <label class="field" for="prefix-input">
+          <span class="field__label">ファイル名の接頭辞（プレフィックス）</span>
+          <input
+            id="prefix-input"
+            class="field__input"
+            type="text"
+            value="gemini_image"
+            placeholder="例: lofi_bgm"
+            maxlength="60"
+          />
+          <span class="field__hint" id="filename-preview">保存例: gemini_image_001.png</span>
+        </label>
+
+        <button id="download-btn" class="btn btn--primary" type="button">
+          <span id="btn-icon">⬇</span>
+          <span id="btn-label">一括ダウンロードを実行</span>
+        </button>
+
+        <!-- 処理状況やエラーメッセージを表示するステータス欄 -->
+        <div id="status" class="status status--hidden" role="status" aria-live="polite"></div>
+      </main>
+
+      <footer class="app__footer">
+        <span>対象: gemini.google.com</span>
+      </footer>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
