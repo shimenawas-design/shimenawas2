@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Gemini 画像一括ダウンローダー",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Google Gemini (gemini.google.com) のチャット画面に表示された生成画像をワンクリックでまとめてダウンロードします。",
 
   "icons": {
