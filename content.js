@@ -119,11 +119,15 @@ async function autoScrollToLoadAllImages() {
 // 画像抽出処理
 // ---------------------------------------------------------------------
 
-// UI装飾（アバター・ナビゲーション・ボタンなど）に含まれる画像を
-// 除外するためのセレクタ。この中に含まれる<img>は生成画像ではないと
-// みなす。
+// UI装飾（ナビゲーション・入力欄など）に含まれる画像を除外するための
+// セレクタ。この中に含まれる<img>は生成画像ではないとみなす。
+//
+// 注意: 以前は <button> も除外対象にしていましたが、多くのAI画像生成
+// サービスでは「クリックで拡大表示する」ために生成画像自体を<button>で
+// 囲んでいることがあり、それによって本物の生成画像まで除外されてしまう
+// 実害が確認されたため外しています。
 const EXCLUDE_ANCESTOR_SELECTOR =
-  'header, nav, aside, footer, button, [role="navigation"], [role="banner"], [role="complementary"], [contenteditable="true"]';
+  'header, nav, aside, footer, [role="navigation"], [role="banner"], [role="complementary"], [contenteditable="true"]';
 
 /**
  * ページ内の <img> 要素を、通常のDOMだけでなく「Shadow DOM」の中まで
