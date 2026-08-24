@@ -1,0 +1,25 @@
+# 音源 — ローカルにのみ置く。1曲80MB前後になるためgitでは管理しない
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.mp4
+*.aif
+*.aiff
+*.ogg
+*.opus
+
+# 中間ファイル
+*.pcm
+
+# ジャケット画像
+# 完成版だけ残したい場合は `git add -f <file>` で個別に追加する
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
