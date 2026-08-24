@@ -157,10 +157,29 @@ async function handleBulkDownload(prefix, tabId, sendResponse) {
     });
   } catch (error) {
     console.error("[Gemini画像DL] 一括ダウンロード処理中にエラーが発生しました:", error);
+
+    const rawMessage = String(error && error.message ? error.message : error);
+
+    // "Could not establish connection. Receiving end does not exist." は、
+    // content.js がそのタブにまだ読み込まれていない場合に発生する。
+    // よくある原因は「拡張機能をインストール/更新した後、既に開いていた
+    // Geminiのタブを再読み込みしていない」こと。Chromeの仕様上、
+    // content_scriptsは拡張機能の読み込み後に新しく開く（または
+    // 再読み込みする）ページにしか自動で追加されないため。
+    if (/Receiving end does not exist|Could not establish connection/i.test(rawMessage)) {
+      sendResponse({
+        ok: false,
+        errorType: "CONTENT_SCRIPT_NOT_LOADED",
+        message:
+          "拡張機能とGeminiのページがまだ接続されていません。Geminiのタブを再読み込み（F5キーなど）してから、もう一度お試しください。",
+      });
+      return;
+    }
+
     sendResponse({
       ok: false,
       errorType: "UNEXPECTED_ERROR",
-      message: "予期しないエラーが発生しました: " + String(error && error.message ? error.message : error),
+      message: "予期しないエラーが発生しました: " + rawMessage,
     });
   }
 }
