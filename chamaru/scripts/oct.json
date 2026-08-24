@@ -1,0 +1,77 @@
+{
+  "_comment": "茶丸の間 10月分（30〜38）ビルド設定。exclude_takes には耳で不採用にしたテイクを書く（虫が入った等、数値では判定できないもの）",
+
+  "crossfade_sec": 8,
+  "seam_sec": 6,
+  "target_rms_db": -20.0,
+  "peak_cap_db": -1.5,
+
+  "episodes": [
+    {
+      "id": "30",
+      "state": "focus",
+      "duration_sec": 3600,
+      "note": "集中／紅葉の朝の庭／箏／落ち葉・朝の風",
+      "exclude_takes": []
+    },
+    {
+      "id": "31",
+      "state": "sleep",
+      "duration_sec": 5400,
+      "note": "安眠／紅葉の宵の庭／ピアノ／紅葉の残光・遠い鹿威し",
+      "exclude_takes": []
+    },
+    {
+      "id": "32",
+      "state": "reset",
+      "duration_sec": 5400,
+      "note": "リセット／紅葉の午後の窓辺／鈴／鹿威し・秋の風",
+      "exclude_takes": []
+    },
+    {
+      "id": "33",
+      "state": "screen",
+      "duration_sec": 3600,
+      "lowpass_hz": 6500,
+      "note": "画面疲れ／雨の夕暮れの茶室／箏(低)／静かな雨・軒の雫",
+      "exclude_takes": []
+    },
+    {
+      "id": "34",
+      "state": "brainfog",
+      "duration_sec": 3600,
+      "binaural_40hz": true,
+      "note": "ブレインフォグ／紅葉の午後の囲炉裏端／箏／薪火(持続)",
+      "exclude_takes": []
+    },
+    {
+      "id": "35",
+      "state": "wake",
+      "duration_sec": 1800,
+      "note": "目覚め／初霜の明け方の庭／鈴／初霜・小鳥。通しループなし",
+      "exclude_takes": []
+    },
+    {
+      "id": "36",
+      "state": "focus",
+      "duration_sec": 3600,
+      "note": "集中／紅葉の朝の窓辺／尺八／落ち葉・朝の空気",
+      "exclude_takes": []
+    },
+    {
+      "id": "37",
+      "state": "screen",
+      "duration_sec": 3600,
+      "lowpass_hz": 6500,
+      "note": "画面疲れ／苔庭の夕暮れの縁側／尺八(低)／遠い風・苔庭",
+      "exclude_takes": []
+    },
+    {
+      "id": "38",
+      "state": "sleep",
+      "duration_sec": 5400,
+      "note": "安眠／秋の夜長の縁側／尺八／秋の雨",
+      "exclude_takes": []
+    }
+  ]
+}
