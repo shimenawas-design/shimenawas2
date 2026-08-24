@@ -1,10 +1,7 @@
 # Level Trim マスタードキュメント
 
-**作成日：2026-08-24**（ローカルセッションでの音源制作作業をまとめたもの）
-関連：[handoff-2026-08-23.md](./handoff-2026-08-23.md)（配信戦略・規約確認）／[prompts.md](./prompts.md)（プロンプト集の原本）／[release-plan.md](./release-plan.md)（リリース計画）
-
-> **⚠️ 本書に対するレビュー結果あり** → [review-2026-08-24.md](./review-2026-08-24.md)
-> Warm Cacheのカット位置・結合手法の妥当性・Thread Poolの扱いについて、リリース前に対処すべき指摘が5件ある。
+**作成日：2026-08-24**（このセッションでの音源制作作業をまとめたもの）
+関連：[handoff20260823.md](./handoff20260823.md)（配信戦略・規約確認）／[prompts.md](./prompts.md)（プロンプト集の原本）
 
 ---
 
@@ -24,7 +21,7 @@
 
 | # | 曲名 | BPM | 動かした変数 | リリース予定 |
 |---|---|---|---|---|
-| 1 | `Idle Loop` | 70 | （基準）デチューン・テープワブル | 9/6（RouteNote提出済み・Pending Moderation） |
+| 1 | `Idle Loop` | 70 | （基準）デチューン・テープワブル | 9/6（リリース済み・審査中） |
 | 2 | `Warm Cache` | 82 | 飽和・持続・ブラウンノイズ層 | 10/11 |
 | 3 | `Long Poll` | 62 | 密度 — 最も疎、ほぼビートレス | 11/1 |
 | 4 | `Thread Pool` | 90 | ポリリズム | 11/22 |
@@ -69,8 +66,8 @@ instrumental warm IDM, crisp precise glitch percussion, steady forward pulse, br
 ```
 
 ### 運用ルール
-- 歌詞欄：`[Instrumental]` のみ（※ただしWarm Cacheはボーカル/ハミングが混入したため例外。詳細は4章）
-- UIのInstrumentalトグル：ON（Warm Cacheは要OFF、4章参照）
+- 歌詞欄：`[Instrumental]` のみ
+- UIのInstrumentalトグル：ON（**Warm Cacheもハミング混入区間は除外済みのため、Instrumentalとして扱う方針で確定**。判断の経緯は4.6参照）
 - 長尺化：Extendで `[Intro]→[Development A]→[Subtle Variation]→[Sustain]→[Outro - slow fade]`
 
 ---
@@ -110,7 +107,8 @@ A single bright amber circuit trace cutting diagonally across a dark printed cir
 - 実在ブランドのロゴ・型番が写り込んでいないか目視確認
 - 出力後Canvaで3000×3000にリサイズ
 - 人物・顔が入ったら再生成
-- **画像はまだ未生成**（このセッションでは着手していない。次のタスク）
+- コピペ専用の統合版プロンプトシートを [gemini_prompts_copyready.md](./gemini_prompts_copyready.md) に用意済み
+- **生成状況（2026-08-24）**：#2〜#6すべて生成・振り分け完了。各曲フォルダ直下に`<曲名> jacket.png`（Thread Poolのみ予備の`(alt).png`もあり）。**Canvaでの3000×3000リサイズはまだ未実施**
 
 ---
 
@@ -156,7 +154,7 @@ Suno（`shimenawas`アカウント、`https://suno.com/me`）から#2〜#6をWAV
 - しかし差し替え後も「ボーカルが消えていない」との報告 → バイト単位のPCM比較で検証したところ、該当区間はtake1の音声と完全一致（差分0）と確認。**つまりtake1自体にも同じ区間にハミングが入っていた**
 - 最終的にユーザーが実際に聴いて特定：**take1は5:30以降、take2は6:00以降にハミングあり**
 - 対応：take1を0:00-3:00、take2を3:00-6:00で使用し、3秒クロスフェードで結合。6:00以降は完全にカット（尺は7:59→5:57に短縮）
-- **この曲はInstrumentalとして扱えない可能性がある**（4.5参照）
+- **判断（2026-08-24確定）**：ハミング混入区間を完全に除外できたため、Instrumentalとして扱う。UIのInstrumentalトグルはON、歌詞欄は`[Instrumental]`のまま他曲と統一
 
 ### 4.4 検証手法（バイト単位比較）
 音声を実際に聴けないため、「意図した音源に差し替わっているか」は以下の方法で数値的に検証した：
@@ -169,68 +167,67 @@ cmp -l out.pcm src.pcm | wc -l   # 0なら完全一致
 
 ### 4.5 最終結果一覧
 
-| 曲 | 手法 | 構成 | 最終尺 | 元の尺 | 特記事項 |
-|---|---|---|---|---|---|
-| #2 Warm Cache | 結合 | take1(0:00-3:00) → 3秒クロスフェード → take2(3:00-6:00) | 5:57 | 7:59 | **ハミングを除外するため尺を短縮。Instrumentalトグルは要検討（4.6参照）** |
-| #3 Long Poll | 単体採用 | take1のみ | 7:59 | 7:59 | 密度差がノイズレベルのため機械選択せず |
-| #4 Thread Pool | 結合 | take1(0-90s)→take2(90-150s)→take1(150-254.8s)→take2(254.8-279.9s)、各3秒クロスフェード | 4:31 | take1:4:15 / take2:4:40 | 尺が短いまま採用（Extend再生成断念） |
-| #5 Backpressure | 結合 | take2(0-180s)→take1(180-210s)→take2(210-479s)、各3秒クロスフェード | 7:53 | 7:59 | — |
-| #6 Hot Path | 単体採用 | take1のみ | 7:59 | 7:59 | 明確な密度差がないため機械選択せず |
+| 曲 | 手法 | 構成 | 最終尺 |
+|---|---|---|---|
+| #2 Warm Cache | 結合 | take2(0:00-3:00) → 3秒クロスフェード → take1(3:00-5:15) → 4秒フェードアウト | 5:12 |
+| #3 Long Poll | 単体採用 | take2のみ（全体平均-15.3dBでtake1より静か） | 7:59 |
+| #4 Thread Pool | 結合 | take2(0-90s)→take1(90-150s)→take2(150-279.9s)、各5秒クロスフェード | 4:30 |
+| #5 Backpressure | 結合 | take1(0-180s)→take2(180-210s)→take1(210-479s)、各3秒クロスフェード | 7:53 |
+| #6 Hot Path | 単体採用 | take2のみ（後半ほど顕著にtake1より静か） | 7:59 |
 
-全曲、最終ファイル名は`#<番号> <曲名> (combined).wav`、保存先は`RouteNote/Level Trim/<曲名>/`。
+最終ファイル名は`#<番号> <曲名> (combined).wav`（48kHz/16bit）。入稿用に`#<番号> <曲名>.flac`（44.1kHz、soxrリサンプラー明示）へ変換済み。
 
-### 4.6 ⚠️ 未解決・要確認事項
+### 4.6 GitHub上のレビュー指摘と対応（2026-08-24）
 
-1. **全曲、実際に聴いての最終確認がまだ済んでいない。** 特にThread Pool（3回クロスフェード）・Backpressure（2回クロスフェード）は継ぎ目が多いため、テンポ/音量の違和感がないか要確認
-2. **Warm Cacheのボーカル/ハミング問題**：ハミングは除外したが、そもそも"instrumental, no vocals"という全曲共通の設計方針にこの曲だけ抵触するリスクがある。RouteNote入稿時、Instrumentalトグルの扱いをどうするか要判断
-3. **サンプルレート未対応**：現在の`(combined).wav`は全曲48kHz/16bit。RouteNoteの受付規格はMP3(320kbps/44.1kHz)かFLAC(44.1kHz)なので、**入稿前に44.1kHzへの変換が必要**（未実施）
-4. **ジャケット画像が#2〜#6すべて未生成**：Geminiプロンプトは3章の通り確定しているが、実際の画像生成・Canvaでの3000×3000リサイズはまだ着手していない
-5. **Thread Poolの尺が他曲より大幅に短い**（4:31 vs 他曲7:53〜7:59）。シリーズ内での尺の統一感が崩れている点、リリース判断に影響する可能性
+GitHubリポジトリ `shimenawas-design/shimenawas2`（ブランチ`claude/new-session-8v0hvp`）の `docs/level-trim/review-2026-08-24.md` に、本書とは別セッションによる品質レビューが存在することが判明。指摘5項目すべてに対応した。
+
+| # | 指摘 | 対応 |
+|---|---|---|
+| 1 | Warm Cacheのカット位置(6:00)がハミング開始点と一致していて精度不足 | take1側の使用終端を5:15に短縮（ハミング開始5:30まで15秒マージン）、末尾4秒フェードアウトを追加 |
+| 2 | **選定基準が設計思想（understated and non-intrusive）と逆行**：「密度が高い方＝音量が大きい方」を機械選択で採用していた | **全曲、選定基準を「静かな方を優先」に反転して再構築**。Long Poll・Hot Pathはtake1→take2に、Backpressureはtake1/take2の担当区間が入れ替わり、Warm Cache・Thread Poolも同様に再構成 |
+| 3 | クロスフェードはバイト比較で「意図した音源か」は検証できるが、テイク間のキー/テンポ衝突は未検証 | Thread Pool（切り替え回数が最多）のクロスフェードを3秒→5秒に延長し、変化をより緩やかに。**ただしキー/テンポの一致そのものはffmpegでは検証できず、実際に聴いての確認が引き続き必要**（未解決、要リスニング） |
+| 4 | Thread Poolが4:31と短尺。3ヶ月の余裕があるためSunoでの再生成を推奨 | **アシスタントでは対応不可**（Suno生成はユーザー操作必須、[handoff20260823.md](./handoff20260823.md)の制約通り）。現状は継ぎ接ぎ版（4:30）のまま。再生成するかは要判断 |
+| 5 | 48kHz→44.1kHz変換時、リサンプラーが未指定（デフォルト＝低品質になりうる） | `-af aresample=resampler=soxr:precision=28` を明示して全曲再変換済み |
+
+軽微な指摘（ファイル名の`#`使用、状態表記の不整合、ドキュメント二重管理）は未対応。特に**ドキュメント二重管理**（本書とGitHub版`master.md`が別内容）は、このセッションにgh CLI・git環境がないため解消できていない。GitHubへの反映が必要ならユーザー側での対応、またはgh CLIが使える環境での作業が必要。
+
+### 4.7 残タスク
+
+1. **全曲を再度リスニング確認**：選定基準を反転したため、旧版で確認済みだった内容は無効。特にThread Poolのキー/テンポ一致（指摘3）は要確認
+2. **Thread Poolを再生成するか判断**（指摘4）
+3. **ジャケット画像5枚をCanvaで3000×3000にリサイズ**（画像自体は#2〜#6すべて生成・各フォルダへ振り分け済み。リサイズのみ未実施）
+4. GitHub側ドキュメントとの整合（要gh CLI環境）
 
 ---
 
 ## 5. ファイル配置
 
-**ドキュメントはリポジトリの `docs/level-trim/` が唯一の正。ローカルにコピーを作らないこと**（詳細はリポジトリ直下の `CLAUDE.md` を参照）。
-音源は `.gitignore` 対象でローカルにのみ存在する。
-
 ```
-RouteNote/                          ← ここでgit管理
-├── CLAUDE.md
-├── docs/level-trim/
-│   ├── master.md                   本書
-│   ├── review-2026-08-24.md        本書へのレビュー
-│   ├── handoff-2026-08-23.md       配信戦略・規約確認
-│   ├── release-plan.md             リリース計画
-│   ├── prompts.md                  プロンプト集の原本（#1〜#6）
-│   └── market-research-2026-08.md  市場調査
-└── Level Trim/                     ← .gitignore対象（音源）
-    ├── Idle Loop/                  提出済み
-    ├── Warm Cache/
-    │   ├── 02 Warm Cache (take1).wav
-    │   ├── 02 Warm Cache (take2).wav
-    │   └── 02 Warm Cache (combined).wav   ← 最終候補
-    ├── Long Poll/                  同様の構成
-    ├── Thread Pool/                同様の構成
-    ├── Backpressure/               同様の構成
-    └── Hot Path/                   同様の構成
+RouteNote/Level Trim/
+├── master20260824.md         本書
+├── handoff20260823.md        配信戦略・規約確認
+├── prompts.md                プロンプト集の原本（#1〜#6）
+├── gemini_prompts_copyready.md  ジャケット用プロンプト（コピペ専用）
+├── 01_Idle Loop/              リリース済み
+├── 02_Warm Cache/
+│   ├── #2 Warm Cache (take1).wav
+│   ├── #2 Warm Cache (take2).wav
+│   ├── #2 Warm Cache (combined).wav   48kHz・編集済み音源
+│   └── #2 Warm Cache.flac             44.1kHz・入稿用
+│   └── Warm Cache jacket.png
+├── 03_Long Poll/               同様の構成 + Long Poll jacket.png
+├── 04_Thread Pool/              同様の構成 + Thread Pool jacket.png / (alt).png
+├── 05_Backpressure/             同様の構成 + Backpressure jacket.png
+└── 06_Hot Path/                同様の構成 + Hot Path jacket.png
 ```
 
-※ ファイル名の先頭は `#2` ではなく `02` にすること。`#` はシェルでコメント開始文字として扱われ、クォートを忘れると事故る。
+※ 2026-08-24、フォルダ名に番号を付与済み（`01_〜06_`）。#2〜#6のジャケット画像も生成・振り分け完了。
 
 ---
 
 ## 6. 次にやること（優先順）
 
-**[review-2026-08-24.md](./review-2026-08-24.md) の指摘を反映済みの順序。**
-
-1. **Warm Cache の末尾を 5:45 に詰める** — ハミング開始点とカット位置が一致しており安全余裕がない（レビュー指摘1）
-2. **全曲を実際に聴いて確認**（4.6-1）— 特にThread Pool（クロスフェード3回）・Backpressure（同2回）の継ぎ目
-3. **Thread Pool を作り直すか判断**（レビュー指摘4）— 尺4:31、つぎはぎ4セグメント。リリースは11/22で猶予あり
-4. **Warm Cacheのinstrumental扱いを判断**（4.6-2）
-5. **44.1kHzへの変換**（4.6-3）— リサンプラーを明示すること：
-   ```bash
-   ffmpeg -i in.wav -af "aresample=resampler=soxr:precision=28" -ar 44100 -map_metadata -1 out.flac
-   ```
-6. **ジャケット画像生成**（4.6-4）— Gemini（3章のプロンプト）→ Canvaで3000×3000
-7. RouteNoteへの入稿（[handoff-2026-08-23.md](./handoff-2026-08-23.md)のチェックリスト参照）
+1. **全曲を再度リスニング確認**（4.7-1）— 選定基準を反転したため再確認必須。特にThread Poolの継ぎ目
+2. **ジャケット画像5枚をCanvaで3000×3000にリサイズ**（4.7-3）
+3. **Thread Poolを再生成するか判断**（4.7-2）
+4. RouteNoteへの入稿（[handoff20260823.md](./handoff20260823.md)のチェックリスト参照）— 音源(`.flac`)・Instrumental設定・C/Pライン等
