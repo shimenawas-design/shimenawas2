@@ -191,9 +191,29 @@ function pickBestSourceUrl(img) {
 }
 
 /**
+ * <img> 要素にすでに描画されているピクセルデータを、canvasに描き写して
+ * data: URL（画像データを直接埋め込んだ文字列）として取り出す関数。
+ *
+ * 実機のGeminiページで検証したところ、生成画像のURLは blob: 形式で、
+ * <img>タグとしての表示（img-src）は問題なく行えるものの、その同じ
+ * blob: URLに対して fetch() / XMLHttpRequest で中身を取得しようとすると
+ * 常に失敗する（ネットワークリクエストすら発生しない）ことが分かった。
+ * ページのCSP設定などにより、blob: URLへの fetch が許可されていない
+ * ためと見られる。一方、画像は<img>としてすでにデコード済みなので、
+ * canvasに描画してtoDataURL()で取り出す方法であればこの制限を回避できる。
+ */
+function blobImageToDataUrl(img) {
+  const canvas = document.createElement("canvas");
+  canvas.width = img.naturalWidth || img.width;
+  canvas.height = img.naturalHeight || img.height;
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  return canvas.toDataURL("image/png");
+}
+
+/**
  * blob: 形式のURL（ページ内でJavaScriptにより一時的に作られたURL）を、
- * ダウンロード可能な data: URL（画像データを直接埋め込んだ文字列）に
- * 変換する関数。
+ * ダウンロード可能な data: URL に変換する関数。
  *
  * 重要: blob: URLはそれを作成したページの中でしか有効ではありません。
  * background.js（サービスワーカー）は別の実行コンテキストなので、
@@ -201,9 +221,20 @@ function pickBestSourceUrl(img) {
  * 渡してダウンロードさせようとしても失敗します。そのため、
  * blob: URLの中身はここ（content.js）で先に読み込んでおき、
  * どこからでも使える data: URL に変換してから渡します。
+ *
+ * まずcanvas経由での変換を試み（上記の理由でこちらが本命）、
+ * 何らかの理由でcanvasが失敗した場合のみ、念のためfetch()による
+ * 従来方式にフォールバックします。
  */
-async function resolveDownloadableUrl(url) {
+async function resolveDownloadableUrl(img, url) {
   if (!url || !url.startsWith("blob:")) return url;
+
+  try {
+    return blobImageToDataUrl(img);
+  } catch (canvasError) {
+    console.warn("[Gemini画像DL] canvas経由の変換に失敗しました。fetchにフォールバックします:", url, canvasError);
+  }
+
   try {
     const response = await fetch(url);
     const blob = await response.blob();
@@ -234,42 +265,74 @@ async function resolveDownloadableUrl(url) {
 async function extractGeminiImageUrls() {
   const allImages = new Set();
   collectAllImagesDeep(document, allImages);
+  console.log(`[Gemini画像DL][debug] 発見した<img>の総数: ${allImages.size}`);
 
   const qualifyingImages = [];
+  let excludedByAncestor = 0;
+  let excludedByNoUrl = 0;
+  let excludedByDataUrl = 0;
+  let excludedBySvg = 0;
+  let excludedBySize = 0;
+  let excludedByKeyword = 0;
+  let excludedByIncomplete = 0;
+
   allImages.forEach((img) => {
     // ナビゲーションやボタンなど、UI装飾の中にある画像は除外する
-    if (img.closest(EXCLUDE_ANCESTOR_SELECTOR)) return;
+    if (img.closest(EXCLUDE_ANCESTOR_SELECTOR)) { excludedByAncestor++; return; }
 
     const rawUrl = pickBestSourceUrl(img);
-    if (!rawUrl) return;
+    if (!rawUrl) { excludedByNoUrl++; return; }
 
     // data:URL（インラインの極小アイコンなど）は生成画像ではないことが多いので除外
     // （blob: URLは後段でdata:URLに変換するため、ここでは除外しない）
-    if (rawUrl.startsWith("data:")) return;
+    if (rawUrl.startsWith("data:")) { excludedByDataUrl++; return; }
 
     // SVG（ベクター画像）はGeminiのロゴ・アイコン類でよく使われる形式で、
     // AIが生成する画像（写真・イラスト）は通常ラスター画像（png/jpg/webp等）
     // なので、拡張子が.svgのものは除外する
-    if (/\.svg(?:[?#]|$)/i.test(rawUrl)) return;
+    if (/\.svg(?:[?#]|$)/i.test(rawUrl)) { excludedBySvg++; return; }
 
-    // アイコン・アバター・ロゴなど、生成画像ではない小さな画像を除外する
+    // 読み込み中・デコード中でまだピクセルデータが確定していない画像は
+    // （生成アニメーション中の一時的なプレースホルダー等）、正しくcanvasに
+    // 描き写せないため除外する
     const width = img.naturalWidth || img.width || 0;
     const height = img.naturalHeight || img.height || 0;
-    if (width > 0 && width < 128) return;
-    if (height > 0 && height < 128) return;
+    if (!img.complete || width === 0 || height === 0) {
+      excludedByIncomplete++;
+      return;
+    }
+
+    // アイコン・アバター・ロゴなど、生成画像ではない小さな画像を除外する
+    if ((width > 0 && width < 128) || (height > 0 && height < 128)) {
+      excludedBySize++;
+      console.log(`[Gemini画像DL][debug] サイズで除外: ${width}x${height} ${rawUrl.slice(0, 100)}`);
+      return;
+    }
 
     // ファイル名やパスに以下のような単語を含むものは、ユーザーアイコンや
     // Gemini自体のロゴ・装飾アイコンである可能性が高いため除外する
     // ("sparkle" はGeminiのキラキラマークのロゴファイル名に含まれる)
-    if (/avatar|logo|favicon|profile|sparkle|spinner/i.test(rawUrl)) return;
+    if (/avatar|logo|favicon|profile|sparkle|spinner/i.test(rawUrl)) { excludedByKeyword++; return; }
 
+    console.log(`[Gemini画像DL][debug] 候補に採用: ${width}x${height} ${rawUrl.slice(0, 100)}`);
     qualifyingImages.push({ img, rawUrl: getHighResolutionUrl(rawUrl) });
+  });
+
+  console.log("[Gemini画像DL][debug] 除外内訳:", {
+    excludedByAncestor,
+    excludedByNoUrl,
+    excludedByDataUrl,
+    excludedBySvg,
+    excludedByIncomplete,
+    excludedBySize,
+    excludedByKeyword,
+    残った候補: qualifyingImages.length,
   });
 
   // blob: URLの変換など、非同期処理が必要なため for...of で順番に処理する
   const resolvedUrls = [];
-  for (const { rawUrl } of qualifyingImages) {
-    const resolved = await resolveDownloadableUrl(rawUrl);
+  for (const { img, rawUrl } of qualifyingImages) {
+    const resolved = await resolveDownloadableUrl(img, rawUrl);
     if (resolved) resolvedUrls.push(resolved);
   }
 
