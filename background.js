@@ -34,6 +34,32 @@ function sleep(ms) {
 }
 
 /**
+ * 画像URLから、保存時に使う拡張子（png/jpg/webp/gifなど）を推測する関数。
+ *
+ * ・普通のURL（例: https://.../image.png）は、末尾のファイル名から拡張子を読み取る
+ * ・data:URL（content.js側でblob:画像を変換した場合。例:
+ *   "data:image/png;base64,...."）は、"image/xxx" の部分から拡張子を読み取る
+ * ・どちらの方法でも分からない場合は、既定値として png を使う
+ */
+function guessFileExtension(url) {
+  const dataUrlMatch = url.match(/^data:image\/([a-zA-Z0-9.+-]+);base64,/i);
+  if (dataUrlMatch) {
+    const subtype = dataUrlMatch[1].toLowerCase();
+    if (subtype === "jpeg") return "jpg";
+    if (["png", "gif", "webp", "bmp"].includes(subtype)) return subtype;
+    return "png";
+  }
+
+  const extensionMatch = url.match(/\.(png|jpg|jpeg|webp|gif)(?:[?&#]|$)/i);
+  if (extensionMatch) {
+    const ext = extensionMatch[1].toLowerCase();
+    return ext === "jpeg" ? "jpg" : ext;
+  }
+
+  return "png";
+}
+
+/**
  * 進捗メッセージをポップアップに送る（ポップアップが閉じている場合は
  * 送信先が無いためエラーになるが、その場合は無視してよい）。
  */
@@ -69,8 +95,7 @@ async function downloadImagesSequentially(imageUrls, prefix) {
     const serial = String(i + 1).padStart(3, "0");
 
     // URLの拡張子を可能な範囲で推測する（取得できなければ png を既定にする）
-    const extensionMatch = url.match(/\.(png|jpg|jpeg|webp|gif)(?:[?&#]|$)/i);
-    const extension = extensionMatch ? extensionMatch[1].toLowerCase() : "png";
+    const extension = guessFileExtension(url);
 
     const filename = `${prefix}_${serial}.${extension}`;
 
@@ -88,7 +113,9 @@ async function downloadImagesSequentially(imageUrls, prefix) {
       });
       successCount++;
     } catch (error) {
-      console.error(`[Gemini画像DL] ダウンロード失敗: ${url}`, error);
+      // data:URL は非常に長くなることがあるため、ログには先頭だけ表示する
+      const urlForLog = url.length > 80 ? `${url.slice(0, 80)}…` : url;
+      console.error(`[Gemini画像DL] ダウンロード失敗: ${urlForLog}`, error);
       failedUrls.push(url);
     }
 

@@ -126,6 +126,30 @@ const EXCLUDE_ANCESTOR_SELECTOR =
   'header, nav, aside, footer, button, [role="navigation"], [role="banner"], [role="complementary"], [contenteditable="true"]';
 
 /**
+ * ページ内の <img> 要素を、通常のDOMだけでなく「Shadow DOM」の中まで
+ * 再帰的にたどって全て集める関数。
+ *
+ * GeminiのようなモダンなWebアプリはWeb Components（独自タグ）を使って
+ * おり、画像がShadow DOM（親のDOMツリーからは通常見えない領域）の中に
+ * 描画されている場合があります。通常の document.querySelectorAll("img")
+ * ではShadow DOMの中は探索できないため、この関数で明示的に潜って探します。
+ * （ただし「閉じた」Shadow DOM (mode: "closed") はブラウザの仕様上、
+ * 拡張機能からも中身を読み取ることができません）
+ */
+function collectAllImagesDeep(root, results) {
+  if (!root || !root.querySelectorAll) return;
+
+  root.querySelectorAll("img").forEach((img) => results.add(img));
+
+  // Shadow DOM を持つ要素があれば、その中も再帰的に探索する
+  root.querySelectorAll("*").forEach((el) => {
+    if (el.shadowRoot) {
+      collectAllImagesDeep(el.shadowRoot, results);
+    }
+  });
+}
+
+/**
  * <img> 要素から「最も解像度が高いと思われる画像URL」を取得する関数。
  * srcset（複数解像度の候補が書かれた属性）や、<picture><source>の
  * srcsetも確認し、一番幅(w)が大きい候補を選ぶ。
@@ -163,85 +187,90 @@ function pickBestSourceUrl(img) {
 }
 
 /**
+ * blob: 形式のURL（ページ内でJavaScriptにより一時的に作られたURL）を、
+ * ダウンロード可能な data: URL（画像データを直接埋め込んだ文字列）に
+ * 変換する関数。
+ *
+ * 重要: blob: URLはそれを作成したページの中でしか有効ではありません。
+ * background.js（サービスワーカー）は別の実行コンテキストなので、
+ * content.js側から見えている blob: URL をそのまま background.js に
+ * 渡してダウンロードさせようとしても失敗します。そのため、
+ * blob: URLの中身はここ（content.js）で先に読み込んでおき、
+ * どこからでも使える data: URL に変換してから渡します。
+ */
+async function resolveDownloadableUrl(url) {
+  if (!url || !url.startsWith("blob:")) return url;
+  try {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = () => reject(reader.error || new Error("FileReaderでの変換に失敗しました"));
+      reader.readAsDataURL(blob);
+    });
+  } catch (error) {
+    console.warn("[Gemini画像DL] blob画像をdata URLに変換できませんでした:", url, error);
+    return null;
+  }
+}
+
+/**
  * ページ内から「Geminiが生成した画像」と思われる <img> 要素を集めて、
- * 画像URLの配列を返す関数。
+ * 画像URLの配列を返す関数（非同期）。
  *
  * 注意: GeminiのHTML構造（クラス名など）はGoogle側の仕様変更で
- * 変わる可能性があります。そのため、
- *   1. まず「それらしいクラス名・属性」を持つ候補セレクタで絞り込む
- *   2. それで1件も見つからない場合は、ページ内の全<img>を対象にした
- *      「汎用フォールバック」で探す
- * という2段構えにして、クラス名が変わっても動き続けやすくしています。
- * それでも動かない場合は、Chromeの検証ツール(F12)で実際の<img>タグを
- * 確認し、下の SELECTORS 配列に新しいセレクタを追加してください。
+ * 変わる可能性があります。そのため、特定のクラス名に依存せず、
+ * ページ内（Shadow DOMの中も含む）の全<img>要素を対象にしたうえで、
+ * 「サイズ」「拡張子」「ファイル名のパターン」「置かれている場所」で
+ * 生成画像らしいものだけを残す、という汎用的な絞り込み方をしています。
+ * それでもうまく抽出できなくなった場合は、Chromeの検証ツール(F12)で
+ * 実際の<img>タグの様子を確認し、下のフィルタ条件を調整してください。
  */
-function extractGeminiImageUrls() {
-  const SELECTORS = [
-    // Gemini生成画像は Google のコンテンツ配信ドメインから配信されることが多い
-    'img[src*="googleusercontent.com"]',
-    'img[src*="ggpht.com"]',
-    // 画像生成結果を表示する専用コンポーネント（Web Components）の候補
-    "single-image img",
-    "image-viewer img",
-    // data属性で画像コンテナを示している場合の候補
-    '[data-test-id*="image"] img',
-    '[data-test-id*="generated"] img',
-    // クラス名に "image" を含む要素の中の img タグ
-    '.image-container img',
-    '.generated-image img',
-  ];
+async function extractGeminiImageUrls() {
+  const allImages = new Set();
+  collectAllImagesDeep(document, allImages);
 
-  const collectFromSelectors = (selectors) => {
-    const found = new Set();
-    for (const selector of selectors) {
-      try {
-        document.querySelectorAll(selector).forEach((el) => found.add(el));
-      } catch (e) {
-        console.warn("[Gemini画像DL] セレクタの評価に失敗しました:", selector, e);
-      }
-    }
-    return found;
-  };
+  const qualifyingImages = [];
+  allImages.forEach((img) => {
+    // ナビゲーションやボタンなど、UI装飾の中にある画像は除外する
+    if (img.closest(EXCLUDE_ANCESTOR_SELECTOR)) return;
 
-  const filterAndCollectUrls = (imgElements) => {
-    const urls = [];
-    imgElements.forEach((img) => {
-      // ナビゲーションやボタンなど、UI装飾の中にある画像は除外する
-      if (img.closest(EXCLUDE_ANCESTOR_SELECTOR)) return;
+    const rawUrl = pickBestSourceUrl(img);
+    if (!rawUrl) return;
 
-      const rawUrl = pickBestSourceUrl(img);
-      if (!rawUrl) return;
+    // data:URL（インラインの極小アイコンなど）は生成画像ではないことが多いので除外
+    // （blob: URLは後段でdata:URLに変換するため、ここでは除外しない）
+    if (rawUrl.startsWith("data:")) return;
 
-      // data:URL（インラインの極小アイコンなど）は生成画像ではないことが多いので除外
-      if (rawUrl.startsWith("data:")) return;
+    // SVG（ベクター画像）はGeminiのロゴ・アイコン類でよく使われる形式で、
+    // AIが生成する画像（写真・イラスト）は通常ラスター画像（png/jpg/webp等）
+    // なので、拡張子が.svgのものは除外する
+    if (/\.svg(?:[?#]|$)/i.test(rawUrl)) return;
 
-      // アイコン・アバター・ロゴなど、生成画像ではない小さな画像を除外する
-      const width = img.naturalWidth || img.width || 0;
-      const height = img.naturalHeight || img.height || 0;
-      if (width > 0 && width < 128) return;
-      if (height > 0 && height < 128) return;
+    // アイコン・アバター・ロゴなど、生成画像ではない小さな画像を除外する
+    const width = img.naturalWidth || img.width || 0;
+    const height = img.naturalHeight || img.height || 0;
+    if (width > 0 && width < 128) return;
+    if (height > 0 && height < 128) return;
 
-      // ファイル名やパスに "avatar" "logo" "icon" "favicon" を含むものは
-      // ユーザーアイコンやサービスロゴである可能性が高いため除外する
-      if (/avatar|logo|favicon|profile/i.test(rawUrl)) return;
+    // ファイル名やパスに以下のような単語を含むものは、ユーザーアイコンや
+    // Gemini自体のロゴ・装飾アイコンである可能性が高いため除外する
+    // ("sparkle" はGeminiのキラキラマークのロゴファイル名に含まれる)
+    if (/avatar|logo|favicon|profile|sparkle|spinner/i.test(rawUrl)) return;
 
-      urls.push(getHighResolutionUrl(rawUrl));
-    });
-    return urls;
-  };
+    qualifyingImages.push({ img, rawUrl: getHighResolutionUrl(rawUrl) });
+  });
 
-  // ---- 1. まずは「それらしい」セレクタで絞り込んで探す ----
-  let imageUrls = filterAndCollectUrls(collectFromSelectors(SELECTORS));
-
-  // ---- 2. 1件も見つからなければ、ページ内の全<img>を対象に再検索する ----
-  //         （HTML構造の変更によりSELECTORSが古くなった場合の保険）
-  if (imageUrls.length === 0) {
-    const allImages = document.querySelectorAll("img");
-    imageUrls = filterAndCollectUrls(allImages);
+  // blob: URLの変換など、非同期処理が必要なため for...of で順番に処理する
+  const resolvedUrls = [];
+  for (const { rawUrl } of qualifyingImages) {
+    const resolved = await resolveDownloadableUrl(rawUrl);
+    if (resolved) resolvedUrls.push(resolved);
   }
 
   // 重複するURL（同じ画像を2回取得してしまった場合）を除去して返す
-  return Array.from(new Set(imageUrls));
+  return Array.from(new Set(resolvedUrls));
 }
 
 /**
@@ -278,7 +307,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     (async () => {
       try {
         await autoScrollToLoadAllImages();
-        const imageUrls = extractGeminiImageUrls();
+        const imageUrls = await extractGeminiImageUrls();
         sendResponse({ ok: true, imageUrls });
       } catch (error) {
         console.error("[Gemini画像DL] 画像抽出中にエラーが発生しました:", error);
