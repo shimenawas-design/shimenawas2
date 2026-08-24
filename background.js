@@ -75,6 +75,29 @@ function notifyProgress(message) {
 // 少し間隔を空けることでその発生頻度を抑えつつ、進捗も見やすくする。
 const DOWNLOAD_INTERVAL_MS = 350;
 
+// ---------------------------------------------------------------------
+// ファイル名の強制指定（data: URLのfilename無視バグへの対策）
+// ---------------------------------------------------------------------
+// 既知のChromeの挙動として、chrome.downloads.download() に filename を
+// 指定しても、url が data: 形式（このアプリの場合は毎回そう）の場合、
+// その指定が無視され、「ダウンロード.png」のような既定のファイル名に
+// なってしまうことがある。
+// 対策として、chrome.downloads.onDeterminingFilename イベント
+// （Chromeがファイル名を最終決定する直前に呼ばれる）を使って、
+// このMap経由で狙った名前を強制的に指定し直す。
+const pendingFilenamesByDownloadId = new Map();
+
+chrome.downloads.onDeterminingFilename.addListener((downloadItem, suggest) => {
+  const desiredFilename = pendingFilenamesByDownloadId.get(downloadItem.id);
+  if (desiredFilename) {
+    pendingFilenamesByDownloadId.delete(downloadItem.id);
+    suggest({ filename: desiredFilename, conflictAction: "uniquify" });
+  } else {
+    // この拡張機能が開始したものではないダウンロードには関与しない
+    suggest();
+  }
+});
+
 /**
  * 画像URLの配列を、指定されたファイル名プレフィックスを使って
  * 1枚ずつ順番にダウンロードする関数。
@@ -103,7 +126,7 @@ async function downloadImagesSequentially(imageUrls, prefix) {
 
     try {
       // chrome.downloads.download はPromiseを返す（ダウンロードIDが解決値）
-      await chrome.downloads.download({
+      const downloadId = await chrome.downloads.download({
         url: url,
         filename: filename,
         // saveAs: false にすることで、毎回「保存先を選ぶダイアログ」を
@@ -111,6 +134,10 @@ async function downloadImagesSequentially(imageUrls, prefix) {
         saveAs: false,
         conflictAction: "uniquify", // 同名ファイルがあれば自動的に連番を振り直す
       });
+      // data: URLの場合、上のfilename指定がChromeの既知の挙動で無視される
+      // ことがあるため、onDeterminingFilenameイベント側でも強制指定できる
+      // よう、ダウンロードIDと紐づけて希望のファイル名を控えておく
+      pendingFilenamesByDownloadId.set(downloadId, filename);
       successCount++;
     } catch (error) {
       // data:URL は非常に長くなることがあるため、ログには先頭だけ表示する
