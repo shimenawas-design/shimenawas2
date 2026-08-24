@@ -12,7 +12,7 @@ Google Gemini（https://gemini.google.com/ ）のチャット画面に表示さ�
 | `background.js` | ポップアップと content.js の橋渡しをしつつ、実際のダウンロード処理（chrome.downloads API）を行うサービスワーカー |
 | `popup.html` / `popup.css` / `popup.js` | 拡張機能アイコンをクリックしたときに表示するUIとその動作 |
 | `icons/` | 拡張機能のアイコン画像（16px / 48px / 128px） |
-| `docs/はじめにお読みください.txt` | 非技術者向けのインストール手順書（配布用ZIPに同梱される） |
+| `docs/INSTALL_README.txt` | 非技術者向けのインストール手順書（配布用ZIPに同梱される） |
 | `scripts/build-zip.sh` | 配布用ZIPを作成するビルドスクリプト |
 
 ## 配布用ZIPの作り方
@@ -26,8 +26,16 @@ Google Gemini（https://gemini.google.com/ ）のチャット画面に表示さ�
 
 `dist/gemini-image-bulk-downloader-v<バージョン番号>.zip` が生成されます。
 このZIPをそのまま配布すれば、受け取った人は中の
-`はじめにお読みください.txt` の手順（後述のインストール方法と同じ内容）
+`INSTALL_README.txt` の手順（後述のインストール方法と同じ内容）
 に従うだけでインストールできます。
+
+ZIPの中身は、フォルダで包まずファイルを直下に配置しています。
+Windowsの「すべて展開」はZIP名と同じフォルダを自動作成してから展開する
+ため、もしZIP側にも同名の入れ子フォルダが入っていると、展開後に
+フォルダが二重になり、Chromeの「拡張機能を読み込む」ダイアログで
+manifest.jsonが見つからない、という混乱を招きます。ファイルを直下に
+置くことで「展開してできたフォルダ＝そのまま選択するフォルダ」になり、
+迷わない構成にしています。
 
 `dist/` はビルド生成物のため `.gitignore` でリポジトリ管理外にしています。
 配布のたびに `scripts/build-zip.sh` を実行して作り直してください。
@@ -42,7 +50,7 @@ Google Gemini（https://gemini.google.com/ ）のチャット画面に表示さ�
 ※ Chrome Web Store（一般公開ストア）を経由しないインストール方法のため、
 Chrome再起動時に「デベロッパーモードの拡張機能が無効になっています」と
 いう警告バナーが出ることがあります。「そのまま維持」を選べば引き続き
-使用できます。詳しいトラブル対応は `docs/はじめにお読みください.txt` を
+使用できます。詳しいトラブル対応は `docs/INSTALL_README.txt` を
 参照してください。
 
 ## 使い方
