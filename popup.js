@@ -73,6 +73,19 @@ function setButtonBusy(isBusy) {
 prefixInput.addEventListener("input", updateFilenamePreview);
 updateFilenamePreview();
 
+// ---------------------------------------------------------------------
+// 処理中の進捗メッセージを受け取って表示する
+// ---------------------------------------------------------------------
+// content.js（自動スクロール中）や background.js（ダウンロード中）から
+// 送られてくる進捗メッセージを受け取り、ステータス欄にリアルタイムで
+// 反映する。ポップアップを開いたままにしておくと、今何をしているのか
+// （スクロール中／何枚目をダウンロード中か）が見えるようになる。
+chrome.runtime.onMessage.addListener((request) => {
+  if (request && request.action === "GEMINI_DL_PROGRESS" && request.message) {
+    showStatus(request.message, "info");
+  }
+});
+
 // ---- メインボタンのクリック処理 ----
 downloadBtn.addEventListener("click", async () => {
   hideStatus();

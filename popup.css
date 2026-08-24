@@ -173,6 +173,18 @@ body {
   border: 1px solid #fecaca;
 }
 
+/* ---- 事前注意事項（自動スクロール・複数ダウンロード許可について） ---- */
+.notice {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92650a;
+  font-size: 10.5px;
+  line-height: 1.6;
+}
+
 /* ---- フッター ---- */
 .app__footer {
   text-align: center;

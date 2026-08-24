@@ -27,15 +27,39 @@ async function requestImageUrlsFromTab(tabId) {
 }
 
 /**
+ * 待機用のヘルパー関数（指定ミリ秒だけ処理を止める）。
+ */
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * 進捗メッセージをポップアップに送る（ポップアップが閉じている場合は
+ * 送信先が無いためエラーになるが、その場合は無視してよい）。
+ */
+function notifyProgress(message) {
+  chrome.runtime.sendMessage({ action: "GEMINI_DL_PROGRESS", message }).catch(() => {
+    // ポップアップが閉じている場合はここに来るが、問題ないので何もしない
+  });
+}
+
+// 1件ダウンロードするごとに空ける間隔（ミリ秒）。
+// Chromeは短時間に大量のダウンロードを開始すると「複数ファイルの
+// ダウンロード」の許可を求めるダイアログを出すことがあるため、
+// 少し間隔を空けることでその発生頻度を抑えつつ、進捗も見やすくする。
+const DOWNLOAD_INTERVAL_MS = 350;
+
+/**
  * 画像URLの配列を、指定されたファイル名プレフィックスを使って
  * 1枚ずつ順番にダウンロードする関数。
  *
  * chrome.downloads.download() を同時に大量に呼び出すと、Chromeが
  * 「複数ファイルの自動ダウンロード」とみなしてブロックしたり、
  * ユーザーに確認を求めたりすることがあるため、1件ずつ完了を待って
- * from順番に実行する（連続ダウンロード方式）ようにしています。
+ * 順番に、かつ少し間隔を空けて実行する（連続ダウンロード方式）ように
+ * しています。
  */
-async function downloadImagesSequentially(imageUrls, prefix, sendProgress) {
+async function downloadImagesSequentially(imageUrls, prefix) {
   let successCount = 0;
   const failedUrls = [];
 
@@ -49,6 +73,8 @@ async function downloadImagesSequentially(imageUrls, prefix, sendProgress) {
     const extension = extensionMatch ? extensionMatch[1].toLowerCase() : "png";
 
     const filename = `${prefix}_${serial}.${extension}`;
+
+    notifyProgress(`ダウンロード中… (${i + 1}/${imageUrls.length}) ${filename}`);
 
     try {
       // chrome.downloads.download はPromiseを返す（ダウンロードIDが解決値）
@@ -66,9 +92,10 @@ async function downloadImagesSequentially(imageUrls, prefix, sendProgress) {
       failedUrls.push(url);
     }
 
-    // 進捗状況をポップアップに通知する（ポップアップが開いていれば表示が更新される）
-    if (sendProgress) {
-      sendProgress(i + 1, imageUrls.length);
+    // 次のダウンロードまで少し間隔を空ける
+    // （Chromeの「複数ダウンロード」ブロックを避けるため）
+    if (i < imageUrls.length - 1) {
+      await sleep(DOWNLOAD_INTERVAL_MS);
     }
   }
 
@@ -90,6 +117,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 async function handleBulkDownload(prefix, tabId, sendResponse) {
   try {
     // ---- 1. content.js に画像抽出を依頼する ----
+    //         （content.js側でまず自動スクロールして遅延読み込み画像を
+    //           表示させてから、DOMを解析して画像URLを集める）
+    notifyProgress("Geminiのページをスクロールして画像を読み込んでいます…");
     const extractResult = await requestImageUrlsFromTab(tabId);
 
     if (!extractResult || !extractResult.ok) {
