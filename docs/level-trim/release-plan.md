@@ -1,6 +1,6 @@
 # リリース計画（2026-08-23 更新）
 
-関連：[handoff.md](./handoff.md)（経緯・決定事項） / [market-research-2026-08.md](./market-research-2026-08.md)（市場調査）
+関連：[prompts.md](./prompts.md)（プロンプト） / [master.md](./master.md)（音源制作の経緯） / [../policy.md](../policy.md)（規約・配信先） / [market-research-2026-08.md](./market-research-2026-08.md)（市場調査）
 
 ---
 
@@ -62,19 +62,8 @@
 - 用途：`Idle Loop` が「定常作業」なら `Warm Cache` は「**深い集中が持続している状態**」＝作業時間中いちばん長い区間＝リピート回数が伸びる枠
 - 市場調査の3案のうち「**Brown noise を素材として取り込む**」だけは #2 で使える（ジャンルを変えず加算するだけなので信号を割らない）
 
-### Suno スタイル欄
-
-```
-instrumental warm IDM, saturated analog synth pads, gentle tape saturation, sparse glitch percussion, soft brown noise bed, sustained and unchanging, slow tempo around 82bpm, nostalgic muted tone, understated and non-intrusive, no build-up, no climax, instrumental, no vocals, no singing, no lyrics
-```
-
-**据え置いた語（＝アルゴリズム上の指紋。次作以降も維持すること）**
-`warm` / `analog synth pads` / `glitch` / `nostalgic muted tone` / `understated and non-intrusive` / `no build-up` / `no climax` / `instrumental`
-
-**動かした語**
-`detuned`→`saturated` / `tape warble`→`tape saturation` / `70bpm`→`82bpm` / `melancholic` 削除 / `soft brown noise bed`・`sustained and unchanging` 追加
-
-歌詞欄・Extend構成（`[Intro]→[Development A]→[Subtle Variation]→[Sustain]→[Outro - slow fade]`）は `Idle Loop` と同じ運用。
+### Suno スタイル欄・据え置く語／動かす語
+**[prompts.md](./prompts.md) を参照**（唯一の正）。
 
 ### アートワーク
 保管してある予備案（Gemini生成「ワークスペースのぼかし」構図）を使用。Canvaで3000×3000にリサイズ。
@@ -95,20 +84,12 @@ instrumental warm IDM, saturated analog synth pads, gentle tape saturation, spar
 **長い待ちは初回だけ。** #2 が8週間隔になるのはページ生成待ちを1回吸収するため。#3 から通常ペースに戻す。
 
 ### Spotify for Artists の claim 手順
-
-1. [artists.spotify.com](https://artists.spotify.com/get-started) を開く
-2. 通常の Spotify アカウントでログイン（リスナー用でOK）
-3. `Level Trim` を検索 → 該当プロフィールを選び **Request access**
-4. メールの認証コードを入力
-5. 氏名・出身地・役割（**Artist**）→ captcha → Next
-6. 承認待ち 24〜72時間。Verified バッジは自動付与、無料、フォロワー下限なし
-
-⚠️ **artists.spotify.com 以外で「認証代行」を名乗るサイトは全て詐欺。**
+**[../policy.md](../policy.md) の第4章を参照。**
 
 ### 入稿フォームのコツ
 ジャンル・ムード・楽器編成の記入欄は、**プレイリスト名と重なる語**を意識する：
 `instrumental` / `ambient` / `focus` / `IDM` / `electronic`
-英語説明文は handoff.md の確定版をそのまま使用。
+英語説明文は [archive/handoff-2026-08-22.md](./archive/handoff-2026-08-22.md) の確定版をそのまま使用。
 
 ---
 

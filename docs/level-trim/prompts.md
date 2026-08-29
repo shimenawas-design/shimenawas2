@@ -1,6 +1,6 @@
 # Suno / Gemini プロンプト集（#1〜#6）
 
-関連：[handoff-2026-08-23.md](./handoff-2026-08-23.md) / [release-plan.md](./release-plan.md)
+関連：[handoff-2026-08-23.md](./archive/handoff-2026-08-23.md) / [release-plan.md](./release-plan.md)
 
 ---
 
@@ -112,9 +112,11 @@ A single bright amber circuit trace cutting diagonally across a dark printed cir
 
 ```bash
 # ファイル名は必ず英数字にする（日本語だとffmpegでエンコードエラー）
-ffmpeg -i "Warm Cache.wav" -ar 44100 -map_metadata -1 "Warm Cache.flac"
+ffmpeg -i "Warm Cache.wav" -af "aresample=resampler=soxr:precision=28" \
+  -ar 44100 -map_metadata -1 "Warm Cache.flac"
 ```
 
 - RouteNoteは **MP3(320kbps/44.1kHz) か FLAC(44.1kHz)** のみ受付。Sunoの48kHz WAVは要変換
 - **`-map_metadata -1`** で "made with suno" の埋め込みメタデータを削除（必須）
+- 48000→44100 は整数比でないため **リサンプラー（soxr）を明示する**
 - リリースタイトルのIME誤変換に注意（過去にカタカナ「アイドルループ」になった事例あり）
