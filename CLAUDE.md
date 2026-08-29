@@ -30,6 +30,7 @@ AI音楽（Suno）を制作し、RouteNote経由で配信するプロジェク�
 | 曲を作る・プロンプトを見る | `docs/level-trim/prompts.md`（Suno・Gemini両方） |
 | 規約・配信先・AI環境・Spotify仕様 | `docs/policy.md` ← **両プロジェクト共通** |
 | なぜそうしたかの経緯を追う | `docs/*/changelog.md` ← **普段は不要** |
+| **リスニング確認をする** | `docs/level-trim/listening-check.md` ← **いま最優先の作業** |
 | 未対処のレビュー指摘 | `docs/level-trim/review-2026-08-24.md` |
 | リリース設計の判断根拠 | `docs/level-trim/release-plan.md`（※日程部分は無効） |
 | 市場・ジャンルの戦略検討 | `docs/level-trim/market-research-2026-08.md` |
