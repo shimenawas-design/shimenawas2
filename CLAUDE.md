@@ -11,15 +11,12 @@ AI音楽（Suno）を制作し、RouteNote経由で配信するプロジェク�
 
 | 名義 | 状態 |
 |---|---|
-| **Level Trim** | 全6曲。#1 `Idle Loop` はRouteNote提出済み・**Pending Moderation**（リリース日 9/6）。#2〜#6 は音源結合まで完了、**未試聴・44.1kHz変換未実施・ジャケット未生成** |
-| **Ongaku Toshokan** | 京都アンビエント10曲。**MP3のスペック未確認**・名義の重複チェック未実施・アルバム名未確定・ジャケット未着手 |
+| **Level Trim** | 全6曲。#1 `Idle Loop` は審査中（リリース日 9/6）。#2〜#6 は音源FLAC変換済み・ジャケット画像生成済み。**残り：全曲リスニング再確認／Canvaで3000×3000リサイズ／Thread Pool再生成の判断** |
+| **Ongaku Toshokan** | 京都BGM、**単曲×10本**（各1時間超）。MP3スペック全曲合格（320kbps/44.1kHz）。`01 Rainy Kyoto` は審査中。**残り：02〜10の入稿／Canvaリサイズ** |
 
-**いま最優先の3件**
-1. Warm Cache の末尾を 5:45 に詰める（ハミング開始点とカット位置が一致・余裕ゼロ）
-2. Ongaku Toshokan の MP3 が 320kbps/44.1kHz か `ffprobe` で確認
-3. YouTube @ongakutoshokan の収益化状態を確認（混ぜる前に）
+**⚠️ RouteNoteの審査待ちは現在27〜29営業日（約6週間）。** 入稿カレンダーはこれを織り込んで組むこと（`docs/policy.md` 参照）。
 
----
+**選定基準を反転して全曲を再構築したため、Level Trim の旧リスニング確認は無効。** 再確認が必要。
 
 ## 📂 どの文書を読むか（**必要なものだけ読むこと**）
 
@@ -27,12 +24,12 @@ AI音楽（Suno）を制作し、RouteNote経由で配信するプロジェク�
 
 | やること | 開くファイル |
 |---|---|
-| 曲を作る・プロンプトを見る | `docs/level-trim/prompts.md` |
-| 日程・リリース計画 | `docs/level-trim/release-plan.md` |
+| **今の状態を知る（まずここ）** | `docs/level-trim/master.md` / `docs/ongaku-toshokan/master.md` ← **軽量・現状のみ** |
+| 曲を作る・プロンプトを見る | `docs/level-trim/prompts.md`（Suno・Gemini両方） |
 | 規約・配信先・AI環境・Spotify仕様 | `docs/policy.md` ← **両プロジェクト共通** |
-| 音源制作の経緯・結合手法 | `docs/level-trim/master.md` |
+| なぜそうしたかの経緯を追う | `docs/*/changelog.md` ← **普段は不要** |
 | 未対処のレビュー指摘 | `docs/level-trim/review-2026-08-24.md` |
-| 京都アルバムの作業 | `docs/ongaku-toshokan/album.md` |
+| リリース設計の判断根拠 | `docs/level-trim/release-plan.md`（※日程部分は無効） |
 | 市場・ジャンルの戦略検討 | `docs/level-trim/market-research-2026-08.md` |
 | 過去の経緯を遡る | `docs/*/archive/` ← **通常は開かない** |
 

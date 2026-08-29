@@ -1,4 +1,11 @@
-# リリース計画（2026-08-23 更新）
+# リリース計画（2026-08-23 作成）
+
+> ## ⚠️ 本書のスケジュールは無効（2026-08-24）
+> RouteNoteの**審査待ちが現在27〜29営業日**（約6週間）であることが一次情報で判明した（[../policy.md](../policy.md) 参照）。
+> 本書の日程はこれを織り込んでいないため、**「スケジュール」節は使わないこと。**
+> 最新の入稿カレンダーは [../ongaku-toshokan/master.md](../ongaku-toshokan/master.md)（Level Trim と合算の週次バッチ）にある。
+>
+> **判断の根拠（延期しない理由・命名方針・#2の設計）は引き続き有効。**
 
 関連：[prompts.md](./prompts.md)（プロンプト） / [master.md](./master.md)（音源制作の経緯） / [../policy.md](../policy.md)（規約・配信先） / [market-research-2026-08.md](./market-research-2026-08.md)（市場調査）
 

@@ -1,7 +1,7 @@
 # 規約・配信先判定・AI音楽の環境
 
 **両プロジェクト（Level Trim / Ongaku Toshokan）共通。この文書が唯一の正。**
-最終更新：2026-08-23
+最終更新：2026-08-24（RouteNote一次情報を反映）
 
 > ⚠️ ここに書かれた情報は**下調べであり最終根拠ではない**。この分野の規約は数ヶ月単位で書き換わる。
 > **入稿直前に必ず各社の規約画面を自分の目で開いて確認すること。**
@@ -37,7 +37,20 @@
 3. **C/Pラインに本名（Satoshi Kawakami）を記載**
 4. **YouTube Content ID のチェックを外す**（AI楽曲は対象外）
 
-追加で判明（2026-08-23）：数量上限は非公表だが、**スパム的に見える大量AI入稿は拒否**。高頻度入稿は手動レビュー対象。**使用したAIツールへのリンク提出を要求**する。
+#### 一次情報で確認済み（2026-08-23、support.routenote.com を直接確認）
+
+| 記事 | 更新日 | 内容 |
+|---|---|---|
+| [Can I upload AI releases?](https://support.routenote.com/kb-article/can-i-upload-ai-releases/) | 2026-08-17 | AI楽曲は受け入れる。ただし **Content Recognition DSP・韓国系ストア（Melon/Genie/Bugs/Flo/Vibe）・Amazon には配信不可**。**使用ツールへのリンク提出必須**。追加審査で通常より時間がかかる場合あり |
+| [AI楽曲のフォーマット規定](https://support.routenote.com/kb-article/how-should-i-format-a-release-containing-ai-generated-music/) | 2026-08-20 | AI企業名を明記しないこと以外に特別な要件はなし |
+| [審査待ち時間](https://support.routenote.com/kb-article/how-long-will-i-be-waiting-for-my-release-to-go-live/) | 2026-08-17 | **現在27〜29営業日**（入稿量増加により通常より延長中）。承認後24時間でストア送信、7〜14日で反映 |
+| [RouteNote Style Guide](https://support.routenote.com/kb-article/routenote-style-guide/) | 2026-07-06 | 「**purely descriptive**」なタイトル（例："Chill Lo-fi Groove"）や総称的なメタデータは**拒否対象** |
+
+#### ⚠️ 未確認（撤回した記述）
+
+以前この文書には「数量上限は非公表だが、スパム的に見える大量AI入稿は拒否。高頻度入稿は手動レビュー対象」と書いていたが、**2026-08-23の一次情報検索では確認できなかった**。出典は二次情報（undetectr.com 等）であり、RouteNote公式の記述ではない。**根拠として使わないこと。**
+
+なお Spotify 側のスパムフィルタが大量アップロードを対象にしているのは別途確認済み（第3章）。RouteNote が同様の運用をしているかは未確認。
 
 > RouteNote自身が「**AIリリースの要件は常に変わり続けている**」と明言している。提出直前に必ず最新ページを再確認すること。
 
@@ -106,6 +119,5 @@ Transparency Tags を2026年3月開始（artwork / track audio / composition / m
 |---|---|
 | midiaresearch.com | Splice×MIDiA『Sounds of 2026』本文 |
 | thenationalnews.com | Spotify head of music「Arabic music 5 trends 2026」 |
-| support.routenote.com | RouteNoteのAIポリシー最新版・リリース日変更手順 |
 | routenote.com/blog | 各種解説記事 |
 | youtube.com | @Chamarunoma1st / @ongakutoshokan の実態 |
