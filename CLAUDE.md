@@ -18,6 +18,8 @@ AI音楽（Suno）を制作し、RouteNote経由で配信するプロジェク�
 
 **選定基準を反転して全曲を再構築したため、Level Trim の旧リスニング確認は無効。** 再確認が必要。
 
+---
+
 ## 📂 どの文書を読むか（**必要なものだけ読むこと**）
 
 全文書を読むと約45,000トークン消費する。**タスクに応じて1〜2ファイルだけ開く。**
@@ -45,7 +47,7 @@ AI音楽（Suno）を制作し、RouteNote経由で配信するプロジェク�
 2. **セッション開始時に `git pull origin claude/new-session-8v0hvp`**
 3. **編集したらその場で commit & push。**「あとでまとめて」は禁止
 4. **ファイル名の規約**
-   - 生きている文書（随時更新）：`master.md` `prompts.md` `release-plan.md` `policy.md` `album.md`
+   - 生きている文書（随時更新）：`master.md` `changelog.md` `prompts.md` `policy.md` `release-plan.md`
    - スナップショット：`handoff-YYYY-MM-DD.md` `review-YYYY-MM-DD.md` `market-research-YYYY-MM.md`
    - 日付は必ず `YYYY-MM-DD`。`handoff20260823.md` のような形式を新たに作らない
 5. **古くなった文書は削除せず `archive/` に移す**
