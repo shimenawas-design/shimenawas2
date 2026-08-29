@@ -1,12 +1,12 @@
 # Level Trim 作業ログ（2026-08-24）
 
-現状の要点だけ知りたい場合は [master20260824.md](./master.md) を見れば十分。本書は経緯・判断理由の記録用（普段は読み込み不要）。
+現状の要点だけ知りたい場合は [master20260824.md](./master20260824.md) を見れば十分。本書は経緯・判断理由の記録用（普段は読み込み不要）。
 
 ---
 
 ## Sunoプロンプト・Gemini画像プロンプト
 
-原本は [prompts.md](./prompts.md)（Suno）（Geminiプロンプトも同ファイル）を参照。全曲で据え置く語（アルゴリズム上の指紋）：
+原本は [prompts.md](./prompts.md)（Suno）／[gemini_prompts_copyready.md](./gemini_prompts_copyready.md)（Gemini、コピペ専用）を参照。全曲で据え置く語（アルゴリズム上の指紋）：
 `warm` / `analog synth pads` / `glitch` / `nostalgic muted tone` / `understated and non-intrusive` / `no build-up` / `no climax` / `instrumental, no vocals, no singing, no lyrics`
 
 歌詞欄：`[Instrumental]`のみ。UIのInstrumentalトグル：ON。長尺化：Extendで`[Intro]→[Development A]→[Subtle Variation]→[Sustain]→[Outro - slow fade]`。
@@ -75,3 +75,7 @@ GitHubリポジトリ `shimenawas-design/shimenawas2`（ブランチ`claude/new-
 | 5 | 48kHz→44.1kHz変換時、リサンプラーが未指定（デフォルト＝低品質になりうる） | `-af aresample=resampler=soxr:precision=28` を明示して全曲再変換済み |
 
 軽微な指摘（ファイル名の`#`使用、状態表記の不整合、ドキュメント二重管理）のうち、**ドキュメント二重管理**はgh CLI環境を整備し、GitHub側`master.md`をローカル版で上書きすることで解消済み（2026-08-24）。
+
+## 5. 指摘3の解決：全曲リスニング確認（2026-08-24）
+
+GitHub側に別セッションが用意した [listening-check.md](https://github.com/shimenawas-design/shimenawas2/blob/claude/new-session-8v0hvp/docs/level-trim/listening-check.md) の手順（継ぎ目位置の特定→3通りの聴き方→問題があれば段階的に対処）に沿って、ユーザーが全曲を実際に聴いて確認。**Thread Pool（継ぎ目3回、最優先対象）を含め、全曲問題なし。** review-2026-08-24.mdの指摘3を対応済みに更新し、GitHubへpush済み。
