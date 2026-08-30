@@ -1,7 +1,7 @@
 # Ongaku Toshokan マスタードキュメント
 
-**作成日：2026-08-24**（現状の状態のみを載せた軽量版。経緯・判断理由は [changelog20260824.md](./changelog.md) 参照）
-関連：[../policy.md](../policy.md)（規約・配信先）／別プロジェクト：[Level Trim](../level-trim/master.md)
+**作成日：2026-08-24**（現状の状態のみを載せた軽量版。経緯・判断理由は [changelog20260824.md](./changelog20260824.md) 参照）
+関連：[handoff20260823.md](./handoff20260823.md)（プロジェクトの位置づけ・規約確認）／別プロジェクト：[Level Trim](../Level%20Trim/master20260824.md)
 
 ---
 
@@ -20,8 +20,8 @@
 | # | RouteNote Track Title | 尺 | 音源 | 画像 | 状態 |
 |---|---|---|---|---|---|
 | 01 | `Rainy Kyoto (雨の日の京都)` | 約102分 | 確認済み | 済 | **リリース済み・審査中** |
-| 02 | `Morning Kyoto (朝の京都)` | 約65分 | 確認済み | jacket.png（Canvaリサイズ待ち） | 未入稿 |
-| 03 | `Late Night Kyoto (夜更けの京都)` | 約65分 | 確認済み | jacket.png（Canvaリサイズ待ち） | 未入稿 |
+| 02 | `Morning Kyoto (朝の京都)` | 約65分 | 確認済み | jacket.png（Canvaリサイズ待ち） | **入稿済み（8/29）** |
+| 03 | `Late Night Kyoto (夜更けの京都)` | 約65分 | 確認済み | jacket.png（Canvaリサイズ待ち） | **入稿済み（8/29）** |
 | 04 | `Ryokan Night (温泉旅館の夜)` | 約61分 | 確認済み | jacket.png（Canvaリサイズ待ち） | 未入稿 |
 | 05 | `Bamboo Forest (竹林の朝)` | 約68分 | 確認済み | jacket.png（Canvaリサイズ待ち） | 未入稿。タイトル表記は未確定（changelog参照） |
 | 06 | `Cherry Blossom Kyoto (桜舞う京都)` | 約64分 | 確認済み | jacket.png（Canvaリサイズ待ち） | 未入稿 |
@@ -34,11 +34,11 @@
 
 ## 3. 入稿カレンダー（2026-08-24時点の最新版）
 
-Level Trimと合算で週2〜3件、土曜バッチ予約投稿。詳細は [Level Trimのmaster](../level-trim/master.md) と合わせて管理。
+Level Trimと合算で週2〜3件、土曜バッチ予約投稿。詳細は [Level Trimのmaster](../Level%20Trim/master20260824.md) と合わせて管理。
 
 | 入稿（土曜） | Ongaku Toshokan | リリース目安 |
 |---|---|---|
-| 8/29 | 02 Morning Kyoto／03 Late Night Kyoto | 10/17 |
+| ~~8/29~~ | ~~02 Morning Kyoto／03 Late Night Kyoto~~ | 10/17（**入稿済み**） |
 | 9/5 | 04 Ryokan Night／05 Bamboo Forest | 10/24 |
 | 9/12 | 06 Cherry Blossom Kyoto／07 Snowy Kyoto | 10/31 |
 | 9/19 | 08 Autumn Kyoto／09 Summer Veranda | 11/7 |
@@ -50,7 +50,7 @@ Level Trimと合算で週2〜3件、土曜バッチ予約投稿。詳細は [Lev
 2. **05 Bamboo Forestのタイトル表記を確定**（「朝」のニュアンスを含めるか）
 3. **RouteNoteの「高頻度入稿は拒否」情報の裏取り**（未確認のまま運用中）
 4. 01 Rainy Kyotoの審査結果確認（承認／リジェクト理由）
-5. 02〜10の入稿（[../policy.md](../policy.md)のチェックリスト参照）
+5. 02〜10の入稿（[handoff20260823.md](./handoff20260823.md)のチェックリスト参照）
 
 ## 5. ファイル配置
 
