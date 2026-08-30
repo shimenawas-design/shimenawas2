@@ -1,7 +1,7 @@
 # 規約・配信先判定・AI音楽の環境
 
-**両プロジェクト（Level Trim / Ongaku Toshokan）共通。この文書が唯一の正。**
-最終更新：2026-08-24（RouteNote一次情報を反映）
+**全プロジェクト（Level Trim / Ongaku Toshokan / Vermilion Gate）共通。この文書が唯一の正。**
+最終更新：2026-08-30（既存公開済みコンテンツのContent ID衝突リスクを追記）
 
 > ⚠️ ここに書かれた情報は**下調べであり最終根拠ではない**。この分野の規約は数ヶ月単位で書き換わる。
 > **入稿直前に必ず各社の規約画面を自分の目で開いて確認すること。**
@@ -56,6 +56,14 @@
 
 ### △ 未使用：DistroKid
 「AI Credits」で開示すれば受け入れ。公式ページは403で直接fetch不可、二次情報止まり（未検証）。
+
+### ⚠️ 既にYouTube等で公開済みの音源をRouteNoteに登録する場合の注意（2026-08-30追記）
+
+**ディストリビューター経由のContent ID登録が、自分自身の既存YouTube動画と衝突することがある。** 業界で実際に頻発している事故で、衝突中は当該動画の収益が凍結され、解決に数ヶ月かかることもある（[iMusician](https://imusician.pro/en/resources/blog/how-to-handle-youtube-copyright-claims)、[Velveteen Records](https://velveteenrecords.co/guides/how-to-resolve-youtube-content-id-conflicts-false-claims)、二次情報）。
+
+- AI楽曲はRouteNoteでContent ID登録の対象外（上記の通り）なので、**入稿時にYouTube Content IDのチェックを外していれば、この衝突自体が発生しない**
+- **新規制作の曲（まだYouTube上に存在しない）より、既にYouTubeで公開済みの曲をRouteNoteに追加登録する場合の方がこのリスクは重大**：新曲は衝突相手が存在しないが、既存曲には実在する衝突相手（自分の動画）がある
+- 該当する場合、チェック解除の確認は他の何より優先すること
 
 ---
 
