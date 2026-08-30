@@ -1,7 +1,7 @@
 # Ongaku Toshokan マスタードキュメント
 
-**作成日：2026-08-24**（現状の状態のみを載せた軽量版。経緯・判断理由は [changelog20260824.md](./changelog20260824.md) 参照）
-関連：[handoff20260823.md](./handoff20260823.md)（プロジェクトの位置づけ・規約確認）／別プロジェクト：[Level Trim](../Level%20Trim/master20260824.md)
+**作成日：2026-08-24**（現状の状態のみを載せた軽量版。経緯・判断理由は [changelog.md](./changelog.md) 参照）
+関連：[../policy.md](../policy.md)（規約・配信先）／別プロジェクト：[Level Trim](../level-trim/master.md)
 
 ---
 
@@ -34,7 +34,7 @@
 
 ## 3. 入稿カレンダー（2026-08-24時点の最新版）
 
-Level Trimと合算で週2〜3件、土曜バッチ予約投稿。詳細は [Level Trimのmaster](../Level%20Trim/master20260824.md) と合わせて管理。
+Level Trimと合算で週2〜3件、土曜バッチ予約投稿。詳細は [Level Trimのmaster](../level-trim/master.md) と合わせて管理。
 
 | 入稿（土曜） | Ongaku Toshokan | リリース目安 |
 |---|---|---|
@@ -48,23 +48,26 @@ Level Trimと合算で週2〜3件、土曜バッチ予約投稿。詳細は [Lev
 
 1. **ジャケット画像10枚をCanvaで3000×3000にリサイズ**
 2. **05 Bamboo Forestのタイトル表記を確定**（「朝」のニュアンスを含めるか）
-3. **RouteNoteの「高頻度入稿は拒否」情報の裏取り**（未確認のまま運用中）
-4. 01 Rainy Kyotoの審査結果確認（承認／リジェクト理由）
-5. 02〜10の入稿（[handoff20260823.md](./handoff20260823.md)のチェックリスト参照）
+3. 01 Rainy Kyotoの審査結果確認（承認／リジェクト理由）
+4. 02〜10の入稿（[../policy.md](../policy.md)のチェックリスト参照）
+
+※「RouteNoteの高頻度入稿は拒否」情報は、2026-08-24の一次情報検索では確認できず**未確認のまま撤回済み**（[../policy.md](../policy.md) 第2章参照）。裏取りタスクとしては解消。
 
 ## 5. ファイル配置
 
+ドキュメントは**リポジトリの `docs/` が唯一の正**（リポジトリ直下の `CLAUDE.md` 参照）。音源・画像は `.gitignore` 対象でローカルにのみ存在する。
+
 ```
-RouteNote/Ongaku toshokan/
-├── master20260824.md          本書（現状のみ）
-├── changelog20260824.md       経緯・判断理由の詳細ログ
-├── handoff20260823.md         プロジェクトの位置づけ・規約確認
-└── Madobe no shiki/
-    ├── 01_Rainy Kyoto (雨の日の京都)/
-    │   ├── 01 Rainy Kyoto.mp3
-    │   └── Rainy Kyoto artwork.jpg
-    ├── 02_Morning Kyoto (朝の京都)/
-    │   ├── 02 Morning Kyoto.mp3
-    │   └── 朝の京都 Morning Kyoto.png
-    └── ...（03〜10も同様の構成）
+RouteNote/                     ← ここでgit管理
+├── CLAUDE.md
+├── docs/ongaku-toshokan/      ← ドキュメントはすべてここ
+└── Ongaku Toshokan/           ← .gitignore対象
+    └── Madobe no shiki/
+        ├── 01_Rainy Kyoto (雨の日の京都)/
+        │   ├── 01 Rainy Kyoto.mp3
+        │   └── Rainy Kyoto artwork.jpg
+        ├── 02_Morning Kyoto (朝の京都)/
+        │   ├── 02 Morning Kyoto.mp3
+        │   └── 朝の京都 Morning Kyoto.png
+        └── ...（03〜10も同様の構成）
 ```
