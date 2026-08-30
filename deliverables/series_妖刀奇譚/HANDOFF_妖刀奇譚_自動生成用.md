@@ -74,6 +74,7 @@ The cursed tale of a haunted blade. Which chapter felt darkest?
 ═══════════════════════════════
 
 ## ① 刀は囁く
+タイトル：妖刀奇譚 刀は囁く｜封印の奥で囁く、一振りの刀【幻想和風LoFi】バトルBGM｜Gaming・Dark Fantasy・Focus
 物語：封印の奥、一振りの刀が囁く。その声に、誰かが耳を傾けてしまう。
 ```
 cinematic Japanese lofi, a cursed blade whispering in the dark, dissonant biwa, sparse shamisen, deep sub bass drone, driving lofi-trap beat, eerie and unsettling, 100 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -89,6 +90,7 @@ cinematic Japanese lofi, a cursed blade whispering in the dark, dissonant biwa, 
 HOOK：`封印の奥、一振りの刀が囁く。`
 
 ## ② 錆びた鞘
+タイトル：妖刀奇譚 錆びた鞘｜長い年月、抜かれぬ刃【幻想和風LoFi】バトルBGM｜Gaming・Dark Fantasy・Focus
 物語：鞘は錆びついている。長い年月、誰もこの刀を抜いていない。
 ```
 cinematic Japanese lofi, a rusted scabbard untouched for ages, dissonant biwa tremolo, distant taiko, deep sub bass, driving lofi-trap beat, decayed tension, 104 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -104,6 +106,7 @@ cinematic Japanese lofi, a rusted scabbard untouched for ages, dissonant biwa tr
 HOOK：`鞘は錆びついている。長い年月、誰も抜いていない。`
 
 ## ③ 呪の芽生え
+タイトル：妖刀奇譚 呪の芽生え｜静かに芽生える、呪いの兆し【幻想和風LoFi】バトルBGM｜Gaming・Dark Fantasy・Focus
 物語：呪いが、静かに芽生えていく。まだ小さな、けれど確かな兆し。
 ```
 cinematic Japanese lofi, a curse quietly taking root, unsettling biwa figure, sparse shamisen, deep sub bass, driving lofi-trap beat, growing dread, 106 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -119,6 +122,7 @@ cinematic Japanese lofi, a curse quietly taking root, unsettling biwa figure, sp
 HOOK：`呪いが静かに芽生える。まだ小さな、確かな兆し。`
 
 ## ④ 妖の笑み
+タイトル：妖刀奇譚 妖の笑み｜どこからか聞こえる、笑い声【幻想和風LoFi】バトルBGM｜Gaming・Dark Fantasy・Focus
 物語：どこからか、笑い声のような音が聞こえる。刀が、喜んでいるかのように。
 ```
 cinematic Japanese lofi, an unsettling laughter-like echo, dissonant biwa, eerie shamisen accents, deep sub bass, driving lofi-trap beat, unsettling amusement, 108 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -134,6 +138,7 @@ cinematic Japanese lofi, an unsettling laughter-like echo, dissonant biwa, eerie
 HOOK：`どこからか笑い声のような音。刀が喜んでいるかのよう。`
 
 ## ⑤ 血を求む刃
+タイトル：妖刀奇譚 血を求む刃｜強く滲み出す、刃の渇望【幻想和風LoFi】バトルBGM｜Gaming・Dark Fantasy・Focus
 物語：刃が、渇望する。その意志が、次第に強く滲み出てくる。
 ```
 cinematic Japanese lofi, the blade's thirst growing stronger, aggressive dissonant biwa, driving shamisen, deep sub bass, driving lofi-trap beat, dark intensity rising, 112 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -149,6 +154,7 @@ cinematic Japanese lofi, the blade's thirst growing stronger, aggressive dissona
 HOOK：`刃が渇望する。その意志が滲み出てくる。`
 
 ## ⑥ 蝕まれる手
+タイトル：妖刀奇譚 蝕まれる手｜確実に広がる、呪いの手【幻想和風LoFi】バトルBGM｜Gaming・Dark Fantasy・Focus
 物語：触れた者の手が、蝕まれていく。呪いは、確実に広がっている。
 ```
 cinematic Japanese lofi, the curse spreading through whoever touches it, tense dissonant biwa, sharp shamisen stabs, deep sub bass, driving lofi-trap beat, corrupting tension, 114 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -164,6 +170,7 @@ cinematic Japanese lofi, the curse spreading through whoever touches it, tense d
 HOOK：`触れた者の手が蝕まれる。呪いは確実に広がる。`
 
 ## ⑦ 狂気の舞
+タイトル：妖刀奇譚 狂気の舞｜制御を失っていく、狂気【幻想和風LoFi】バトルBGM｜Gaming・Dark Fantasy・Focus
 物語：狂気が舞う。写本の筆致が、制御を失っていく。
 ```
 cinematic Japanese lofi, madness dancing through the chamber, frenzied biwa, chaotic shamisen, deep sub bass, driving lofi-trap beat, unhinged intensity, 118 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -179,6 +186,7 @@ cinematic Japanese lofi, madness dancing through the chamber, frenzied biwa, cha
 HOOK：`狂気が舞う。筆致が制御を失っていく。`
 
 ## ⑧ 刀と斬り結ぶ
+タイトル：妖刀奇譚 刀と斬り結ぶ｜意志と意志の激突【幻想和風LoFi】バトルBGM｜Gaming・Dark Fantasy・Focus
 物語：ついに刀と斬り結ぶ。意志と意志の激突が、写本を震わせる。
 ```
 cinematic Japanese lofi, clashing against the cursed blade itself, explosive dissonant biwa, sharp shamisen stab, deep sub bass, driving lofi-trap beat, violent climax, 116 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -194,6 +202,7 @@ cinematic Japanese lofi, clashing against the cursed blade itself, explosive dis
 HOOK：`ついに刀と斬り結ぶ。意志と意志の激突。`
 
 ## ⑨ 封印の儀
+タイトル：妖刀奇譚 封印の儀｜再び鎮める、刀の意志【幻想和風LoFi】バトルBGM｜Gaming・Dark Fantasy・Focus
 物語：封印の儀が行われる。刀の意志を、再びこの場所に鎮める。
 ```
 cinematic Japanese lofi, a sealing ritual to calm the cursed blade, solemn biwa, deep taiko, deep sub bass, driving lofi-trap beat, ritualistic resolution, 105 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -209,6 +218,7 @@ cinematic Japanese lofi, a sealing ritual to calm the cursed blade, solemn biwa,
 HOOK：`封印の儀が行われる。刀の意志を再び鎮める。`
 
 ## ⑩ 刀は眠る
+タイトル：妖刀奇譚 刀は眠る｜刀は再び、眠りにつく【幻想和風LoFi】バトルBGM｜Gaming・Dark Fantasy・Focus
 物語：刀は再び眠りにつく。奇譚は閉じられ、禁書区画は静けさへ戻る。
 ```
 cinematic Japanese lofi, the cursed blade returning to sleep, biwa theme softening, gentle shamisen, mellow lofi beat, warm bass, deep dark resolution, 88 BPM, instrumental, no vocals, full-volume melody from 0:00

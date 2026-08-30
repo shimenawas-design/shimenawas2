@@ -72,6 +72,7 @@ A quiet room with only the hearth fire for light. Stay a while.
 ═══════════════════════════════
 
 ## ① 火を熾す
+タイトル：囲炉裏の間 火を熾す｜小さな火が、部屋を暖める【幻想和風LoFi】作業用BGM｜Reading・Deep Focus・Sleep
 物語：囲炉裏に火を熾す。小さな火が、少しずつ部屋を暖めていく。
 ```
 cinematic Japanese lofi, kindling a hearth fire, koto+shinobue, soft crackling fire beginning, warm lofi beat, warm bass, subtle strings, cozy start, 62 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -87,6 +88,7 @@ cinematic Japanese lofi, kindling a hearth fire, koto+shinobue, soft crackling f
 HOOK：`小さな火が、部屋をゆっくり暖めていく。`
 
 ## ② 炉端の一服
+タイトル：囲炉裏の間 炉端の一服｜火の揺らぎを、じっと眺める【幻想和風LoFi】作業用BGM｜Reading・Deep Focus・Sleep
 物語：炉端に腰を下ろし、一息つく。火の揺らぎだけを、じっと眺める。
 ```
 cinematic Japanese lofi, resting by the hearth, koto, steady crackling fire, warm lofi beat, warm bass, subtle strings, relaxed and settled, 61 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -102,6 +104,7 @@ cinematic Japanese lofi, resting by the hearth, koto, steady crackling fire, war
 HOOK：`炉端に座り、火の揺らぎをじっと眺める。`
 
 ## ③ 鉄瓶の湯気
+タイトル：囲炉裏の間 鉄瓶の湯気｜静かに立ちのぼる、鉄瓶の湯気【幻想和風LoFi】作業用BGM｜Reading・Deep Focus・Sleep
 物語：自在鉤に吊るされた鉄瓶から、静かに湯気が立ちのぼる。
 ```
 cinematic Japanese lofi, steam rising from an iron kettle, koto+shakuhachi, fire crackle, soft kettle simmer, warm lofi beat, warm bass, gentle and warm, 63 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -117,6 +120,7 @@ cinematic Japanese lofi, steam rising from an iron kettle, koto+shakuhachi, fire
 HOOK：`鉄瓶から、静かに湯気が立ちのぼる。`
 
 ## ④ 薪の爆ぜる音
+タイトル：囲炉裏の間 薪の爆ぜる音｜部屋に響く、薪の爆ぜる音【幻想和風LoFi】作業用BGM｜Reading・Deep Focus・Sleep
 物語：薪が小さく爆ぜる。その音だけが、部屋に響く。
 ```
 cinematic Japanese lofi, the crackle and pop of burning wood, koto, prominent gentle fire crackle, warm lofi beat, warm bass, subtle strings, cozy and textured, 64 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -132,6 +136,7 @@ cinematic Japanese lofi, the crackle and pop of burning wood, koto, prominent ge
 HOOK：`薪が小さく爆ぜる。その音だけが部屋に響く。`
 
 ## ⑤ 煤けた梁
+タイトル：囲炉裏の間 煤けた梁｜長い年月を刻む、煤けた梁【幻想和風LoFi】作業用BGM｜Reading・Deep Focus・Sleep
 物語：見上げれば、長い年月に煤けた梁。この部屋が刻んできた時間を思う。
 ```
 cinematic Japanese lofi, gazing up at soot-blackened beams, koto+shakuhachi, gentle fire crackle, warm lofi beat, warm bass, spacious strings, reflective and nostalgic, 60 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -147,6 +152,7 @@ cinematic Japanese lofi, gazing up at soot-blackened beams, koto+shakuhachi, gen
 HOOK：`煤けた梁を見上げ、この部屋の時間を思う。`
 
 ## ⑥ 夜なべの手仕事
+タイトル：囲炉裏の間 夜なべの手仕事｜針を運ぶ音だけの、静かな夜【幻想和風LoFi】作業用BGM｜Reading・Deep Focus・Sleep
 物語：火のそばで、静かな手仕事。針を運ぶ音だけが、時を刻む。
 ```
 cinematic Japanese lofi, quiet handiwork by the fire at night, koto, soft fire crackle, warm lofi beat, warm bass, subtle strings, focused and calm, 62 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -162,6 +168,7 @@ cinematic Japanese lofi, quiet handiwork by the fire at night, koto, soft fire c
 HOOK：`火のそばで、静かな手仕事。時が静かに刻まれる。`
 
 ## ⑦ 熾火になる
+タイトル：囲炉裏の間 熾火になる｜赤く沈む、熾火の光【幻想和風LoFi】作業用BGM｜Reading・Deep Focus・Sleep
 物語：炎が落ち着き、熾火になる。赤く沈んだ光だけが、部屋を満たす。
 ```
 cinematic Japanese lofi, the fire settling into embers, koto, soft ember glow crackle, warm lofi beat, warm bass, deep spacious strings, calm and settling, 59 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -177,6 +184,7 @@ cinematic Japanese lofi, the fire settling into embers, koto, soft ember glow cr
 HOOK：`炎が落ち着き、熾火になる。赤い光が部屋を満たす。`
 
 ## ⑧ 障子の外の闇
+タイトル：囲炉裏の間 障子の外の闇｜火の温もりを濃くする、外の闇【幻想和風LoFi】作業用BGM｜Reading・Deep Focus・Sleep
 物語：障子の外は、深い闇。内と外の境が、火の温もりをより濃くする。
 ```
 cinematic Japanese lofi, the deep dark night beyond the shoji screen, koto+shakuhachi, soft ember crackle, warm lofi beat, deep warm bass, spacious strings, cozy contrast, 58 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -192,6 +200,7 @@ cinematic Japanese lofi, the deep dark night beyond the shoji screen, koto+shaku
 HOOK：`障子の外は深い闇。火の温もりがより濃くなる。`
 
 ## ⑨ 灰に埋めて
+タイトル：囲炉裏の間 灰に埋めて｜明日への火種を、静かに守る【幻想和風LoFi】作業用BGM｜Reading・Deep Focus・Sleep
 物語：残り火を灰に埋める。明日への火種を、静かに守る仕草。
 ```
 cinematic Japanese lofi, banking the embers in ash for the night, koto, very soft dying crackle, mellow lofi beat, warm bass, tender strings, tender and settling, 58 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -207,6 +216,7 @@ cinematic Japanese lofi, banking the embers in ash for the night, koto, very sof
 HOOK：`残り火を灰に埋める。明日への火種を静かに守る。`
 
 ## ⑩ 朝の残り火
+タイトル：囲炉裏の間 朝の残り火｜灰に残る、小さな熱【幻想和風LoFi】作業用BGM｜Reading・Deep Focus・Sleep
 物語：朝、灰の中にまだ小さな熱が残っている。夜は終わり、また静かな図書館へ。
 ```
 cinematic Japanese lofi, the last warmth remaining in the morning ashes, koto theme returning softly, gentle morning light, mellow lofi beat, warm bass, tender strings, warm farewell, 64 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up

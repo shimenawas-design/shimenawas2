@@ -72,6 +72,7 @@ An epic chronicle of war against oni demons. Which battle hit hardest?
 ═══════════════════════════════
 
 ## ① 鬼気迫る
+タイトル：鬼哭の戦記 鬼気迫る｜地鳴りのような、戦の予兆【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Motivation
 物語：戦記の最初の頁。地鳴りのような気配が、行間から立ち上る。
 ```
 cinematic Japanese lofi, an ominous presence rising, shamisen+taiko hit, deep sub bass, biwa stabs, driving lofi-trap beat, dramatic orchestral hit, dark and heavy, 110 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -87,6 +88,7 @@ cinematic Japanese lofi, an ominous presence rising, shamisen+taiko hit, deep su
 HOOK：`地鳴りのような気配が、戦記の頁から立ち上る。`
 
 ## ② 咆哮
+タイトル：鬼哭の戦記 咆哮｜鬼の咆哮、戦記に刻まれる【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Motivation
 物語：戦記の紙面が震える。鬼の咆哮が、音となって刻まれた瞬間。
 ```
 cinematic Japanese lofi, a demon's roar shaking the ground, shamisen riff, powerful taiko hits, deep sub bass, biwa, driving lofi-trap beat, explosive intensity, 118 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -102,6 +104,7 @@ cinematic Japanese lofi, a demon's roar shaking the ground, shamisen riff, power
 HOOK：`戦記の紙面が震える。咆哮が、音となって刻まれる。`
 
 ## ③ 鬼火の陣
+タイトル：鬼哭の戦記 鬼火の陣｜円陣を組む、無数の鬼火【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Motivation
 物語：無数の鬼火が円陣を組む。夜の戦場に、赤い光が満ちていく。
 ```
 cinematic Japanese lofi, a ring of oni-fire surrounding the battlefield, shamisen+taiko, deep sub bass, biwa, driving lofi-trap beat, eerie and powerful, 115 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -117,6 +120,7 @@ cinematic Japanese lofi, a ring of oni-fire surrounding the battlefield, shamise
 HOOK：`無数の鬼火が円陣を組む。赤い光が満ちていく。`
 
 ## ④ 金棒の一撃
+タイトル：鬼哭の戦記 金棒の一撃｜大地を揺るがす、渾身の一撃【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Motivation
 物語：金棒が振り下ろされる。その一撃の重さが、大地に刻まれる。
 ```
 cinematic Japanese lofi, a massive club strike, heavy shamisen chord, crushing taiko hit, deepest sub bass, biwa, driving lofi-trap beat, weighty and powerful, 112 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -132,6 +136,7 @@ cinematic Japanese lofi, a massive club strike, heavy shamisen chord, crushing t
 HOOK：`金棒の一撃、その重さが大地に刻まれる。`
 
 ## ⑤ 鬼哭啾々
+タイトル：鬼哭の戦記 鬼哭啾々｜戦いの合間、不気味な静寂【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Motivation
 物語：低く響く泣き声のような音。戦いの合間に訪れる、不気味な静寂。
 ```
 cinematic Japanese lofi, a mournful demonic wail between battles, sparse shamisen, deep sub bass drone, distant taiko, biwa tremolo, eerie tension, 108 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -147,6 +152,7 @@ cinematic Japanese lofi, a mournful demonic wail between battles, sparse shamise
 HOOK：`低く響く泣き声のような音。不気味な静寂が訪れる。`
 
 ## ⑥ 角の砕ける音
+タイトル：鬼哭の戦記 角の砕ける音｜戦記の頂点を告げる、砕ける音【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Motivation
 物語：一撃が角を砕く。その音が、戦記の頂点を告げる。
 ```
 cinematic Japanese lofi, a horn shattering under a decisive blow, sharp shamisen stab, crushing taiko hit, deep sub bass, biwa, driving lofi-trap beat, sharp and violent-elegant, 122 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -162,6 +168,7 @@ cinematic Japanese lofi, a horn shattering under a decisive blow, sharp shamisen
 HOOK：`一撃が角を砕く。戦記の頂点を告げる音。`
 
 ## ⑦ 血脈の怒り
+タイトル：鬼哭の戦記 血脈の怒り｜加速していく、怒りの音【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Motivation
 物語：怒りが血脈を駆け巡るように、音が加速していく。
 ```
 cinematic Japanese lofi, rage surging through the battlefield, fast shamisen riff, relentless taiko, deep sub bass, biwa stabs, driving lofi-trap beat, aggressive and intense, 126 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -177,6 +184,7 @@ cinematic Japanese lofi, rage surging through the battlefield, fast shamisen rif
 HOOK：`怒りが血脈を駆け巡るように、音が加速する。`
 
 ## ⑧ 鬼神との対峙
+タイトル：鬼哭の戦記 鬼神との対峙｜最大の敵、鬼神との対峙【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Motivation
 物語：最大の敵との対峙。戦記の筆致が、最も重く、最も速くなる。
 ```
 cinematic Japanese lofi, facing the demon god, epic shamisen lead, thunderous taiko, deepest sub bass, biwa, driving lofi-trap beat, orchestral peak, epic and overwhelming, 128 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -192,6 +200,7 @@ cinematic Japanese lofi, facing the demon god, epic shamisen lead, thunderous ta
 HOOK：`最大の敵との対峙。戦記の筆致が最も重くなる。`
 
 ## ⑨ 討伐の刻
+タイトル：鬼哭の戦記 討伐の刻｜ついに訪れる、討伐の刻【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Motivation
 物語：ついに、討伐の刻が訪れる。最後の一撃が、戦記に刻まれる。
 ```
 cinematic Japanese lofi, the decisive moment of the hunt, weighty shamisen chord, final crushing taiko hit, deep sub bass, biwa resonance, driving lofi-trap beat, heavy and conclusive, 116 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -207,6 +216,7 @@ cinematic Japanese lofi, the decisive moment of the hunt, weighty shamisen chord
 HOOK：`ついに討伐の刻。最後の一撃が戦記に刻まれる。`
 
 ## ⑩ 鬼は去りて
+タイトル：鬼哭の戦記 鬼は去りて｜鬼は去り、また静けさへ【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Motivation
 物語：鬼は去り、戦記は閉じられる。禁書区画は、また静けさへ戻る。
 ```
 cinematic Japanese lofi, the demon departs and the chronicle closes, shamisen theme softening, taiko fading, gentle biwa, mellow lofi beat, warm resolution, 95 BPM, instrumental, no vocals, full-volume melody from 0:00

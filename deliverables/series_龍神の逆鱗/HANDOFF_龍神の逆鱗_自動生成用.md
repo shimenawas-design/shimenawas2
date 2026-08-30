@@ -71,6 +71,7 @@ An epic chronicle of a duel against a dragon god. Which moment felt most epic?
 ═══════════════════════════════
 
 ## ① 天が鳴る
+タイトル：龍神の逆鱗 天が鳴る｜低く唸る空、龍神の目覚め【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Epic
 物語：空が低く唸る。龍神が目覚める、その最初の兆し。
 ```
 cinematic Japanese lofi, the sky groaning as a dragon god awakens, shamisen+taiko hit, deep sub bass, epic brass swell, driving lofi-trap beat, ominous and grand, 115 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -86,6 +87,7 @@ cinematic Japanese lofi, the sky groaning as a dragon god awakens, shamisen+taik
 HOOK：`空が低く唸る。龍神が目覚める、その兆し。`
 
 ## ② 雲を裂く
+タイトル：龍神の逆鱗 雲を裂く｜稲光に浮かぶ、その輪郭【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Epic
 物語：雲を裂いて、何かが姿を現す。その輪郭だけが、稲光に浮かぶ。
 ```
 cinematic Japanese lofi, something tearing through the clouds, powerful taiko, epic shamisen, deep sub bass, brass hits, driving lofi-trap beat, dramatic reveal, 122 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -101,6 +103,7 @@ cinematic Japanese lofi, something tearing through the clouds, powerful taiko, e
 HOOK：`雲を裂いて、何かが姿を現す。`
 
 ## ③ 龍の眼
+タイトル：龍神の逆鱗 龍の眼｜嵐を映す、金色の瞳【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Epic
 物語：一つの眼が、こちらを見据える。金色の瞳に、嵐が映り込む。
 ```
 cinematic Japanese lofi, a single golden dragon eye watching, tense shamisen, deep sub bass drone, distant taiko, brass tension, eerie grandeur, 118 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -116,6 +119,7 @@ cinematic Japanese lofi, a single golden dragon eye watching, tense shamisen, de
 HOOK：`一つの眼が、こちらを見据える。`
 
 ## ④ 逆鱗に触れる
+タイトル：龍神の逆鱗 逆鱗に触れる｜解き放たれる、龍神の怒り【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Epic
 物語：禁忌に触れた。逆鱗が逆立ち、怒りが解き放たれる。
 ```
 cinematic Japanese lofi, touching the forbidden scale and unleashing fury, sharp shamisen stab, crushing taiko, deep sub bass, brass stab, driving lofi-trap beat, explosive anger, 128 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -131,6 +135,7 @@ cinematic Japanese lofi, touching the forbidden scale and unleashing fury, sharp
 HOOK：`禁忌に触れた。逆鱗が逆立ち、怒りが解き放たれる。`
 
 ## ⑤ 天雷の顎
+タイトル：龍神の逆鱗 天雷の顎｜天そのものが武器となる【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Epic
 物語：雷が牙のように空を噛む。天そのものが、武器となる。
 ```
 cinematic Japanese lofi, lightning striking like fangs from the sky, thunderous taiko, epic shamisen lead, deepest sub bass, brass hits, driving lofi-trap beat, overwhelming power, 132 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -146,6 +151,7 @@ cinematic Japanese lofi, lightning striking like fangs from the sky, thunderous 
 HOOK：`雷が牙のように空を噛む。天が武器となる。`
 
 ## ⑥ 咆哮する天
+タイトル：龍神の逆鱗 咆哮する天｜全てを飲み込む、天の咆哮【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Epic
 物語：天そのものが咆哮する。音の壁が、全てを飲み込んでいく。
 ```
 cinematic Japanese lofi, the sky itself roaring, massive layered taiko, epic shamisen, deepest sub bass, full brass and strings, driving lofi-trap beat, climactic peak, 135 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -161,6 +167,7 @@ cinematic Japanese lofi, the sky itself roaring, massive layered taiko, epic sha
 HOOK：`天そのものが咆哮する。音の壁が全てを飲み込む。`
 
 ## ⑦ 一縷の隙
+タイトル：龍神の逆鱗 一縷の隙｜嵐の中に見える、一瞬の隙【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Epic
 物語：嵐の中、一瞬の隙が見える。その一点に、全てを賭ける。
 ```
 cinematic Japanese lofi, a single thread of opportunity in the storm, sparse tense shamisen, held taiko silence-then-hit, deep sub bass, brass tension, focused calm-before-strike, 108 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -176,6 +183,7 @@ cinematic Japanese lofi, a single thread of opportunity in the storm, sparse ten
 HOOK：`嵐の中、一瞬の隙が見える。全てを賭ける一点。`
 
 ## ⑧ 渾身の一撃
+タイトル：龍神の逆鱗 渾身の一撃｜最も激しく、最も重い一撃【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Epic
 物語：全身全霊の一撃。写本の筆致が、最も激しく、最も重くなる。
 ```
 cinematic Japanese lofi, a strike with everything given, massive shamisen chord, crushing taiko hit, deepest sub bass, full orchestral hit, driving lofi-trap beat, climactic and heavy, 130 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -191,6 +199,7 @@ cinematic Japanese lofi, a strike with everything given, massive shamisen chord,
 HOOK：`全身全霊の一撃。写本が最も激しく震える。`
 
 ## ⑨ 龍の落涙
+タイトル：龍神の逆鱗 龍の落涙｜静まる嵐、光の涙【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Epic
 物語：嵐が静まる。天から、一滴の雨のような光が落ちる。
 ```
 cinematic Japanese lofi, the storm calming as a single tear of light falls, gentle shamisen chord, softening taiko, deep warm bass, tender strings, bittersweet resolution, 100 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -206,6 +215,7 @@ cinematic Japanese lofi, the storm calming as a single tear of light falls, gent
 HOOK：`嵐が静まる。天から、光の涙が落ちる。`
 
 ## ⑩ 空は晴れて
+タイトル：龍神の逆鱗 空は晴れて｜空は晴れ、龍神は去る【幻想和風LoFi】バトルBGM｜Gaming・Boss Battle・Epic
 物語：空は晴れ、龍神は去る。写本は閉じられ、禁書区画は静けさへ戻る。
 ```
 cinematic Japanese lofi, the sky clearing as the dragon god departs, shamisen theme returning softly, taiko fading, gentle strings, mellow lofi beat, warm resolution, 88 BPM, instrumental, no vocals, full-volume melody from 0:00

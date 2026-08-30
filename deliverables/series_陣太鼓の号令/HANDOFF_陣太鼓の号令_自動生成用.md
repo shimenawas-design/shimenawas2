@@ -71,6 +71,7 @@ An epic scroll chronicle of a great battle. Which moment felt most epic?
 ═══════════════════════════════
 
 ## ① 法螺貝が鳴る
+タイトル：陣太鼓の号令 法螺貝が鳴る｜響き渡る、開戦の法螺貝【幻想和風LoFi】バトルBGM｜Gaming・Epic・Motivation
 物語：法螺貝の音が響き渡る。絵巻が開かれ、戦の幕が上がる。
 ```
 cinematic Japanese lofi, a conch horn signaling the start of battle, shamisen+taiko hit, deep sub bass, shinobue flourish, driving lofi-trap beat, dramatic orchestral hit, bold opening, 105 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -86,6 +87,7 @@ cinematic Japanese lofi, a conch horn signaling the start of battle, shamisen+ta
 HOOK：`法螺貝の音が響き渡る。戦の幕が上がる。`
 
 ## ② 陣を敷く
+タイトル：陣太鼓の号令 陣を敷く｜旗が立ち並ぶ、陣立て【幻想和風LoFi】バトルBGM｜Gaming・Epic・Motivation
 物語：陣が敷かれていく。旗が次々と立ち並び、土煙が舞う。
 ```
 cinematic Japanese lofi, formations taking shape across the field, layered taiko rhythm, shamisen, deep sub bass, shinobue, driving lofi-trap beat, building tension, 108 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -101,6 +103,7 @@ cinematic Japanese lofi, formations taking shape across the field, layered taiko
 HOOK：`陣が敷かれていく。旗が立ち並び、土煙が舞う。`
 
 ## ③ 先鋒突撃
+タイトル：陣太鼓の号令 先鋒突撃｜土煙を切り裂く、最初の突撃【幻想和風LoFi】バトルBGM｜Gaming・Epic・Motivation
 物語：先鋒が動く。土煙を切り裂いて、最初の突撃が始まる。
 ```
 cinematic Japanese lofi, the vanguard charges forward, fast taiko rhythm, aggressive shamisen, deep sub bass, driving lofi-trap beat, high energy motion, 118 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -116,6 +119,7 @@ cinematic Japanese lofi, the vanguard charges forward, fast taiko rhythm, aggres
 HOOK：`先鋒が動く。土煙を切り裂き、突撃が始まる。`
 
 ## ④ 矢戦
+タイトル：陣太鼓の号令 矢戦｜空を埋め尽くす、矢の嵐【幻想和風LoFi】バトルBGM｜Gaming・Epic・Motivation
 物語：矢が空を埋め尽くす。降り注ぐ矢の音が、絵巻に刻まれる。
 ```
 cinematic Japanese lofi, a storm of arrows filling the sky, rapid taiko, sharp shamisen stabs, deep sub bass, driving lofi-trap beat, intense and sharp, 120 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -131,6 +135,7 @@ cinematic Japanese lofi, a storm of arrows filling the sky, rapid taiko, sharp s
 HOOK：`矢が空を埋め尽くす。降り注ぐ音が刻まれる。`
 
 ## ⑤ 総攻撃
+タイトル：陣太鼓の号令 総攻撃｜太鼓の連打が告げる、総攻撃【幻想和風LoFi】バトルBGM｜Gaming・Epic・Motivation
 物語：全軍が動く。総攻撃の号令が、太鼓の連打として響く。
 ```
 cinematic Japanese lofi, the full army surges forward, thunderous layered taiko, epic shamisen lead, deep sub bass, driving lofi-trap beat, orchestral peak, overwhelming energy, 122 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -146,6 +151,7 @@ cinematic Japanese lofi, the full army surges forward, thunderous layered taiko,
 HOOK：`全軍が動く。総攻撃の号令が太鼓の連打として響く。`
 
 ## ⑥ 旗の翻る
+タイトル：陣太鼓の号令 旗の翻る｜目まぐるしく変わる、戦況【幻想和風LoFi】バトルBGM｜Gaming・Epic・Motivation
 物語：旗が激しく翻る。風と共に、戦況が目まぐるしく変わっていく。
 ```
 cinematic Japanese lofi, banners whipping in the battle wind, driving taiko, dynamic shamisen, deep sub bass, driving lofi-trap beat, turbulent energy, 116 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -161,6 +167,7 @@ cinematic Japanese lofi, banners whipping in the battle wind, driving taiko, dyn
 HOOK：`旗が激しく翻る。戦況が目まぐるしく変わる。`
 
 ## ⑦ 一騎打ち
+タイトル：陣太鼓の号令 一騎打ち｜両軍が退く、緊張の一騎打ち【幻想和風LoFi】バトルBGM｜Gaming・Epic・Motivation
 物語：両軍が退き、一騎打ちの間が生まれる。緊張が絵巻を満たす。
 ```
 cinematic Japanese lofi, a single duel amid the greater battle, sparse tense shamisen, single deep taiko hits, deep sub bass, driving lofi-trap beat, focused tension, 110 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -176,6 +183,7 @@ cinematic Japanese lofi, a single duel amid the greater battle, sparse tense sha
 HOOK：`両軍が退き、一騎打ちの間が生まれる。`
 
 ## ⑧ 押し返す
+タイトル：陣太鼓の号令 押し返す｜流れを変える、押し返す力【幻想和風LoFi】バトルBGM｜Gaming・Epic・Motivation
 物語：均衡が崩れる。押し返す力が、絵巻の流れを一変させる。
 ```
 cinematic Japanese lofi, the tide of battle turning, powerful taiko surge, aggressive shamisen, deep sub bass, driving lofi-trap beat, momentum shift, 124 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -191,6 +199,7 @@ cinematic Japanese lofi, the tide of battle turning, powerful taiko surge, aggre
 HOOK：`均衡が崩れる。押し返す力が流れを一変させる。`
 
 ## ⑨ 勝鬨
+タイトル：陣太鼓の号令 勝鬨｜絵巻の頂点、上がる勝鬨【幻想和風LoFi】バトルBGM｜Gaming・Epic・Motivation
 物語：勝鬨が上がる。絵巻の頂点、歓喜が音として満ちる。
 ```
 cinematic Japanese lofi, a triumphant victory cry across the field, epic shamisen lead, powerful taiko hits, deep sub bass, driving lofi-trap beat, orchestral triumph, 118 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -206,6 +215,7 @@ cinematic Japanese lofi, a triumphant victory cry across the field, epic shamise
 HOOK：`勝鬨が上がる。絵巻の頂点、歓喜が満ちる。`
 
 ## ⑩ 陣を払う
+タイトル：陣太鼓の号令 陣を払う｜陣は払われ、また静けさへ【幻想和風LoFi】バトルBGM｜Gaming・Epic・Motivation
 物語：陣が払われる。旗は畳まれ、絵巻はまた禁書区画で眠りにつく。
 ```
 cinematic Japanese lofi, the camp being struck and the chronicle closing, shamisen theme softening, taiko fading, gentle shinobue, mellow lofi beat, warm resolution, 92 BPM, instrumental, no vocals, full-volume melody from 0:00

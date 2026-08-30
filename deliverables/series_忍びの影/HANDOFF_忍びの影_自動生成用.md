@@ -71,6 +71,7 @@ A scroll of shadow and stealth. Which moment felt the tensest?
 ═══════════════════════════════
 
 ## ① 影に潜む
+タイトル：忍びの影 影に潜む｜夜の闇に溶け込む、一つの気配【幻想和風LoFi】バトルBGM｜Gaming・Stealth・Focus
 物語：夜の闇に、一つの気配が溶け込む。巻物が開かれ、任務が始まる。
 ```
 cinematic Japanese lofi, blending into the night shadows, sparse shamisen pizzicato, tense shakuhachi, deep sub bass drone, driving lofi-trap beat, quiet tension, 98 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -86,6 +87,7 @@ cinematic Japanese lofi, blending into the night shadows, sparse shamisen pizzic
 HOOK：`夜の闇に、気配が溶け込む。任務が始まる。`
 
 ## ② 屋根を渡る
+タイトル：忍びの影 屋根を渡る｜音もなく渡る、屋根から屋根へ【幻想和風LoFi】バトルBGM｜Gaming・Stealth・Focus
 物語：屋根から屋根へ、音もなく渡っていく。瓦の上を、影だけが走る。
 ```
 cinematic Japanese lofi, silently crossing from rooftop to rooftop, quick shamisen pizzicato, light taiko taps, deep sub bass, driving lofi-trap beat, agile tension, 108 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -101,6 +103,7 @@ cinematic Japanese lofi, silently crossing from rooftop to rooftop, quick shamis
 HOOK：`屋根から屋根へ、音もなく渡っていく。`
 
 ## ③ 気配を消す
+タイトル：忍びの影 気配を消す｜完全に消える、気配と息【幻想和風LoFi】バトルBGM｜Gaming・Stealth・Focus
 物語：息を潜め、気配を完全に消す。静寂だけが、そこにある。
 ```
 cinematic Japanese lofi, erasing all presence into stillness, near-silent shakuhachi, sparse deep sub bass, distant soft taiko, driving lofi-trap beat, held breath tension, 96 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -116,6 +119,7 @@ cinematic Japanese lofi, erasing all presence into stillness, near-silent shakuh
 HOOK：`息を潜め、気配を完全に消す。静寂だけがそこにある。`
 
 ## ④ 手裏剣の風
+タイトル：忍びの影 手裏剣の風｜風を切る、手裏剣の一投【幻想和風LoFi】バトルBGM｜Gaming・Stealth・Focus
 物語：手裏剣が風を切る。その一瞬の音だけが、夜に響く。
 ```
 cinematic Japanese lofi, a shuriken cutting through the night air, sharp shamisen stab, single sharp taiko hit, deep sub bass, driving lofi-trap beat, sudden sharp burst, 105 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -131,6 +135,7 @@ cinematic Japanese lofi, a shuriken cutting through the night air, sharp shamise
 HOOK：`手裏剣が風を切る。その音だけが夜に響く。`
 
 ## ⑤ 罠の間
+タイトル：忍びの影 罠の間｜一歩の迷いが全てを決める【幻想和風LoFi】バトルBGM｜Gaming・Stealth・Focus
 物語：罠が仕掛けられた部屋。一歩の迷いが、全てを決める。
 ```
 cinematic Japanese lofi, a room rigged with traps, tense sparse shamisen, held silence between hits, deep sub bass, driving lofi-trap beat, careful precision tension, 100 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -146,6 +151,7 @@ cinematic Japanese lofi, a room rigged with traps, tense sparse shamisen, held s
 HOOK：`罠が仕掛けられた部屋。一歩の迷いが全てを決める。`
 
 ## ⑥ 追手の足音
+タイトル：忍びの影 追手の足音｜近づいてくる、追手の足音【幻想和風LoFi】バトルBGM｜Gaming・Stealth・Focus
 物語：遠くから、追手の足音が近づいてくる。緊張が、一気に高まる。
 ```
 cinematic Japanese lofi, pursuers' footsteps approaching from a distance, urgent shamisen pizzicato, quickening taiko, deep sub bass, driving lofi-trap beat, rising urgency, 114 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -161,6 +167,7 @@ cinematic Japanese lofi, pursuers' footsteps approaching from a distance, urgent
 HOOK：`遠くから、追手の足音が近づく。緊張が高まる。`
 
 ## ⑦ 煙玉
+タイトル：忍びの影 煙玉｜視界を染める、煙玉の一瞬【幻想和風LoFi】バトルBGM｜Gaming・Stealth・Focus
 物語：煙玉が弾け、視界が白く染まる。その隙に、姿を消す。
 ```
 cinematic Japanese lofi, a smoke bomb bursting to cover an escape, sharp shamisen hit, sudden taiko burst, deep sub bass, driving lofi-trap beat, chaotic then clearing, 110 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -176,6 +183,7 @@ cinematic Japanese lofi, a smoke bomb bursting to cover an escape, sharp shamise
 HOOK：`煙玉が弾け、視界が白く染まる。姿を消す好機。`
 
 ## ⑧ 屋根裏の対峙
+タイトル：忍びの影 屋根裏の対峙｜狭い闇の中、緊張の対峙【幻想和風LoFi】バトルBGM｜Gaming・Stealth・Focus
 物語：屋根裏で、ついに対峙する。狭い闇の中、緊張が極まる。
 ```
 cinematic Japanese lofi, a tense standoff in a cramped attic, sparse dissonant shamisen, held silence, deep sub bass, driving lofi-trap beat, claustrophobic tension, 102 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -191,6 +199,7 @@ cinematic Japanese lofi, a tense standoff in a cramped attic, sparse dissonant s
 HOOK：`屋根裏で、ついに対峙する。緊張が極まる。`
 
 ## ⑨ 撤収
+タイトル：忍びの影 撤収｜静かに退いていく、任務の終わり【幻想和風LoFi】バトルBGM｜Gaming・Stealth・Focus
 物語：任務は終わった。静かに、影は退いていく。
 ```
 cinematic Japanese lofi, silently withdrawing after the mission, calming shamisen pizzicato, softening taiko, warm bass, driving lofi-trap beat, settling tension, 96 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -206,6 +215,7 @@ cinematic Japanese lofi, silently withdrawing after the mission, calming shamise
 HOOK：`任務は終わった。静かに、影は退いていく。`
 
 ## ⑩ 影は消えて
+タイトル：忍びの影 影は消えて｜影は消え、また静けさへ【幻想和風LoFi】バトルBGM｜Gaming・Stealth・Focus
 物語：影は消え、巻物は閉じられる。禁書区画は、また静けさへ戻る。
 ```
 cinematic Japanese lofi, the shadow vanishing and the scroll closing, shamisen theme softening, gentle shakuhachi, mellow lofi beat, warm resolution, 90 BPM, instrumental, no vocals, full-volume melody from 0:00

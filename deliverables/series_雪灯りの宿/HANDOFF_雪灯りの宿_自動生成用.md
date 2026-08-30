@@ -72,6 +72,7 @@ A mountain inn cut off by winter snow. Stay warm tonight.
 ═══════════════════════════════
 
 ## ① 雪の戸口
+タイトル：雪灯りの宿 雪の戸口｜雪の戸口に立つ、静かな出迎え【幻想和風LoFi】作業用BGM｜Sleep・Relax・Winter Night
 物語：雪をかき分け、宿の戸口に立つ。灯りが、静かに出迎える。
 ```
 cinematic Japanese lofi, arriving at a snow-covered inn doorway, koto+shinobue, soft falling snow hush, warm lofi beat, warm bass, subtle strings, quiet welcome, 62 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -87,6 +88,7 @@ cinematic Japanese lofi, arriving at a snow-covered inn doorway, koto+shinobue, 
 HOOK：`雪をかき分け、戸口に立つ。灯りが静かに出迎える。`
 
 ## ② 灯りの土間
+タイトル：雪灯りの宿 灯りの土間｜冷えた体を包む、土間の灯り【幻想和風LoFi】作業用BGM｜Sleep・Relax・Winter Night
 物語：土間に灯りが点る。冷えた体に、その暖かさが染み渡る。
 ```
 cinematic Japanese lofi, warm light filling the entryway, koto, gentle snow hush outside, warm lofi beat, warm bass, subtle strings, warming relief, 61 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -102,6 +104,7 @@ cinematic Japanese lofi, warm light filling the entryway, koto, gentle snow hush
 HOOK：`土間に灯りが点る。冷えた体にその暖かさが染みる。`
 
 ## ③ 炉端の夜
+タイトル：雪灯りの宿 炉端の夜｜雪の宿、炉端で過ごす夜【幻想和風LoFi】作業用BGM｜Sleep・Relax・Winter Night
 物語：宿の炉端に腰を下ろす。窓の外では、雪が静かに降り続いている。
 ```
 cinematic Japanese lofi, settling by the inn's hearth, koto+shakuhachi, soft fire crackle and distant snow hush, warm lofi beat, warm bass, spacious strings, deeply cozy, 60 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -117,6 +120,7 @@ cinematic Japanese lofi, settling by the inn's hearth, koto+shakuhachi, soft fir
 HOOK：`炉端に腰を下ろす。窓の外では雪が降り続く。`
 
 ## ④ 障子に降る雪
+タイトル：雪灯りの宿 障子に降る雪｜障子に映る、雪の影【幻想和風LoFi】作業用BGM｜Sleep・Relax・Winter Night
 物語：障子越しに、雪の影が映る。静かに、静かに、降り積もっていく。
 ```
 cinematic Japanese lofi, snow shadows falling against the shoji screen, koto, very soft snow hush, warm lofi beat, warm bass, subtle strings, quiet and delicate, 59 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -132,6 +136,7 @@ cinematic Japanese lofi, snow shadows falling against the shoji screen, koto, ve
 HOOK：`障子越しに雪の影が映る。静かに降り積もっていく。`
 
 ## ⑤ 静寂の窓辺
+タイトル：雪灯りの宿 静寂の窓辺｜音のない世界、雪の窓辺【幻想和風LoFi】作業用BGM｜Sleep・Relax・Winter Night
 物語：窓辺に座り、降る雪を眺める。音のない世界が、そこに広がっている。
 ```
 cinematic Japanese lofi, sitting by the window watching the silent snowfall, koto+shinobue, near-silent snow ambience, warm lofi beat, warm bass, spacious strings, profound stillness, 58 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -147,6 +152,7 @@ cinematic Japanese lofi, sitting by the window watching the silent snowfall, kot
 HOOK：`窓辺に座り、降る雪を眺める。音のない世界。`
 
 ## ⑥ 湯たんぽの温もり
+タイトル：雪灯りの宿 湯たんぽの温もり｜じんわり伝わる、湯たんぽの熱【幻想和風LoFi】作業用BGM｜Sleep・Relax・Winter Night
 物語：湯たんぽを抱く。じんわりと伝わる熱が、指先まで届いていく。
 ```
 cinematic Japanese lofi, embracing a warm water bottle's heat, koto, soft distant snow hush, warm lofi beat, warm bass, tender strings, deeply comforting, 60 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -162,6 +168,7 @@ cinematic Japanese lofi, embracing a warm water bottle's heat, koto, soft distan
 HOOK：`湯たんぽを抱く。じんわりとした熱が指先まで届く。`
 
 ## ⑦ 深雪の夜半
+タイトル：雪灯りの宿 深雪の夜半｜雪に埋もれる、山宿の夜半【幻想和風LoFi】作業用BGM｜Sleep・Relax・Winter Night
 物語：夜半、雪はさらに深く積もっていく。宿は、雪に埋もれるように眠る。
 ```
 cinematic Japanese lofi, deep snow accumulating in the middle of the night, koto+shakuhachi, muffled deep snow hush, mellow lofi beat, warm bass, spacious strings, deeply hushed, 57 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -177,6 +184,7 @@ cinematic Japanese lofi, deep snow accumulating in the middle of the night, koto
 HOOK：`夜半、雪はさらに深く積もる。宿は雪に埋もれて眠る。`
 
 ## ⑧ 軒のつらら
+タイトル：雪灯りの宿 軒のつらら｜月光に輝く、軒先のつらら【幻想和風LoFi】作業用BGM｜Sleep・Relax・Winter Night
 物語：軒先に、つららが長く伸びている。月光を受けて、静かに輝く。
 ```
 cinematic Japanese lofi, long icicles hanging from the eaves under moonlight, koto, soft snow and faint wind, mellow lofi beat, warm bass, tender strings, crystalline beauty, 59 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -192,6 +200,7 @@ cinematic Japanese lofi, long icicles hanging from the eaves under moonlight, ko
 HOOK：`軒先に、つららが長く伸びる。月光に静かに輝く。`
 
 ## ⑨ 雪明かりの朝
+タイトル：雪灯りの宿 雪明かりの朝｜白さが満たす、雪明かりの朝【幻想和風LoFi】作業用BGM｜Sleep・Relax・Winter Night
 物語：朝、雪明かりが部屋を満たす。降り積もった白さが、光を反射する。
 ```
 cinematic Japanese lofi, morning light reflecting off fresh snow, koto theme softly returning, gentle morning hush, mellow lofi beat, warm bass, tender strings, bright and calm, 62 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -207,6 +216,7 @@ cinematic Japanese lofi, morning light reflecting off fresh snow, koto theme sof
 HOOK：`朝、雪明かりが部屋を満たす。`
 
 ## ⑩ 雪はやみ
+タイトル：雪灯りの宿 雪はやみ｜雪はやみ、また静かな夜へ【幻想和風LoFi】作業用BGM｜Sleep・Relax・Winter Night
 物語：雪はやみ、静けさが訪れる。宿を後にし、また図書館の静かな夜へ。
 ```
 cinematic Japanese lofi, the snowfall finally stopping, koto theme returning warmly, gentle stillness, mellow lofi beat, warm bass, tender strings, warm farewell, 63 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up

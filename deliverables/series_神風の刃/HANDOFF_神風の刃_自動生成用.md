@@ -71,6 +71,7 @@ A chronicle of a swordsman as fast as the wind. Which strike felt fastest?
 ═══════════════════════════════
 
 ## ① 風を切る
+タイトル：神風の刃 風を切る｜一陣の風、疾走のはじまり【幻想和風LoFi】バトルBGM｜Gaming・Workout・Speed
 物語：一陣の風が吹き抜ける。写本が開かれ、疾走が始まる。
 ```
 cinematic Japanese lofi, a gust of wind cutting through, fast shamisen riff, driving taiko, deep sub bass, wind sound design, driving lofi-trap beat, immediate speed, 125 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -86,6 +87,7 @@ cinematic Japanese lofi, a gust of wind cutting through, fast shamisen riff, dri
 HOOK：`一陣の風が吹き抜ける。疾走が始まる。`
 
 ## ② 疾駆
+タイトル：神風の刃 疾駆｜瞬く間に流れる、景色【幻想和風LoFi】バトルBGM｜Gaming・Workout・Speed
 物語：疾駆が始まる。景色が、瞬く間に後方へ流れていく。
 ```
 cinematic Japanese lofi, a swift dash across the field, rapid shamisen riff, driving taiko, deep sub bass, wind whoosh, driving lofi-trap beat, high velocity, 130 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -101,6 +103,7 @@ cinematic Japanese lofi, a swift dash across the field, rapid shamisen riff, dri
 HOOK：`疾駆が始まる。景色が瞬く間に流れていく。`
 
 ## ③ 縮地
+タイトル：神風の刃 縮地｜一瞬で詰める、間合い【幻想和風LoFi】バトルBGM｜Gaming・Workout・Speed
 物語：一瞬で間合いを詰める。まるで地を縮めたかのような速さ。
 ```
 cinematic Japanese lofi, closing distance in an instant, explosive shamisen stab, sudden taiko hit, deep sub bass, wind burst, driving lofi-trap beat, instant burst, 135 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -116,6 +119,7 @@ cinematic Japanese lofi, closing distance in an instant, explosive shamisen stab
 HOOK：`一瞬で間合いを詰める。地を縮めたかのような速さ。`
 
 ## ④ 残像の太刀
+タイトル：神風の刃 残像の太刀｜宙に残る、太刀の残像【幻想和風LoFi】バトルBGM｜Gaming・Workout・Speed
 物語：太刀を振るう。その速さゆえに、残像だけが宙に残る。
 ```
 cinematic Japanese lofi, a blade leaving only an afterimage, sharp shamisen stab, taiko accent, deep sub bass, driving lofi-trap beat, elegant speed, 128 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -131,6 +135,7 @@ cinematic Japanese lofi, a blade leaving only an afterimage, sharp shamisen stab
 HOOK：`太刀を振るう。速さゆえに残像だけが宙に残る。`
 
 ## ⑤ 弾丸のごとく
+タイトル：神風の刃 弾丸のごとく｜音を置き去りにする、速さ【幻想和風LoFi】バトルBGM｜Gaming・Workout・Speed
 物語：弾丸のように駆け抜ける。音が、置いていかれるほどの速さ。
 ```
 cinematic Japanese lofi, moving like a bullet, blistering shamisen riff, relentless taiko, deepest sub bass, wind roar, driving lofi-trap beat, maximum velocity, 138 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -146,6 +151,7 @@ cinematic Japanese lofi, moving like a bullet, blistering shamisen riff, relentl
 HOOK：`弾丸のように駆け抜ける。音さえ置いていかれる速さ。`
 
 ## ⑥ 追撃
+タイトル：神風の刃 追撃｜さらに引き上がる、追撃の速度【幻想和風LoFi】バトルBGM｜Gaming・Workout・Speed
 物語：逃さない。追撃の速度が、さらに一段引き上がる。
 ```
 cinematic Japanese lofi, relentless pursuit at rising speed, fast shamisen riff, driving taiko, deep sub bass, wind sound design, driving lofi-trap beat, escalating chase, 133 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -161,6 +167,7 @@ cinematic Japanese lofi, relentless pursuit at rising speed, fast shamisen riff,
 HOOK：`逃さない。追撃の速度がさらに引き上がる。`
 
 ## ⑦ 交差の一閃
+タイトル：神風の刃 交差の一閃｜全てが静止して見える、一閃【幻想和風LoFi】バトルBGM｜Gaming・Workout・Speed
 物語：軌跡が交差する。一閃の瞬間、全てが静止して見える。
 ```
 cinematic Japanese lofi, trails crossing in a single decisive flash, sharp shamisen stab, single powerful taiko hit, deep sub bass, driving lofi-trap beat, frozen instant then release, 122 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -176,6 +183,7 @@ cinematic Japanese lofi, trails crossing in a single decisive flash, sharp shami
 HOOK：`軌跡が交差する。一閃の瞬間、全てが静止して見える。`
 
 ## ⑧ 加速する刃
+タイトル：神風の刃 加速する刃｜目で追えない、刃の加速【幻想和風LoFi】バトルBGM｜Gaming・Workout・Speed
 物語：刃が、さらに加速する。もはや目で追えないほどの速さへ。
 ```
 cinematic Japanese lofi, the blade accelerating beyond sight, blistering shamisen riff, thunderous taiko, deepest sub bass, wind roar, driving lofi-trap beat, extreme acceleration, 140 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -191,6 +199,7 @@ cinematic Japanese lofi, the blade accelerating beyond sight, blistering shamise
 HOOK：`刃がさらに加速する。目で追えないほどの速さへ。`
 
 ## ⑨ 音速の斬
+タイトル：神風の刃 音速の斬｜風景を歪ませる、衝撃波【幻想和風LoFi】バトルBGM｜Gaming・Workout・Speed
 物語：音を超える斬撃。衝撃波が、風景を歪ませる。
 ```
 cinematic Japanese lofi, a strike breaking the sound barrier, explosive shamisen chord, massive taiko hit, deepest sub bass, sonic boom sound design, driving lofi-trap beat, shockwave climax, 136 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -206,6 +215,7 @@ cinematic Japanese lofi, a strike breaking the sound barrier, explosive shamisen
 HOOK：`音を超える斬撃。衝撃波が風景を歪ませる。`
 
 ## ⑩ 風は止む
+タイトル：神風の刃 風は止む｜風は止み、また静けさへ【幻想和風LoFi】バトルBGM｜Gaming・Workout・Speed
 物語：風が止む。写本は閉じられ、禁書区画は静けさへ戻る。
 ```
 cinematic Japanese lofi, the wind finally settling and the chronicle closing, shamisen theme softening, taiko fading, gentle shinobue, mellow lofi beat, calm resolution, 90 BPM, instrumental, no vocals, full-volume melody from 0:00

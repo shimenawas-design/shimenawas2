@@ -72,6 +72,7 @@ An ancient shrine by the sea. Let the waves carry your thoughts away.
 ═══════════════════════════════
 
 ## ① 浜への鳥居
+タイトル：潮騒の社 浜への鳥居｜波打ち際に立つ、一つの鳥居【幻想和風LoFi】作業用BGM｜Relax・Reading・Sleep
 物語：小道の先、波打ち際に鳥居が立つ。潮の匂いが、風に混じる。
 ```
 cinematic Japanese lofi, arriving at a torii gate by the shore, koto+shinobue, gentle waves rising, warm lofi beat, warm bass, subtle strings, serene arrival, 66 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -87,6 +88,7 @@ cinematic Japanese lofi, arriving at a torii gate by the shore, koto+shinobue, g
 HOOK：`小道の先、波打ち際に鳥居が立つ。`
 
 ## ② 潮騒の参道
+タイトル：潮騒の社 潮騒の参道｜一歩ごとに近づく、潮騒【幻想和風LoFi】作業用BGM｜Relax・Reading・Sleep
 物語：参道を歩く。潮騒が、一歩ごとに近づいてくる。
 ```
 cinematic Japanese lofi, walking the shrine path toward the sea, koto, steady wave sound rising, warm lofi beat, warm bass, spacious strings, gentle journey, 68 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -102,6 +104,7 @@ cinematic Japanese lofi, walking the shrine path toward the sea, koto, steady wa
 HOOK：`参道を歩く。潮騒が一歩ごとに近づく。`
 
 ## ③ 磯の岩場
+タイトル：潮騒の社 磯の岩場｜波が洗う、磯の岩場【幻想和風LoFi】作業用BGM｜Relax・Reading・Sleep
 物語：磯の岩場に立つ。波が寄せては返し、岩を洗っていく。
 ```
 cinematic Japanese lofi, standing on rocky tide pools, koto+shakuhachi, waves washing over rocks, warm lofi beat, warm bass, subtle strings, textured and calm, 67 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -117,6 +120,7 @@ cinematic Japanese lofi, standing on rocky tide pools, koto+shakuhachi, waves wa
 HOOK：`磯の岩場に立つ。波が寄せては返す。`
 
 ## ④ 汐の満ちる
+タイトル：潮騒の社 汐の満ちる｜静かに、着実に満ちる汐【幻想和風LoFi】作業用BGM｜Relax・Reading・Sleep
 物語：汐が満ちてくる。水位が、静かに、着実に上がっていく。
 ```
 cinematic Japanese lofi, the tide slowly rising, koto, fuller waves washing higher, warm lofi beat, warm bass, spacious strings, steady and rising, 69 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -132,6 +136,7 @@ cinematic Japanese lofi, the tide slowly rising, koto, fuller waves washing high
 HOOK：`汐が満ちてくる。水位が静かに上がっていく。`
 
 ## ⑤ 海霧の社殿
+タイトル：潮騒の社 海霧の社殿｜海霧に包まれる、幻想の社【幻想和風LoFi】作業用BGM｜Relax・Reading・Sleep
 物語：社殿が、海霧に包まれていく。輪郭がにじみ、幻想的な景色になる。
 ```
 cinematic Japanese lofi, the shrine hall wrapped in sea mist, koto+shinobue, muffled dreamy wave sound, warm lofi beat, warm bass, dreamy strings, ethereal and soft, 65 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -147,6 +152,7 @@ cinematic Japanese lofi, the shrine hall wrapped in sea mist, koto+shinobue, muf
 HOOK：`社殿が海霧に包まれる。幻想的な景色になる。`
 
 ## ⑥ 沖を見る
+タイトル：潮騒の社 沖を見る｜縁側から見つめる、水平線【幻想和風LoFi】作業用BGM｜Relax・Reading・Sleep
 物語：社殿の縁側から、沖を見つめる。水平線が、静かに広がっている。
 ```
 cinematic Japanese lofi, gazing out at the open sea from the shrine, koto, wide open wave sound, warm lofi beat, warm bass, spacious strings, expansive and calm, 66 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -162,6 +168,7 @@ cinematic Japanese lofi, gazing out at the open sea from the shrine, koto, wide 
 HOOK：`縁側から沖を見つめる。水平線が静かに広がる。`
 
 ## ⑦ 夕凪
+タイトル：潮騒の社 夕凪｜風も波も止む、束の間の静寂【幻想和風LoFi】作業用BGM｜Relax・Reading・Sleep
 物語：夕凪の時間。風が止み、波も穏やかになる、束の間の静寂。
 ```
 cinematic Japanese lofi, the still calm of evening dead-wind, koto+shakuhachi, very gentle almost-still waves, warm lofi beat, warm bass, tender strings, deeply peaceful, 64 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -177,6 +184,7 @@ cinematic Japanese lofi, the still calm of evening dead-wind, koto+shakuhachi, v
 HOOK：`夕凪の時間。風が止み、波も穏やかになる。`
 
 ## ⑧ 月と潮
+タイトル：潮騒の社 月と潮｜銀色に揺れる、月と潮【幻想和風LoFi】作業用BGM｜Relax・Reading・Sleep
 物語：月が昇り、潮を照らす。銀色の光が、波間に揺れる。
 ```
 cinematic Japanese lofi, moonrise illuminating the tide, koto, soft night waves, mellow lofi beat, warm bass, tender strings, serene nocturne, 65 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -192,6 +200,7 @@ cinematic Japanese lofi, moonrise illuminating the tide, koto, soft night waves,
 HOOK：`月が昇り、潮を照らす。銀色の光が波間に揺れる。`
 
 ## ⑨ 引き潮の夜
+タイトル：潮騒の社 引き潮の夜｜姿を変えていく、夜の海【幻想和風LoFi】作業用BGM｜Relax・Reading・Sleep
 物語：夜が更け、潮が引いていく。海が、静かに姿を変えていく。
 ```
 cinematic Japanese lofi, the tide receding late at night, koto, gently receding wave sound, mellow lofi beat, warm bass, spacious strings, quiet transformation, 63 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -207,6 +216,7 @@ cinematic Japanese lofi, the tide receding late at night, koto, gently receding 
 HOOK：`夜が更け、潮が引いていく。海が姿を変える。`
 
 ## ⑩ 波に還る
+タイトル：潮騒の社 波に還る｜潮騒が遠ざかる、帰り道【幻想和風LoFi】作業用BGM｜Relax・Reading・Sleep
 物語：小道を戻り、図書館へ。潮騒が遠ざかり、また静かな夜へ還る。
 ```
 cinematic Japanese lofi, returning to the library as the waves fade, koto theme returning softly, mellow lofi beat, warm bass, tender strings, warm farewell, 66 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up

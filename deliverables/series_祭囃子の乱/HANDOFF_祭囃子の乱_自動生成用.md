@@ -71,6 +71,7 @@ A night of matsuri drums turning into a joyful frenzy. Which beat got you moving
 ═══════════════════════════════
 
 ## ① 宵宮の鼓動
+タイトル：祭囃子の乱 宵宮の鼓動｜幕を開ける、宵宮の太鼓【幻想和風LoFi】バトルBGM｜Gaming・Festival・Motivation
 物語：宵宮の太鼓が、最初の鼓動を打つ。祭りの夜が、幕を開ける。
 ```
 cinematic Japanese lofi, the first beat of a festival eve drum, shamisen+taiko hit, shinobue flourish, deep sub bass, driving lofi-trap beat, festive opening, 120 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -86,6 +87,7 @@ cinematic Japanese lofi, the first beat of a festival eve drum, shamisen+taiko h
 HOOK：`宵宮の太鼓が最初の鼓動を打つ。`
 
 ## ② 神輿が奔る
+タイトル：祭囃子の乱 神輿が奔る｜夜を駆け抜ける、神輿の勢い【幻想和風LoFi】バトルBGM｜Gaming・Festival・Motivation
 物語：神輿が奔る。担がれた重みが、勢いよく夜を駆け抜ける。
 ```
 cinematic Japanese lofi, a portable shrine rushing through the night, driving taiko, energetic shamisen, deep sub bass, driving lofi-trap beat, exhilarating momentum, 126 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -101,6 +103,7 @@ cinematic Japanese lofi, a portable shrine rushing through the night, driving ta
 HOOK：`神輿が奔る。担がれた重みが夜を駆け抜ける。`
 
 ## ③ 囃子が加速する
+タイトル：祭囃子の乱 囃子が加速する｜熱を帯びていく、笛と太鼓【幻想和風LoFi】バトルBGM｜Gaming・Festival・Motivation
 物語：笛と太鼓が、次第に速度を上げていく。祭りが、熱を帯びていく。
 ```
 cinematic Japanese lofi, the festival music accelerating, fast shinobue, quickening taiko, shamisen, deep sub bass, driving lofi-trap beat, rising heat, 130 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -116,6 +119,7 @@ cinematic Japanese lofi, the festival music accelerating, fast shinobue, quicken
 HOOK：`笛と太鼓が速度を上げる。祭りが熱を帯びていく。`
 
 ## ④ 火の粉舞う
+タイトル：祭囃子の乱 火の粉舞う｜夜空に散る、無数の光【幻想和風LoFi】バトルBGM｜Gaming・Festival・Motivation
 物語：火の粉が舞い上がる。夜空に、無数の小さな光が散っていく。
 ```
 cinematic Japanese lofi, embers rising into the night sky, energetic shamisen, driving taiko, deep sub bass, driving lofi-trap beat, sparkling intensity, 128 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -131,6 +135,7 @@ cinematic Japanese lofi, embers rising into the night sky, energetic shamisen, d
 HOOK：`火の粉が舞い上がる。夜空に無数の光が散る。`
 
 ## ⑤ 乱舞
+タイトル：祭囃子の乱 乱舞｜秩序を超えた、熱狂の渦【幻想和風LoFi】バトルBGM｜Gaming・Festival・Motivation
 物語：乱舞が始まる。秩序を超えた、熱狂の渦。
 ```
 cinematic Japanese lofi, a wild frenzied dance of festival energy, chaotic energetic shamisen, relentless taiko, deep sub bass, driving lofi-trap beat, ecstatic peak, 134 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -146,6 +151,7 @@ cinematic Japanese lofi, a wild frenzied dance of festival energy, chaotic energ
 HOOK：`乱舞が始まる。秩序を超えた熱狂の渦。`
 
 ## ⑥ 太鼓の連打
+タイトル：祭囃子の乱 太鼓の連打｜祭りの頂点を作る、連打【幻想和風LoFi】バトルBGM｜Gaming・Festival・Motivation
 物語：太鼓が連打される。その連続する音の壁が、祭りの頂点を作る。
 ```
 cinematic Japanese lofi, relentless drum rolls building to a peak, thunderous layered taiko, epic shamisen, deep sub bass, driving lofi-trap beat, climactic wall of sound, 136 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -161,6 +167,7 @@ cinematic Japanese lofi, relentless drum rolls building to a peak, thunderous la
 HOOK：`太鼓が連打される。音の壁が祭りの頂点を作る。`
 
 ## ⑦ 睨み合い
+タイトル：祭囃子の乱 睨み合い｜次の一打を前にした静寂【幻想和風LoFi】バトルBGM｜Gaming・Festival・Motivation
 物語：一瞬、静寂が訪れる。次の一打を前にした、束の間の睨み合い。
 ```
 cinematic Japanese lofi, a tense pause before the next surge, sparse held shamisen, silence then single taiko hit, deep sub bass, driving lofi-trap beat, dramatic pause, 110 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -176,6 +183,7 @@ cinematic Japanese lofi, a tense pause before the next surge, sparse held shamis
 HOOK：`一瞬、静寂が訪れる。次の一打を前にした睨み合い。`
 
 ## ⑧ 総踊り
+タイトル：祭囃子の乱 総踊り｜一つのうねりとなる、総踊り【幻想和風LoFi】バトルBGM｜Gaming・Festival・Motivation
 物語：総踊りが始まる。祭り全体が、一つの大きなうねりとなる。
 ```
 cinematic Japanese lofi, the whole festival dancing as one, explosive shamisen, massive layered taiko, deep sub bass, driving lofi-trap beat, unified ecstatic peak, 138 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -191,6 +199,7 @@ cinematic Japanese lofi, the whole festival dancing as one, explosive shamisen, 
 HOOK：`総踊りが始まる。祭り全体が一つのうねりとなる。`
 
 ## ⑨ 打ち上げ
+タイトル：祭囃子の乱 打ち上げ｜花火のように上がる、最後の高揚【幻想和風LoFi】バトルBGM｜Gaming・Festival・Motivation
 物語：花火のように、最後の高揚が打ち上がる。祭りの頂点、その瞬間。
 ```
 cinematic Japanese lofi, a final burst of celebration like fireworks, triumphant shamisen lead, powerful taiko hits, deep sub bass, driving lofi-trap beat, triumphant climax, 132 BPM, instrumental, no vocals, explosive full-volume start from 0:00
@@ -206,6 +215,7 @@ cinematic Japanese lofi, a final burst of celebration like fireworks, triumphant
 HOOK：`花火のように、最後の高揚が打ち上がる。`
 
 ## ⑩ 祭のあと
+タイトル：祭囃子の乱 祭のあと｜提灯が消え、また静けさへ【幻想和風LoFi】バトルBGM｜Gaming・Festival・Motivation
 物語：祭りは終わる。提灯の灯りが一つずつ消え、禁書区画は静けさへ戻る。
 ```
 cinematic Japanese lofi, the festival ending as lanterns dim one by one, shamisen theme softening, taiko fading, gentle shinobue, mellow lofi beat, warm nostalgic resolution, 94 BPM, instrumental, no vocals, full-volume melody from 0:00

@@ -72,6 +72,7 @@ A valley stream where countless fireflies dance at night. Which light caught you
 ═══════════════════════════════
 
 ## ① 沢へ降りる
+タイトル：蛍火の沢 沢へ降りる｜草を分けて、夏の夜の沢へ【幻想和風LoFi】作業用BGM｜Sleep・Relax・Summer Night
 物語：草を分けて、沢へ降りていく。夜の空気が、少しずつ涼しくなる。
 ```
 cinematic Japanese lofi, descending toward a night stream through tall grass, koto+shinobue, gentle stream sound rising, warm lofi beat, warm bass, subtle strings, serene approach, 64 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -87,6 +88,7 @@ cinematic Japanese lofi, descending toward a night stream through tall grass, ko
 HOOK：`草を分けて、沢へ降りていく。夜の空気が涼しくなる。`
 
 ## ② 最初の一匹
+タイトル：蛍火の沢 最初の一匹｜夜に浮かぶ、小さな灯り【幻想和風LoFi】作業用BGM｜Sleep・Relax・Summer Night
 物語：最初の一匹が、光を放つ。小さな灯りが、夜の中に浮かぶ。
 ```
 cinematic Japanese lofi, the first firefly beginning to glow, koto, steady stream sound, soft cricket chirps, warm lofi beat, warm bass, spacious strings, gentle wonder, 63 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -102,6 +104,7 @@ cinematic Japanese lofi, the first firefly beginning to glow, koto, steady strea
 HOOK：`最初の一匹が光を放つ。小さな灯りが夜に浮かぶ。`
 
 ## ③ 蛍火の群れ
+タイトル：蛍火の沢 蛍火の群れ｜群れをなす、光の乱舞【幻想和風LoFi】作業用BGM｜Sleep・Relax・Summer Night
 物語：一匹、また一匹と増えていく。やがて、群れをなす光の乱舞。
 ```
 cinematic Japanese lofi, countless fireflies gathering into a glowing swarm, koto+shakuhachi, full stream and cricket sound, warm lofi beat, warm bass, subtle strings, magical abundance, 66 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -117,6 +120,7 @@ cinematic Japanese lofi, countless fireflies gathering into a glowing swarm, kot
 HOOK：`一匹、また一匹。やがて群れをなす光の乱舞。`
 
 ## ④ 草いきれの夜
+タイトル：蛍火の沢 草いきれの夜｜虫の声響く、蒸し暑い夜【幻想和風LoFi】作業用BGM｜Sleep・Relax・Summer Night
 物語：草いきれが立ちのぼる、蒸し暑い夏の夜。虫の声が、絶え間なく響く。
 ```
 cinematic Japanese lofi, the warm humid air of a summer night, koto, dense cricket chorus, gentle stream, warm lofi beat, warm bass, subtle strings, thick and textured, 62 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -132,6 +136,7 @@ cinematic Japanese lofi, the warm humid air of a summer night, koto, dense crick
 HOOK：`草いきれが立ちのぼる、蒸し暑い夏の夜。`
 
 ## ⑤ 水面の光
+タイトル：蛍火の沢 水面の光｜水面に映る、二つの光【幻想和風LoFi】作業用BGM｜Sleep・Relax・Summer Night
 物語：蛍の光が、水面に映り込む。二つの光が、揺れながら重なる。
 ```
 cinematic Japanese lofi, firefly light reflected on the water's surface, koto+shinobue, gentle rippling stream, warm lofi beat, warm bass, spacious strings, mirrored beauty, 65 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -147,6 +152,7 @@ cinematic Japanese lofi, firefly light reflected on the water's surface, koto+sh
 HOOK：`蛍の光が水面に映り込む。二つの光が揺れて重なる。`
 
 ## ⑥ 夜風の渡る
+タイトル：蛍火の沢 夜風の渡る｜風に揺れる、蛍火の灯り【幻想和風LoFi】作業用BGM｜Sleep・Relax・Summer Night
 物語：夜風が沢を渡っていく。蛍の光が、風に流されるように揺れる。
 ```
 cinematic Japanese lofi, a night breeze sweeping through the valley, koto, wind through grass and stream, warm lofi beat, warm bass, subtle strings, gentle movement, 67 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -162,6 +168,7 @@ cinematic Japanese lofi, a night breeze sweeping through the valley, koto, wind 
 HOOK：`夜風が沢を渡る。蛍の光が風に流されるように揺れる。`
 
 ## ⑦ 蛍の輪舞
+タイトル：蛍火の沢 蛍の輪舞｜輪を描いて舞う、蛍たち【幻想和風LoFi】作業用BGM｜Sleep・Relax・Summer Night
 物語：蛍たちが、輪を描くように舞う。まるで踊っているかのように。
 ```
 cinematic Japanese lofi, fireflies dancing in circular patterns, koto+shakuhachi, lively stream and cricket sound, warm lofi beat, warm bass, spacious strings, playful and magical, 68 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -177,6 +184,7 @@ cinematic Japanese lofi, fireflies dancing in circular patterns, koto+shakuhachi
 HOOK：`蛍たちが輪を描くように舞う。踊っているかのように。`
 
 ## ⑧ 更ける夏の夜
+タイトル：蛍火の沢 更ける夏の夜｜落ち着いていく、蛍の光【幻想和風LoFi】作業用BGM｜Sleep・Relax・Summer Night
 物語：夜がさらに更けていく。蛍の光も、少しずつ落ち着いていく。
 ```
 cinematic Japanese lofi, the summer night deepening, koto, softening stream and cricket sound, mellow lofi beat, warm bass, tender strings, quiet and settling, 61 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -192,6 +200,7 @@ cinematic Japanese lofi, the summer night deepening, koto, softening stream and 
 HOOK：`夜がさらに更ける。蛍の光も落ち着いていく。`
 
 ## ⑨ 消えゆく光
+タイトル：蛍火の沢 消えゆく光｜一つ、また一つと消える光【幻想和風LoFi】作業用BGM｜Sleep・Relax・Summer Night
 物語：蛍の光が、一つ、また一つと消えていく。夜明けが、近づいている。
 ```
 cinematic Japanese lofi, fireflies fading one by one, koto, faint stream sound, mellow lofi beat, warm bass, tender strings, gentle farewell, 60 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -207,6 +216,7 @@ cinematic Japanese lofi, fireflies fading one by one, koto, faint stream sound, 
 HOOK：`蛍の光が一つ、また一つと消えていく。`
 
 ## ⑩ 夜明けの沢
+タイトル：蛍火の沢 夜明けの沢｜夜が明け、また静けさへ【幻想和風LoFi】作業用BGM｜Sleep・Relax・Summer Night
 物語：夜が明ける。蛍は姿を消し、沢はまた静かな図書館の裏手へ還る。
 ```
 cinematic Japanese lofi, dawn breaking over the stream as the fireflies vanish, koto theme returning softly, gentle morning birds, mellow lofi beat, warm bass, tender strings, warm farewell, 64 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up

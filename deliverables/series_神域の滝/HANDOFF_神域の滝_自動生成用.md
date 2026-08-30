@@ -72,6 +72,7 @@ A sacred waterfall hidden deep within the library. Let the water clear your mind
 ═══════════════════════════════
 
 ## ① 滝への径
+タイトル：神域の滝 滝への径｜苔むした石段、水音の聖域へ【幻想和風LoFi】作業用BGM｜Deep Focus・Meditation・Study
 物語：苔むした石段を降りていく。遠くから、水音が聞こえ始める。
 ```
 cinematic Japanese lofi, descending a mossy path toward a waterfall, koto+shinobue, distant water sound rising, warm lofi beat, warm bass, subtle strings, serene approach, 68 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -87,6 +88,7 @@ cinematic Japanese lofi, descending a mossy path toward a waterfall, koto+shinob
 HOOK：`苔むした石段を降りる。遠くから水音が聞こえ始める。`
 
 ## ② 白糸の滝壺
+タイトル：神域の滝 白糸の滝壺｜白糸のように落ちる滝【幻想和風LoFi】作業用BGM｜Deep Focus・Meditation・Study
 物語：白糸のような滝が、滝壺に注ぎ込む。その音に、耳を澄ませる。
 ```
 cinematic Japanese lofi, thread-like falls pouring into a clear pool, koto, prominent clear waterfall sound, warm lofi beat, warm bass, spacious strings, pure and clear, 70 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -102,6 +104,7 @@ cinematic Japanese lofi, thread-like falls pouring into a clear pool, koto, prom
 HOOK：`白糸のような滝が滝壺に注ぐ。その音に耳を澄ませる。`
 
 ## ③ 苔むす岩肌
+タイトル：神域の滝 苔むす岩肌｜長い年月が積もる、苔の岩肌【幻想和風LoFi】作業用BGM｜Deep Focus・Meditation・Study
 物語：滝の周りを覆う、深い緑の苔。長い年月が、そこに積もっている。
 ```
 cinematic Japanese lofi, moss-covered rock surrounding the falls, koto+shakuhachi, steady waterfall sound, warm lofi beat, warm bass, subtle strings, deep and ancient, 67 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -117,6 +120,7 @@ cinematic Japanese lofi, moss-covered rock surrounding the falls, koto+shakuhach
 HOOK：`深い緑の苔。長い年月がそこに積もっている。`
 
 ## ④ 水の帳
+タイトル：神域の滝 水の帳｜滝が仕切る、静かな空間【幻想和風LoFi】作業用BGM｜Deep Focus・Meditation・Study
 物語：滝が、まるで帳のように空間を仕切る。その向こうに、静かな光。
 ```
 cinematic Japanese lofi, a curtain of falling water dividing the space, koto, full immersive waterfall sound, warm lofi beat, warm bass, spacious strings, ethereal and clear, 71 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -132,6 +136,7 @@ cinematic Japanese lofi, a curtain of falling water dividing the space, koto, fu
 HOOK：`滝が帳のように空間を仕切る。その向こうに静かな光。`
 
 ## ⑤ 渓の木漏れ日
+タイトル：神域の滝 渓の木漏れ日｜水面にきらめく、渓の光【幻想和風LoFi】作業用BGM｜Deep Focus・Meditation・Study
 物語：渓谷に差し込む木漏れ日。水面が、きらきらと光を返す。
 ```
 cinematic Japanese lofi, dappled sunlight through the ravine, koto+shinobue, gentle waterfall and stream sound, warm lofi beat, warm bass, subtle strings, bright and serene, 72 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -147,6 +152,7 @@ cinematic Japanese lofi, dappled sunlight through the ravine, koto+shinobue, gen
 HOOK：`渓谷に差し込む木漏れ日。水面が光を返す。`
 
 ## ⑥ 滝行の間
+タイトル：神域の滝 滝行の間｜心を空にする、滝の前で【幻想和風LoFi】作業用BGM｜Deep Focus・Meditation・Study
 物語：滝の前に立つ、静かな時間。心を空にする、その一瞬。
 ```
 cinematic Japanese lofi, standing before the falls in quiet meditation, koto, deep resonant waterfall sound, warm lofi beat, deep warm bass, spacious strings, meditative and still, 66 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -162,6 +168,7 @@ cinematic Japanese lofi, standing before the falls in quiet meditation, koto, de
 HOOK：`滝の前に立つ、静かな時間。心を空にする。`
 
 ## ⑦ 淵の静けさ
+タイトル：神域の滝 淵の静けさ｜水音が遠のく、深い淵【幻想和風LoFi】作業用BGM｜Deep Focus・Meditation・Study
 物語：滝壺の先、深い淵。水音が遠のき、静けさだけが残る。
 ```
 cinematic Japanese lofi, the deep still pool beyond the falls, koto+shakuhachi, distant softened waterfall sound, warm lofi beat, warm bass, spacious strings, deep tranquility, 65 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -177,6 +184,7 @@ cinematic Japanese lofi, the deep still pool beyond the falls, koto+shakuhachi, 
 HOOK：`滝壺の先、深い淵。静けさだけが残る。`
 
 ## ⑧ 霧のかかる滝
+タイトル：神域の滝 霧のかかる滝｜霧に包まれる、幻想の滝【幻想和風LoFi】作業用BGM｜Deep Focus・Meditation・Study
 物語：滝全体が、霧に包まれていく。輪郭がにじみ、幻想的な景色になる。
 ```
 cinematic Japanese lofi, the falls wrapped in drifting mist, koto, muffled dreamy waterfall sound, warm lofi beat, warm bass, dreamy strings, ethereal and soft, 69 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -192,6 +200,7 @@ cinematic Japanese lofi, the falls wrapped in drifting mist, koto, muffled dream
 HOOK：`滝全体が霧に包まれる。幻想的な景色になる。`
 
 ## ⑨ 月映る水面
+タイトル：神域の滝 月映る水面｜月が映り込む、滝壺の水面【幻想和風LoFi】作業用BGM｜Deep Focus・Meditation・Study
 物語：夜、月が滝壺に映り込む。静かな光の輪が、水面に揺れる。
 ```
 cinematic Japanese lofi, the moon reflected in the waterfall pool at night, koto, soft night waterfall sound, mellow lofi beat, warm bass, tender strings, serene nocturne, 67 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
@@ -207,6 +216,7 @@ cinematic Japanese lofi, the moon reflected in the waterfall pool at night, koto
 HOOK：`夜、月が滝壺に映り込む。静かな光の輪。`
 
 ## ⑩ 水音に還る
+タイトル：神域の滝 水音に還る｜石段を上り、また静けさへ【幻想和風LoFi】作業用BGM｜Deep Focus・Meditation・Study
 物語：石段を上り、図書館へ戻る。水音が遠ざかり、また静かな夜へ。
 ```
 cinematic Japanese lofi, returning to the library as the water sound fades, koto theme returning softly, mellow lofi beat, warm bass, tender strings, warm farewell, 68 BPM, instrumental, no vocals, full-volume melody from 0:00, no intro build-up
