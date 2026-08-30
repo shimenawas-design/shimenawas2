@@ -90,7 +90,7 @@ Transparency Tags を2026年3月開始（artwork / track audio / composition / m
 - ジャンル信号が混ざると**「分類不能」扱いになり Discover Weekly に入らない**。安定分類には**同一ジャンルで3〜5リリース**必要
 - Discover Weekly / Radio への露出は**3〜6作目**で出始める
 - エディトリアル入稿はリリース**31〜40日前で採用率18%、1〜3日前だと4%**。1リリースにつき1曲のみ、**公開後は永久に入稿不可**
-- 推奨リリース間隔は**4〜6週に1曲**
+- 推奨リリース間隔は4〜6週に1曲（二次情報・確度中）だが、**運用は週2〜3件・土曜バッチで確定**（2026-08-24、ユーザー判断）
 
 ### Spotify for Artists の claim 手順
 1. [artists.spotify.com](https://artists.spotify.com/get-started) を開く
