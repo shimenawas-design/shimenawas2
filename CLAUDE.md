@@ -35,6 +35,7 @@ AI音楽（Suno）を制作し、RouteNote経由で配信するプロジェク�
 | リリース設計の判断根拠 | `docs/level-trim/release-plan.md`（※日程部分は無効） |
 | 市場・ジャンルの戦略検討 | `docs/level-trim/market-research-2026-08.md` |
 | 過去の経緯を遡る | `docs/*/archive/` ← **通常は開かない** |
+| ドキュメント整理の手法を知る | `docs/doc-practices.md` |
 
 各文書は自分の担当範囲だけを持ち、重複させない。**同じ情報を2箇所に書かないこと。**
 
