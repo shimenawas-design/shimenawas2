@@ -1,12 +1,12 @@
 # Level Trim 作業ログ（2026-08-24）
 
-現状の要点だけ知りたい場合は [master20260824.md](./master20260824.md) を見れば十分。本書は経緯・判断理由の記録用（普段は読み込み不要）。
+現状の要点だけ知りたい場合は [master20260824.md](./master.md) を見れば十分。本書は経緯・判断理由の記録用（普段は読み込み不要）。
 
 ---
 
 ## Sunoプロンプト・Gemini画像プロンプト
 
-原本は [prompts.md](./prompts.md)（Suno）／[gemini_prompts_copyready.md](./gemini_prompts_copyready.md)（Gemini、コピペ専用）を参照。全曲で据え置く語（アルゴリズム上の指紋）：
+原本は [prompts.md](./prompts.md)（Suno）／[prompts.md](./prompts.md)（Gemini、コピペ専用）を参照。全曲で据え置く語（アルゴリズム上の指紋）：
 `warm` / `analog synth pads` / `glitch` / `nostalgic muted tone` / `understated and non-intrusive` / `no build-up` / `no climax` / `instrumental, no vocals, no singing, no lyrics`
 
 歌詞欄：`[Instrumental]`のみ。UIのInstrumentalトグル：ON。長尺化：Extendで`[Intro]→[Development A]→[Subtle Variation]→[Sustain]→[Outro - slow fade]`。
