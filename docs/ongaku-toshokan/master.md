@@ -19,9 +19,9 @@
 
 | # | RouteNote Track Title | 尺 | 音源 | 画像 | 状態 |
 |---|---|---|---|---|---|
-| 01 | `Rainy Kyoto (雨の日の京都)` | 約102分 | 確認済み | 済 | **リリース済み・審査中** |
-| 02 | `Morning Kyoto (朝の京都)` | 約65分 | 確認済み | jacket.png（Canvaリサイズ待ち） | **入稿済み（8/29）** |
-| 03 | `Late Night Kyoto (夜更けの京都)` | 約65分 | 確認済み | jacket.png（Canvaリサイズ待ち） | **入稿済み（8/29）** |
+| 01 | `Rainy Kyoto (雨の日の京都)` | 約102分 | 確認済み | 済 | **審査中**（入稿 8/23） |
+| 02 | `Morning Kyoto (朝の京都)` | 約65分 | 確認済み | jacket.png（Canvaリサイズ待ち） | **審査中**（入稿 8/29） |
+| 03 | `Late Night Kyoto (夜更けの京都)` | 約65分 | 確認済み | jacket.png（Canvaリサイズ待ち） | **審査中**（入稿 8/29） |
 | 04 | `Ryokan Night (温泉旅館の夜)` | 約61分 | 確認済み | jacket.png（Canvaリサイズ待ち） | 未入稿 |
 | 05 | `Bamboo Forest (竹林の朝)` | 約68分 | 確認済み | jacket.png（Canvaリサイズ待ち） | 未入稿。タイトル表記は未確定（changelog参照） |
 | 06 | `Cherry Blossom Kyoto (桜舞う京都)` | 約64分 | 確認済み | jacket.png（Canvaリサイズ待ち） | 未入稿 |
@@ -31,6 +31,8 @@
 | 10 | `Fresh Green (新緑の庭)` | 約64分 | 確認済み | jacket.png（Canvaリサイズ待ち） | 未入稿 |
 
 音源スペックは全曲MP3 320kbps/44.1kHz確認済み（再エンコード不要）。各曲1時間超の長尺は意図的（作業用BGMとして設計）。
+
+**UPC（審査中の3曲、2026-08-30 RouteNote画面で確認）**：01 Rainy Kyoto = 5064115158501／02 Morning Kyoto = 5064115052656／03 Late Night Kyoto = 5064115006369
 
 ## 3. 入稿カレンダー（2026-08-24時点の最新版）
 
