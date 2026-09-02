@@ -21,8 +21,8 @@
 
 | # | 曲名 | BPM | 最終尺 | 音源 | 画像 | 状態 |
 |---|---|---|---|---|---|---|
-| 1 | Idle Loop | 70 | — | — | — | リリース済み・審査中（9/6） |
-| 2 | Warm Cache | 82 | 5:12 | `.flac`変換済み | jacket.png（Canvaリサイズ待ち） | **入稿済み（8/29）** |
+| 1 | Idle Loop | 70 | — | — | — | **審査中**（リリース日 9/6） |
+| 2 | Warm Cache | 82 | 5:12 | `.flac`変換済み | jacket.png（Canvaリサイズ待ち） | **審査中**（入稿 8/29） |
 | 3 | Long Poll | 62 | 7:59 | `.flac`変換済み | jacket.png（Canvaリサイズ待ち） | リスニング確認OK |
 | 4 | Thread Pool | 90 | 4:30 | `.flac`変換済み | jacket.png（Canvaリサイズ待ち） | リスニング確認OK・再生成要否は未決定 |
 | 5 | Backpressure | 76 | 7:53 | `.flac`変換済み | jacket.png（Canvaリサイズ待ち） | リスニング確認OK |
