@@ -79,21 +79,93 @@ RouteNoteの2026年1月AIポリシーは「実在アーティストの声を模�
 | S3 異界列車 | 10 | フルアルバム64.2分÷10 | 同上フォルダ |
 | **合計** | **70** | | |
 
-### 曲名（現状は日本語のみ。英語タイトルは未着手）
+### RouteNote Track Title（英語+日本語原題併記、2026-09-06確定）
 
-**D1 剣戟の写本**：封印の扉／抜刀／疾風の一撃／鍔迫り合い／満月の決闘／紅椿の一閃／二刀の残響／嵐中の一閃／決着／写本は閉じられて
+Ongaku Toshokanと同じ「English (原題)」方式。ソースは各シリーズ`_選定版/`フォルダ（`番号_曲名.wav/mp3`）。
 
-**D2 鬼哭の戦記**：鬼気迫る／咆哮／鬼火の陣／金棒の一撃／鬼哭啾々／角の砕ける音／血脈の怒り／鬼神との対峙／討伐の刻／鬼は去りて
+**D1 剣戟の写本 / Chronicle of Blades**
+1. Sealed Gate (封印の扉)
+2. Drawing the Blade (抜刀)
+3. Strike of the Swift Wind (疾風の一撃)
+4. Blade Lock (鍔迫り合い)
+5. Duel Under the Full Moon (満月の決闘)
+6. Crimson Camellia Strike (紅椿の一閃)
+7. Echo of Twin Blades (二刀の残響)
+8. Flash Within the Storm (嵐中の一閃)
+9. Decisive Blow (決着)
+10. The Manuscript Closes (写本は閉じられて)
 
-**D3 陣太鼓の号令**：法螺貝が鳴る／陣を敷く／先鋒突撃／矢戦／総攻撃／旗の翻る／一騎打ち／押し返す／勝鬨／陣を払う
+**D2 鬼哭の戦記 / War Record of the Weeping Oni**
+1. Rising Menace (鬼気迫る)
+2. The Roar (咆哮)
+3. Formation of Demon Fire (鬼火の陣)
+4. Strike of the Iron Club (金棒の一撃)
+5. Wailing of the Demons (鬼哭啾々)
+6. The Shattered Horn (角の砕ける音)
+7. Rage of the Bloodline (血脈の怒り)
+8. Facing the Demon God (鬼神との対峙)
+9. Hour of Subjugation (討伐の刻)
+10. The Demon Departs (鬼は去りて)
 
-**D4 忍びの影**：影に潜む／屋根を渡る／気配を消す／手裏剣の風／罠の間／追手の足音／煙玉／屋根裏の対峙／撤収／影は消えて
+**D3 陣太鼓の号令 / Call of the War Drum**
+1. The Conch Horn Sounds (法螺貝が鳴る)
+2. Forming the Ranks (陣を敷く)
+3. Vanguard Charge (先鋒突撃)
+4. Battle of Arrows (矢戦)
+5. The Full Assault (総攻撃)
+6. Banners Unfurled (旗の翻る)
+7. Single Combat (一騎打ち)
+8. Pushing Back the Tide (押し返す)
+9. Cry of Victory (勝鬨)
+10. Breaking Camp (陣を払う)
 
-**S1 雨の書庫**：雨のはじまり／書架を打つ雨／苔庭の雨／軒の雫／遠雷の書斎／硝子越しの雨／灯りと雨音／真夜中の豪雨／雨のあとの静けさ／雨に眠る書庫
+**D4 忍びの影 / Shadow of the Shinobi**
+1. Lurking in the Shadows (影に潜む)
+2. Crossing the Rooftops (屋根を渡る)
+3. Vanishing Presence (気配を消す)
+4. Wind of the Shuriken (手裏剣の風)
+5. The Waiting Trap (罠の間)
+6. Footsteps of the Pursuers (追手の足音)
+7. Smoke Bomb (煙玉)
+8. Confrontation in the Rafters (屋根裏の対峙)
+9. The Withdrawal (撤収)
+10. The Shadow Vanishes (影は消えて)
 
-**S2 神々の温泉宿**：湯宿の灯り／湯けむりの露天／縁側の夜風／客間の安らぎ／中庭の月／遠い湯の音／火照りと休息／真夜中の内湯／まどろみの床／夜明けの湯宿
+**S1 雨の書庫 / The Rain-Soaked Archive**
+1. The Rain Begins (雨のはじまり)
+2. Rain on the Bookshelves (書架を打つ雨)
+3. Rain on the Moss Garden (苔庭の雨)
+4. Drops from the Eaves (軒の雫)
+5. Study of Distant Thunder (遠雷の書斎)
+6. Rain Through the Glass (硝子越しの雨)
+7. Lamplight and Rainfall (灯りと雨音)
+8. Midnight Downpour (真夜中の豪雨)
+9. Stillness After the Rain (雨のあとの静けさ)
+10. The Archive Asleep in Rain (雨に眠る書庫)
 
-**S3 異界列車**：始発は真夜中／提灯の車両／霧の停車場／星原を渡る夜／妖たちの停車駅／雨の鉄橋／夜光の海辺を過ぎて／鳥居のトンネル／夜明けの車窓／終着、図書館へ
+**S2 神々の温泉宿 / The Hot Spring Inn of the Gods**
+1. Lantern Light of the Inn (湯宿の灯り)
+2. Steam Over the Open Bath (湯けむりの露天)
+3. Night Breeze on the Veranda (縁側の夜風)
+4. Comfort of the Guest Room (客間の安らぎ)
+5. Moon Over the Courtyard (中庭の月)
+6. Distant Sound of the Spring (遠い湯の音)
+7. Warmth and Rest (火照りと休息)
+8. Midnight Indoor Bath (真夜中の内湯)
+9. Bed of Slumber (まどろみの床)
+10. The Inn at Dawn (夜明けの湯宿)
+
+**S3 異界列車 / The Otherworld Train**
+1. The Midnight Departure (始発は真夜中)
+2. The Lantern Car (提灯の車両)
+3. Station in the Fog (霧の停車場)
+4. Crossing the Sea of Stars (星原を渡る夜)
+5. Station of the Spirits (妖たちの停車駅)
+6. Rain on the Iron Bridge (雨の鉄橋)
+7. Passing the Glowing Shore (夜光の海辺を過ぎて)
+8. Tunnel of the Torii (鳥居のトンネル)
+9. Dawn Through the Window (夜明けの車窓)
+10. Final Stop: The Library (終着、図書館へ)
 
 ※S4〜S8・D5〜D8は企画書のみで音源未制作（対象外）
 
@@ -101,7 +173,7 @@ RouteNoteの2026年1月AIポリシーは「実在アーティストの声を模�
 
 1. **アーティスト名の直接重複確認**（RouteNote入稿画面 or Spotify/Apple Musicアプリ）
 2. ~~既存YouTube楽曲の棚卸し~~ → **完了（上記5章、全70曲）**。ヴォーカルテクスチャの有無は曲ごとに確認せず、全曲そのまま出す方針
-3. 英語タイトルの用意（RouteNote入稿には英語表記が必要。Ongaku Toshokanと同じ「英語 (原題)」併記方式を踏襲するか要判断）
+3. ~~英語タイトルの用意~~ → **完了（上記5章、全70曲）**。Ongaku Toshokanと同じ「英語 (原題)」併記方式を採用
 4. 音源フォーマット確認（44.1kHz MP3/FLAC化・メタデータ除去。Level Trim/Ongaku Toshokanと同じ変換が必要）
 5. RouteNote入稿画面で「Instrumental」の扱い（フラグかジャンル選択肢か）を確認
 6. RouteNote入稿（[../policy.md](../policy.md)のAI楽曲チェックリスト参照。**YouTube Content ID解除を最優先で確認**）
