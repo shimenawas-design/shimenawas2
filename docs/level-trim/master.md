@@ -17,14 +17,14 @@
 
 配信戦略・規約確認は [../policy.md](../policy.md)、リリースカレンダーは [../ongaku-toshokan/master.md](../ongaku-toshokan/master.md) を参照。
 
-## 2. 曲一覧・現在の状態（2026-08-24時点）
+## 2. 曲一覧・現在の状態（2026-09-08更新）
 
 | # | 曲名 | BPM | 最終尺 | 音源 | 画像 | 状態 |
 |---|---|---|---|---|---|---|
 | 1 | Idle Loop | 70 | — | — | — | **審査中**（リリース日 9/6） |
 | 2 | Warm Cache | 82 | 5:12 | `.flac`変換済み | jacket.png（Canvaリサイズ待ち） | **審査中**（入稿 8/29） |
-| 3 | Long Poll | 62 | 7:59 | `.flac`変換済み | jacket.png（Canvaリサイズ待ち） | リスニング確認OK |
-| 4 | Thread Pool | 90 | 4:30 | `.flac`変換済み | jacket.png（Canvaリサイズ待ち） | リスニング確認OK・再生成要否は未決定 |
+| 3 | Long Poll | 62 | 7:59 | `.flac`変換済み | **3000×3000済み**（2026-09-08） | リスニング確認OK |
+| 4 | Thread Pool | 90 | 4:30 | `.flac`変換済み | **3000×3000済み**（2026-09-08） | リスニング確認OK・再生成要否は未決定 |
 | 5 | Backpressure | 76 | 7:53 | `.flac`変換済み | jacket.png（Canvaリサイズ待ち） | リスニング確認OK |
 | 6 | Hot Path | 100 | 7:59 | `.flac`変換済み | jacket.png（Canvaリサイズ待ち） | リスニング確認OK |
 
@@ -34,7 +34,7 @@
 
 ## 3. 残タスク（優先順）
 
-1. **ジャケット画像5枚をCanvaで3000×3000にリサイズ**（画像自体は#2〜#6すべて生成・振り分け済み）
+1. **ジャケット画像の3000×3000リサイズ**（Long Poll・Thread Poolは完了。Warm Cache・Backpressure・Hot Pathの3枚が残り）
 2. **Thread Poolを再生成するか判断**（4:30と短尺。3ヶ月の余裕があるため再生成も選択肢）
 3. RouteNoteへの入稿（[../policy.md](../policy.md)のチェックリスト参照）
 
@@ -51,8 +51,8 @@ RouteNote/                     ← ここでgit管理
 └── Level Trim/                ← .gitignore対象
     ├── 01_Idle Loop/          リリース済み
     ├── 02_Warm Cache/         (take1).wav / (take2).wav / (combined).wav / .flac / jacket.png
-    ├── 03_Long Poll/          同様の構成
-    ├── 04_Thread Pool/        同様の構成（jacket (alt).pngあり）
+    ├── 03_Long Poll/          同様の構成（jacket.pngは3000×3000済み）
+    ├── 04_Thread Pool/        同様の構成（jacket (alt).pngあり／jacket.pngは3000×3000済み）
     ├── 05_Backpressure/       同様の構成
     └── 06_Hot Path/           同様の構成
 ```
