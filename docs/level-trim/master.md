@@ -22,11 +22,11 @@
 | # | 曲名 | BPM | 最終尺 | 音源 | 画像 | 状態 |
 |---|---|---|---|---|---|---|
 | 1 | Idle Loop | 70 | — | — | — | **審査中**（リリース日 9/6） |
-| 2 | Warm Cache | 82 | 5:12 | `.flac`変換済み | jacket.png（Canvaリサイズ待ち） | **審査中**（入稿 8/29） |
-| 3 | Long Poll | 62 | 7:59 | `.flac`変換済み | **3000×3000済み**（2026-09-08） | リスニング確認OK |
-| 4 | Thread Pool | 90 | 4:30 | `.flac`変換済み | **3000×3000済み**（2026-09-08） | リスニング確認OK・再生成要否は未決定 |
-| 5 | Backpressure | 76 | 7:53 | `.flac`変換済み | jacket.png（Canvaリサイズ待ち） | リスニング確認OK |
-| 6 | Hot Path | 100 | 7:59 | `.flac`変換済み | jacket.png（Canvaリサイズ待ち） | リスニング確認OK |
+| 2 | Warm Cache | 82 | 5:12 | `.flac`変換済み | 3000×3000済み | **審査中**（入稿 8/29） |
+| 3 | Long Poll | 62 | 7:59 | `.flac`変換済み | 3000×3000済み | リスニング確認OK |
+| 4 | Thread Pool | 90 | 4:30 | `.flac`変換済み | 3000×3000済み | リスニング確認OK・再生成要否は未決定 |
+| 5 | Backpressure | 76 | 7:53 | `.flac`変換済み | 3000×3000済み（2026-09-08） | リスニング確認OK |
+| 6 | Hot Path | 100 | 7:59 | `.flac`変換済み | 3000×3000済み（2026-09-08） | リスニング確認OK |
 
 音源はすべて2テイクを組み合わせ／選定して作成（`#<番号> <曲名> (combined).wav`＝48kHz、`#<番号> <曲名>.flac`＝44.1kHz入稿用）。組み合わせ方の詳細・変更履歴は [changelog.md](./changelog.md) を参照。
 
@@ -34,7 +34,7 @@
 
 ## 3. 残タスク（優先順）
 
-1. **ジャケット画像の3000×3000リサイズ**（Long Poll・Thread Poolは完了。Warm Cache・Backpressure・Hot Pathの3枚が残り）
+1. ~~ジャケット画像を3000×3000にリサイズ~~ → **全6曲完了（2026-09-08）**
 2. **Thread Poolを再生成するか判断**（4:30と短尺。3ヶ月の余裕があるため再生成も選択肢）
 3. RouteNoteへの入稿（[../policy.md](../policy.md)のチェックリスト参照）
 
@@ -49,10 +49,10 @@ RouteNote/                     ← ここでgit管理
 ├── CLAUDE.md
 ├── docs/level-trim/           ← ドキュメントはすべてここ
 └── Level Trim/                ← .gitignore対象
-    ├── 01_Idle Loop/          リリース済み
-    ├── 02_Warm Cache/         (take1).wav / (take2).wav / (combined).wav / .flac / jacket.png
-    ├── 03_Long Poll/          同様の構成（jacket.pngは3000×3000済み）
-    ├── 04_Thread Pool/        同様の構成（jacket (alt).pngあり／jacket.pngは3000×3000済み）
-    ├── 05_Backpressure/       同様の構成
-    └── 06_Hot Path/           同様の構成
+    ├── 済/01_Idle Loop/       リリース済み（アーカイブ）
+    ├── 済/02_Warm Cache/      アーカイブ（jacket3000×3000済み）
+    ├── 03_Long Poll/          （combined).wav / .flac / jacket.png=3000×3000済み
+    ├── 04_Thread Pool/        同様の構成（jacket (alt).pngあり／jacket.png=3000×3000済み）
+    ├── 05_Backpressure/       同様の構成（jacket.png=3000×3000済み）
+    └── 06_Hot Path/           同様の構成（jacket.png=3000×3000済み）
 ```
