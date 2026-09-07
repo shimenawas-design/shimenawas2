@@ -7,13 +7,16 @@ AI音楽（Suno）を制作し、RouteNote経由で配信するプロジェク�
 
 ---
 
-## 📍 現況（2026-08-30）
+## 📍 現況（2026-09-07）
 
 | 名義 | 状態 |
 |---|---|
 | **Level Trim** | 全6曲。#1 `Idle Loop`・#2 `Warm Cache` は審査中（#1リリース日9/6）。#3〜#6 は音源FLAC変換済み・ジャケット画像生成済み。**残り：Canvaで3000×3000リサイズ／Thread Pool再生成の判断** |
 | **Ongaku Toshokan** | 京都BGM、**単曲×10本**（各1時間超）。MP3スペック全曲合格（320kbps/44.1kHz）。`01 Rainy Kyoto` は審査中。**残り：02〜10の入稿／Canvaリサイズ** |
-| **Vermilion Gate**（新規） | ファンタジー和風・エピック系。既にYouTube公開済みの楽曲をRouteNoteでも配信する計画。名義確定済み（直接重複確認は未実施）。**残り：名義の直接確認／既存曲の棚卸し／YouTube Content ID解除の徹底** |
+| **Vermilion Gate** | ファンタジー和風・エピック系、既存YouTube公開曲70曲をRouteNoteでも配信。全曲棚卸し・音源変換・タイトル確定・Instrumentalフラグ設定済み（2026-09-06）。入稿カレンダー9/12〜10/10分作成済み。**残り：名義の直接重複確認／ジャケットCanvaリサイズ／YouTube Content ID解除の徹底** |
+| **Hollow Rotor**（新規） | Phonk/ジムワークアウト向けインストBGM。「チャート逆算」手法の新ジャンル初適用（Level Trim/Ongaku Toshokanとは別カテゴリの新規開拓）。#1 `Torque Lock`（150bpm）が音源・ジャケットとも完成、リスニング確認OK（2026-09-07）。**残り：名義の直接重複確認／RouteNote入稿／#2以降の設計** |
+
+**⚠️ Hollow Rotorはローカルセッション単独で2026-09-05〜07に作られ、本リポジトリへの同期が今回（2026-09-07）初めて行われた。** 経緯は `docs/hollow-rotor/master.md` 参照。
 
 **⚠️ RouteNoteの審査待ちは現在27〜29営業日（約6週間）。** 入稿カレンダーはこれを織り込んで組むこと（`docs/policy.md` 参照）。
 
@@ -25,8 +28,8 @@ AI音楽（Suno）を制作し、RouteNote経由で配信するプロジェク�
 
 | やること | 開くファイル |
 |---|---|
-| **今の状態を知る（まずここ）** | `docs/level-trim/master.md` / `docs/ongaku-toshokan/master.md` / `docs/vermilion-gate/master.md` ← **軽量・現状のみ** |
-| 曲を作る・プロンプトを見る | `docs/level-trim/prompts.md`（Suno・Gemini両方） |
+| **今の状態を知る（まずここ）** | `docs/level-trim/master.md` / `docs/ongaku-toshokan/master.md` / `docs/vermilion-gate/master.md` / `docs/hollow-rotor/master.md` ← **軽量・現状のみ** |
+| 曲を作る・プロンプトを見る | `docs/level-trim/prompts.md` または `docs/hollow-rotor/prompts.md`（それぞれSuno・Gemini両方） |
 | 規約・配信先・AI環境・Spotify仕様 | `docs/policy.md` ← **両プロジェクト共通** |
 | なぜそうしたかの経緯を追う | `docs/*/changelog.md` ← **普段は不要** |
 | **リスニング確認をする** | `docs/level-trim/listening-check.md` ← **いま最優先の作業** |
