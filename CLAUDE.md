@@ -14,7 +14,7 @@ AI音楽（Suno）を制作し、RouteNote経由で配信するプロジェク�
 | **Level Trim** | 全6曲。#1 `Idle Loop`・#2 `Warm Cache` は審査中（#1リリース日9/6）。#3〜#6 は音源FLAC変換済み・ジャケット画像生成済み。**残り：Canvaで3000×3000リサイズ／Thread Pool再生成の判断** |
 | **Ongaku Toshokan** | 京都BGM、**単曲×10本**（各1時間超）。MP3スペック全曲合格（320kbps/44.1kHz）。`01 Rainy Kyoto` は審査中。**残り：02〜10の入稿／Canvaリサイズ** |
 | **Vermilion Gate** | ファンタジー和風・エピック系、既存YouTube公開曲70曲をRouteNoteでも配信。全曲棚卸し・音源変換・タイトル確定・Instrumentalフラグ設定済み（2026-09-06）。入稿カレンダー9/12〜10/10分作成済み。**残り：名義の直接重複確認／ジャケットCanvaリサイズ／YouTube Content ID解除の徹底** |
-| **Hollow Rotor**（新規） | Phonk/ジムワークアウト向けインストBGM。「チャート逆算」手法の新ジャンル初適用（Level Trim/Ongaku Toshokanとは別カテゴリの新規開拓）。#1 `Torque Lock`（150bpm）が音源・ジャケットとも完成、リスニング確認OK（2026-09-07）。**残り：名義の直接重複確認／RouteNote入稿／#2以降の設計** |
+| **Hollow Rotor** | Phonk/ジムワークアウト向けインストBGM。「チャート逆算」手法の新ジャンル初適用。#1 `Torque Lock`（150bpm）完成・リスニング確認OK。#2 `Rev Limiter`（160bpm、BPMのみ変更）はプロンプト確定・未生成（2026-09-08）。入稿は他プロジェクトと同じ**土曜バッチ**で実施予定。**残り：名義の直接重複確認／#2の生成／RouteNote入稿** |
 
 **⚠️ Hollow Rotorはローカルセッション単独で2026-09-05〜07に作られ、本リポジトリへの同期が今回（2026-09-07）初めて行われた。** 経緯は `docs/hollow-rotor/master.md` 参照。
 

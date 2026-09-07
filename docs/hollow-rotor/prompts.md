@@ -42,3 +42,21 @@ Extreme close-up of a hollow, cutaway rotary engine rotor suspended in a dark em
 ```
 
 生成後、透かし除去 → 3000×3000リサイズ（Track #1はPIL/ffmpegで実施、`LANCZOS`リサンプリング）。
+
+---
+
+## #2 `Rev Limiter`（確定・2026-09-08、未生成）
+
+動かす変数はBPMのみ（150→160）。他はTrack #1の確定版から一切変更しない。
+
+### Style of Music
+```
+dark aggressive electronic instrumental, cowbell-driven percussion groove, distorted pitched-down sub-bass with pitch bends, punchy kick, sharp snare, busy hi-hat rolls, gritty lo-fi tape and vinyl texture, hypnotic repetitive loop, relentless mechanical energy, tempo 160bpm, explosive full-volume start from 0:00, no long intro, seamless loop, purely instrumental track, absolutely no vocal content, no voice of any kind, no human voice, no singing, no vocal samples
+```
+
+Lyrics欄: `[Instrumental]`のみ + Instrumentalトグル ON。`phonk`という単語は入れない（Track #1で声混入の原因と特定済み）。Extend使用時は区間ごとに全文を再入力。
+
+### Gemini画像プロンプト
+```
+A hollow cutaway turbine rotor spinning at speed inside a dark industrial test chamber, deep black void background, intense crimson red and amber light streaking through the hollow center from motion, radial motion blur on the outer edge while the core stays sharp, heat shimmer and thin smoke trails, scratched brushed steel and carbon texture, cinematic movie-poster lighting, hyper-detailed photorealistic render, aggressive high-speed atmosphere, no text, no people, no hands, no silhouettes, no logos, square 1:1 aspect ratio, ultra high detail, 8k quality
+```
