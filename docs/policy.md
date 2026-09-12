@@ -35,6 +35,7 @@
 1. **AI企業名をクレジット／言及しない**
 2. **主要アーティストを Producer として記載**
 3. **C/Pラインに本名（Satoshi Kawakami）を記載**
+4. **🚫 Record Label Name には本名を絶対に使わない。Label＝アーティスト名義**（`Ongaku Toshokan` の曲なら Label も `Ongaku Toshokan`）。**本名を使うのはC/Pラインだけ**。2026-09-12、Long Poll・Thread PoolでLabelに本名を入れて入稿してしまい、配信申請後はUI上から修正できず（サポート依頼が必要）断念した
 4. **YouTube Content ID のチェックを外す**（AI楽曲は対象外）
 
 #### 一次情報で確認済み（2026-08-23、support.routenote.com を直接確認）
