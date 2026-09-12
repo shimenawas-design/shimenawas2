@@ -31,6 +31,7 @@ AI音楽（Suno）を制作し、RouteNote経由で配信するプロジェク�
 | **今の状態を知る（まずここ）** | `docs/level-trim/master.md` / `docs/ongaku-toshokan/master.md` / `docs/vermilion-gate/master.md` / `docs/hollow-rotor/master.md` ← **軽量・現状のみ** |
 | 曲を作る・プロンプトを見る | `docs/level-trim/prompts.md` または `docs/hollow-rotor/prompts.md`（それぞれSuno・Gemini両方） |
 | 規約・配信先・AI環境・Spotify仕様 | `docs/policy.md` ← **両プロジェクト共通** |
+| **RouteNoteに入稿する** | `.claude/skills/routenote-release/SKILL.md` ← **スキル。手順・共通入力値・絶対ルール** |
 | なぜそうしたかの経緯を追う | `docs/*/changelog.md` ← **普段は不要** |
 | **リスニング確認をする** | `docs/level-trim/listening-check.md` ← **いま最優先の作業** |
 | 未対処のレビュー指摘 | `docs/level-trim/review-2026-08-24.md` |
@@ -112,10 +113,15 @@ ffmpeg -i in.wav -af "aresample=resampler=soxr:precision=28" \
 
 ---
 
-## ユーザー自身の操作が必要なこと（アシスタントは代行不可）
+## ユーザー自身の操作が必要なこと
 
-Suno生成 / Canvaリサイズ / RouteNoteのログイン・アップロード・規約同意 / Spotify for Artistsのclaim / YouTubeへの投稿
+Suno生成 / Canvaリサイズ / RouteNoteのログイン / **RouteNoteへの音源アップロード** / Spotify for Artistsのclaim / YouTubeへの投稿
 
 → **スクリーンショットを見ながら次の操作を案内する形で伴走する。**
+
+**⚠️ 2026-09-12更新：RouteNoteの入稿作業はアシスタントが代行できる。**
+Claude in Chrome で、リリース作成・Album Details入力・トラックメタデータ・ジャケットアップロード・ストア設定・規約同意・配信申請まで完走した実績あり（9/12バッチ5曲）。
+**音源アップロードだけは不可** — ファイルが100MB超で、`file_upload` の10MB上限を超えるため。
+手順・注意点はスキル `.claude/skills/routenote-release/SKILL.md` にまとめてある。
 
 アシスタントが実行できるのは、ローカルの ffmpeg/ffprobe での変換・解析まで（librosa等は未インストール）。
