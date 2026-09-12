@@ -63,3 +63,27 @@ Lyrics欄: `[Instrumental]`のみ + Instrumentalトグル ON。`phonk`という�
 ```
 A hollow cutaway turbine rotor spinning at speed inside a dark industrial test chamber, deep black void background, intense crimson red and amber light streaking through the hollow center from motion, radial motion blur on the outer edge while the core stays sharp, heat shimmer and thin smoke trails, scratched brushed steel and carbon texture, cinematic movie-poster lighting, hyper-detailed photorealistic render, aggressive high-speed atmosphere, no text, no people, no hands, no silhouettes, no logos, square 1:1 aspect ratio, ultra high detail, 8k quality
 ```
+
+---
+
+## #3 `Dead Weight`（確定・2026-09-12、プロンプトのみ確定・未生成）
+
+動かす変数はBPM（150→148、経緯は下記）と③808処理（重く獰猛に）。**当初BPM140で設計したが、声混入の原因がBPM自体にあると判明し148に変更した。** 詳細な検証経緯は[master.md](./master.md)5章を参照。
+
+### ❌ 試行錯誤（すべて140bpm、声混入解消せず）
+1. `dark aggressive phonk instrumental` + `growling/guttural`表記 → 声が「がっつり」増加
+2. `dark aggressive electronic instrumental`（phonkなし）+ `crushing sub-bass with deep pitch drops`表記 → 改善せず、むしろ増加
+3. 808をTrack #1の確定版そのまま + BPM140維持 → 改善せず（冒頭から声）
+4. BPM145に変更 → 改善したが声は残る
+
+### ✅ 確定版（Style of Music、BPM148で声なしを2テイクで確認）
+```
+dark aggressive electronic instrumental, cowbell-driven percussion groove, heavily distorted crushing sub-bass with deep pitch drops, punchy kick, sharp snare, busy hi-hat rolls, gritty lo-fi tape and vinyl texture, hypnotic repetitive loop, relentless mechanical energy, tempo 148bpm, explosive full-volume start from 0:00, no long intro, seamless loop, purely instrumental track, absolutely no vocal content, no voice of any kind, no human voice, no singing, no vocal samples, no trap beat, no rap, no hip-hop vocals, no R&B, no soul
+```
+
+Lyrics欄: `[Instrumental]`のみ + Instrumentalトグル ON。**140〜145付近のBPMは避ける**（トラップの定番テンポ域でボーカル連想が強い）。低めのBPMを狙う曲では`no trap beat, no rap, no hip-hop vocals, no R&B, no soul`を標準装備にする。
+
+### Gemini画像プロンプト（未生成）
+```
+A massive hollow cutaway engine rotor under extreme compressive strain inside a dark industrial press chamber, deep black void background, dramatic crimson red and amber light glowing from stress fractures and the hollow core, heavy metal groaning under load, thick scratched steel and carbon texture, sparks and embers falling, cinematic movie-poster lighting, hyper-detailed photorealistic render, monumental and crushing atmosphere, no text, no people, no hands, no silhouettes, no logos, square 1:1 aspect ratio, ultra high detail, 8k quality
+```
