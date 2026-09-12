@@ -101,6 +101,7 @@ ffmpeg -i in.wav -af "aresample=resampler=soxr:precision=28" \
 - AI企業名をクレジット・言及しない
 - 主要アーティストを **Producer** として記載
 - C/Pラインに**本名（Satoshi Kawakami）**
+- **🚫 Record Label Name に本名を使わない。Label＝アーティスト名義**（本名を使うのはC/Pラインだけ。2026-09-12に取り違えて入稿し、配信後は修正不可だった）
 - **YouTube Content ID のチェックを外す**
 - **提出直前に必ず公式ページを再確認する**（RouteNote自身が「AIリリースの要件は常に変わり続けている」と明言）
 
