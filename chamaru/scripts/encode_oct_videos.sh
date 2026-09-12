@@ -3,7 +3,7 @@
 # ffmpeg zoompanパラメータどおりに実行する。
 
 set -e
-cd "C:/Users/shime/Downloads/茶丸"
+cd "C:/Users/shime/Downloads/03.茶丸Youtube配信/茶丸"
 
 encode() {
   local id="$1" dir="$2" bg="$3" audio="$4" out="$5" duration="$6" d="$7" zinc="$8" fade_st="$9" loop="${10}"
