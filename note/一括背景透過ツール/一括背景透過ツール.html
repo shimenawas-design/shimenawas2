@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一括背景透過＆自動トリミングツール</title>
+
+<!-- ZIP化・保存用ライブラリ（CDN経由。完全ローカル処理には影響しません） -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<style>
+  :root {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --accent: #6c5ce7;
+    --accent2: #00cec9;
+    --accent-grad: linear-gradient(135deg, #6c5ce7, #00cec9);
+    --text: #2d3436;
+    --text-sub: #636e72;
+    --border: #e3e7f1;
+    --danger: #ff6b6b;
+    --success: #00b894;
+    --radius: 16px;
+    --shadow: 0 8px 24px rgba(45, 52, 54, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 8px;
+    background: var(--accent-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  header p {
+    color: var(--text-sub);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .panel {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+
+  /* ---- ドロップゾーン ---- */
+  #dropZone {
+    border: 3px dashed #c9cff5;
+    border-radius: var(--radius);
+    padding: 48px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fafbff;
+  }
+  #dropZone.dragover {
+    border-color: var(--accent);
+    background: #f0edff;
+    transform: scale(1.01);
+  }
+  #dropZone .icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+  #dropZone .main-text {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  #dropZone .sub-text {
+    font-size: 13px;
+    color: var(--text-sub);
+  }
+  #fileInput { display: none; }
+
+  /* ---- コントロール ---- */
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .control-item {
+    flex: 1;
+    min-width: 220px;
+  }
+  .control-item label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-sub);
+    margin-bottom: 6px;
+  }
+  .control-item label span.val {
+    color: var(--accent);
+    font-weight: 800;
+  }
+  input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent);
+  }
+  input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  /* ---- ボタン共通 ---- */
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.15s ease;
+  }
+  button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+  .btn-primary {
+    background: var(--accent-grad);
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 15px;
+    box-shadow: 0 6px 16px rgba(108, 92, 231, 0.35);
+  }
+  .btn-primary:hover:not(:disabled) { filter: brightness(1.06); transform: translateY(-1px); }
+  .btn-secondary {
+    background: #fff;
+    color: var(--text-sub);
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+  .btn-secondary:hover:not(:disabled) { background: #f4f6fb; }
+  .btn-danger-outline {
+    background: #fff;
+    color: var(--danger);
+    border: 1px solid #ffd6d6;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  .btn-danger-outline:hover { background: #fff0f0; }
+
+  /* ---- アクションバー ---- */
+  .action-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+  .action-bar .left-group,
+  .action-bar .right-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #statusText {
+    font-size: 13px;
+    color: var(--text-sub);
+  }
+
+  /* ---- プレビューグリッド ---- */
+  #previewGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .thumb-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .thumb-img-wrap {
+    aspect-ratio: 1 / 1;
+    background-image:
+      linear-gradient(45deg, #eee 25%, transparent 25%),
+      linear-gradient(-45deg, #eee 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #eee 75%),
+      linear-gradient(-45deg, transparent 75%, #eee 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    position: relative;
+  }
+  .thumb-img-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .thumb-img-wrap .loading {
+    font-size: 12px;
+    color: var(--text-sub);
+  }
+  .thumb-info {
+    padding: 8px 10px;
+    font-size: 11px;
+    color: var(--text-sub);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+  }
+  .thumb-info .fname {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+  }
+  .thumb-remove {
+    position: absolute;
+    top: 6px; right: 6px;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: rgba(45,52,54,0.55);
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+  }
+  .thumb-remove:hover { background: var(--danger); }
+  .thumb-badge {
+    position: absolute;
+    bottom: 6px; left: 6px;
+    background: var(--success);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  .empty-hint {
+    text-align: center;
+    color: var(--text-sub);
+    font-size: 13px;
+    padding: 20px;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--text-sub);
+    font-size: 12px;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 560px) {
+    header h1 { font-size: 22px; }
+    #dropZone { padding: 32px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>一括背景透過＆自動トリミングツール</h1>
+    <p>白背景の画像をまとめて読み込み、ブラウザ内だけで透過＆トリミング。サーバーには一切送信されません。</p>
+  </header>
+
+  <!-- ドロップゾーン -->
+  <div class="panel">
+    <div id="dropZone">
+      <div class="icon">🖼️</div>
+      <div class="main-text">ここに画像をドラッグ＆ドロップ</div>
+      <div class="sub-text">またはクリックしてファイルを選択（PNG / JPG / WEBP、複数選択可）</div>
+      <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp" multiple>
+    </div>
+
+    <div class="controls">
+      <div class="control-item">
+        <label>白色許容度（Tolerance）<span class="val" id="toleranceVal">18</span></label>
+        <input type="range" id="toleranceSlider" min="0" max="100" value="18">
+      </div>
+      <div class="control-item">
+        <label>余白（padding px）<span class="val" id="paddingVal">10</span></label>
+        <input type="range" id="paddingSlider" min="0" max="60" value="10">
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="control-item">
+        <label>フチの処理</label>
+        <select id="edgeModeSelect" style="width:100%; padding:8px 10px; border-radius:8px; border:1px solid var(--border); font-size:14px; font-family:inherit;">
+          <option value="bg">背景だけ透過（通常）</option>
+          <option value="cut">白フチ（ダイカット枠）も消す</option>
+          <option value="keep">白フチ（ダイカット枠）を残す（均一な枠に整える）</option>
+        </select>
+        <div class="sub-text" style="font-size:12px; color:var(--text-sub); margin-top:4px;">
+          イラストの外側を白い縁取りで囲ったステッカー風画像用。「消す」は最大シルエット抽出＋穴埋めで枠を除去、「残す」は同じ方法で切り出してから均一な白フチを付け直します。
+        </div>
+      </div>
+      <div class="control-item" id="borderWidthRow" style="display:none;">
+        <label>白フチの太さ（px）<span class="val" id="borderWidthVal">14</span></label>
+        <input type="range" id="borderWidthSlider" min="2" max="48" value="14">
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <div class="left-group">
+        <button class="btn-secondary" id="reprocessBtn">🔄 この設定で再処理</button>
+        <button class="btn-secondary" id="clearBtn">🗑️ すべてクリア</button>
+      </div>
+      <div class="right-group">
+        <span id="statusText"></span>
+        <button class="btn-primary" id="downloadBtn" disabled>⬇ ZIPで一括ダウンロード</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- プレビュー -->
+  <div class="panel">
+    <div id="previewGrid"></div>
+    <div class="empty-hint" id="emptyHint">まだ画像が読み込まれていません</div>
+  </div>
+
+  <footer>
+    すべての処理はこのブラウザ内（お使いのパソコン内）だけで完結します。画像が外部サーバーへ送信されることはありません。
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------------------------------------------------------------
+  // 状態管理
+  // ---------------------------------------------------------------
+  // items: [{ id, file, name, img(HTMLImageElement), status('pending'|'done'|'error'),
+  //           blob(処理後PNG Blob), previewUrl(処理後プレビュー用URL) }]
+  let items = [];
+  let itemSeq = 0;
+  let processQueueToken = 0; // 再処理が連打された時に古い処理を無視するためのトークン
+
+  const dropZone = document.getElementById("dropZone");
+  const fileInput = document.getElementById("fileInput");
+  const toleranceSlider = document.getElementById("toleranceSlider");
+  const toleranceVal = document.getElementById("toleranceVal");
+  const paddingSlider = document.getElementById("paddingSlider");
+  const paddingVal = document.getElementById("paddingVal");
+  const edgeModeSelect = document.getElementById("edgeModeSelect");
+  const borderWidthRow = document.getElementById("borderWidthRow");
+  const borderWidthSlider = document.getElementById("borderWidthSlider");
+  const borderWidthVal = document.getElementById("borderWidthVal");
+  const previewGrid = document.getElementById("previewGrid");
+  const emptyHint = document.getElementById("emptyHint");
+  const statusText = document.getElementById("statusText");
+  const downloadBtn = document.getElementById("downloadBtn");
+  const reprocessBtn = document.getElementById("reprocessBtn");
+  const clearBtn = document.getElementById("clearBtn");
+
+  // ---------------------------------------------------------------
+  // ドラッグ＆ドロップ / ファイル選択
+  // ---------------------------------------------------------------
+  dropZone.addEventListener("click", () => fileInput.click());
+
+  ["dragenter", "dragover"].forEach((evt) => {
+    dropZone.addEventListener(evt, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropZone.classList.add("dragover");
+    });
+  });
+  ["dragleave", "drop"].forEach((evt) => {
+    dropZone.addEventListener(evt, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropZone.classList.remove("dragover");
+    });
+  });
+  dropZone.addEventListener("drop", (e) => {
+    const files = Array.from(e.dataTransfer.files || []).filter(isImageFile);
+    if (files.length) addFiles(files);
+  });
+  fileInput.addEventListener("change", (e) => {
+    const files = Array.from(e.target.files || []).filter(isImageFile);
+    if (files.length) addFiles(files);
+    fileInput.value = ""; // 同じファイルを連続選択できるようにリセット
+  });
+
+  function isImageFile(file) {
+    return /^image\/(png|jpe?g|webp)$/i.test(file.type);
+  }
+
+  // ---------------------------------------------------------------
+  // スライダー表示
+  // ---------------------------------------------------------------
+  toleranceSlider.addEventListener("input", () => {
+    toleranceVal.textContent = toleranceSlider.value;
+  });
+  paddingSlider.addEventListener("input", () => {
+    paddingVal.textContent = paddingSlider.value;
+  });
+  borderWidthSlider.addEventListener("input", () => {
+    borderWidthVal.textContent = borderWidthSlider.value;
+  });
+
+  reprocessBtn.addEventListener("click", () => {
+    if (items.length) processAll();
+  });
+  edgeModeSelect.addEventListener("change", () => {
+    borderWidthRow.style.display = edgeModeSelect.value === "keep" ? "" : "none";
+    if (items.length) processAll();
+  });
+  clearBtn.addEventListener("click", () => {
+    items.forEach((it) => it.previewUrl && URL.revokeObjectURL(it.previewUrl));
+    items = [];
+    renderGrid();
+    updateStatus();
+  });
+  downloadBtn.addEventListener("click", downloadZip);
+
+  // ---------------------------------------------------------------
+  // ファイル追加 → 画像読み込み → 自動処理
+  // ---------------------------------------------------------------
+  function addFiles(files) {
+    const newItems = files.map((file) => ({
+      id: ++itemSeq,
+      file,
+      name: file.name.replace(/\.[^.]+$/, "") + ".png",
+      img: null,
+      status: "loading",
+      blob: null,
+      previewUrl: null,
+    }));
+    items = items.concat(newItems);
+    renderGrid();
+    updateStatus();
+
+    // 画像を読み込む（Image要素へ）
+    let loadedCount = 0;
+    newItems.forEach((it) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          it.img = img;
+          loadedCount++;
+          if (loadedCount === newItems.length) {
+            processAll();
+          }
+        };
+        img.onerror = () => {
+          it.status = "error";
+          loadedCount++;
+          renderGrid();
+          if (loadedCount === newItems.length) processAll();
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(it.file);
+    });
+  }
+
+  // ---------------------------------------------------------------
+  // 全画像を現在のスライダー設定で（再）処理
+  // ---------------------------------------------------------------
+  function processAll() {
+    const myToken = ++processQueueToken;
+    const tolerance = parseInt(toleranceSlider.value, 10);
+    const padding = parseInt(paddingSlider.value, 10);
+    const edgeMode = edgeModeSelect.value; // "bg" | "cut" | "keep"
+    const borderWidth = parseInt(borderWidthSlider.value, 10);
+
+    reprocessBtn.disabled = true;
+    downloadBtn.disabled = true;
+
+    const targets = items.filter((it) => it.img);
+    let done = 0;
+
+    function step(i) {
+      if (myToken !== processQueueToken) return; // 途中でキャンセルされた
+      if (i >= targets.length) {
+        reprocessBtn.disabled = false;
+        downloadBtn.disabled = items.every((it) => it.status !== "done");
+        updateStatus();
+        return;
+      }
+      const it = targets[i];
+      try {
+        const result = processImage(it.img, tolerance, padding, edgeMode, borderWidth);
+        if (it.previewUrl) URL.revokeObjectURL(it.previewUrl);
+        it.blob = result.blob;
+        it.previewUrl = URL.createObjectURL(result.blob);
+        it.status = "done";
+      } catch (err) {
+        console.error("処理失敗:", it.file.name, err);
+        it.status = "error";
+      }
+      done++;
+      updateStatus(`処理中… (${done}/${targets.length})`);
+      renderThumb(it);
+      // UIが固まらないよう、次の画像処理は次フレームへ
+      requestAnimationFrame(() => step(i + 1));
+    }
+    step(0);
+  }
+
+  // ---------------------------------------------------------------
+  // コア処理：白背景透過 ＋ 自動トリミング
+  // ---------------------------------------------------------------
+  function processImage(img, tolerance, padding, edgeMode, borderWidth) {
+    const w = img.naturalWidth;
+    const h = img.naturalHeight;
+
+    const srcCanvas = document.createElement("canvas");
+    srcCanvas.width = w;
+    srcCanvas.height = h;
+    const srcCtx = srcCanvas.getContext("2d", { willReadFrequently: true });
+    srcCtx.drawImage(img, 0, 0, w, h);
+
+    const imageData = srcCtx.getImageData(0, 0, w, h);
+    const data = imageData.data;
+    const n = w * h;
+
+    function clamp255(v) { return v < 0 ? 0 : v > 255 ? 255 : Math.round(v); }
+
+    // 白からの乖離（0＝純白）＝ 255 − RGBの最小チャンネル
+    function devAt(p) {
+      const idx = p * 4;
+      return 255 - Math.min(data[idx], data[idx + 1], data[idx + 2]);
+    }
+
+    if (edgeMode === "cut" || edgeMode === "keep") {
+      silhouetteProcess(edgeMode, borderWidth);
+    } else {
+      floodAndDefringe();
+    }
+
+    srcCtx.putImageData(imageData, 0, 0);
+
+    // ============================================================
+    // モードA（通常）：背景を端からフラッドフィルで透過し、
+    //                 フチに残る白かぶりだけを数pxそぎ落とす
+    // ============================================================
+    function floodAndDefringe() {
+      const feather = 28;   // 白→被写体のグラデーション帯
+      const edgeDepth = 3;  // フチを処理する最大の深さ(px)
+
+      // 端から連結した白だけを透過（内側のハイライト等は背景と繋がらず残る）
+      const bg = new Uint8Array(n);
+      const stack = [];
+      for (let x = 0; x < w; x++) { stack.push(x); stack.push((h - 1) * w + x); }
+      for (let y = 1; y < h - 1; y++) { stack.push(y * w); stack.push(y * w + (w - 1)); }
+      while (stack.length) {
+        const p = stack.pop();
+        if (bg[p]) continue;
+        if (devAt(p) > tolerance) continue;
+        bg[p] = 1;
+        data[p * 4 + 3] = 0;
+        const px = p % w;
+        if (px > 0)     stack.push(p - 1);
+        if (px < w - 1) stack.push(p + 1);
+        if (p >= w)     stack.push(p - w);
+        if (p < n - w)  stack.push(p + w);
+      }
+
+      const touched = new Uint8Array(n);
+      let frontier = [];
+      for (let p = 0; p < n; p++) {
+        if (bg[p]) continue;
+        const px = p % w;
+        if ((px > 0 && bg[p - 1]) || (px < w - 1 && bg[p + 1]) ||
+            (p >= w && bg[p - w]) || (p < n - w && bg[p + w])) {
+          frontier.push(p); touched[p] = 1;
+        }
+      }
+      for (let depth = 0; depth < edgeDepth && frontier.length; depth++) {
+        const next = [];
+        for (const p of frontier) {
+          const dev = devAt(p);
+          const factor = dev <= tolerance ? 0
+                       : dev >= tolerance + feather ? 1
+                       : (dev - tolerance) / feather;
+          if (factor >= 1) continue;
+          const idx = p * 4;
+          if (factor <= 0.02) {
+            data[idx + 3] = 0;
+          } else {
+            if (factor > 0.15) {
+              const k = (1 - factor) * 255;
+              data[idx]     = clamp255((data[idx]     - k) / factor);
+              data[idx + 1] = clamp255((data[idx + 1] - k) / factor);
+              data[idx + 2] = clamp255((data[idx + 2] - k) / factor);
+            }
+            data[idx + 3] = Math.round(data[idx + 3] * factor);
+          }
+          const px = p % w;
+          if (px > 0     && !bg[p - 1] && !touched[p - 1]) { touched[p - 1] = 1; next.push(p - 1); }
+          if (px < w - 1 && !bg[p + 1] && !touched[p + 1]) { touched[p + 1] = 1; next.push(p + 1); }
+          if (p >= w     && !bg[p - w] && !touched[p - w]) { touched[p - w] = 1; next.push(p - w); }
+          if (p < n - w  && !bg[p + w] && !touched[p + w]) { touched[p + w] = 1; next.push(p + w); }
+        }
+        frontier = next;
+      }
+    }
+
+    // ============================================================
+    // モードB：最大シルエット抽出＋穴埋め
+    //   cut  … ダイカット枠を除去（イラスト本体の輪郭だけ残す）
+    //   keep … 同じ方法で切り出してから均一な白フチを付け直す
+    // ============================================================
+    function silhouetteProcess(mode, borderPx) {
+      const STRONG = 70, SATLIM = 26;
+      const dev = new Uint8Array(n), strong = new Uint8Array(n);
+      for (let i = 0; i < n; i++) {
+        const r = data[i*4], g = data[i*4+1], b = data[i*4+2], a = data[i*4+3];
+        const mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+        dev[i] = 255 - mn;
+        // 「線」または「彩度のある塗り」＝ イラストの実体
+        strong[i] = (a > 20 && (dev[i] > STRONG || (mx - mn) > SATLIM)) ? 1 : 0;
+      }
+
+      // --- 連結成分（8近傍）
+      const labels = new Int32Array(n);
+      const comps = [];
+      for (let s = 0; s < n; s++) {
+        if (!strong[s] || labels[s]) continue;
+        const id = comps.length + 1;
+        let size = 0, minx = w, miny = h, maxx = 0, maxy = 0;
+        const st = [s]; labels[s] = id;
+        while (st.length) {
+          const p = st.pop(); size++;
+          const px = p % w, py = (p - px) / w;
+          if (px < minx) minx = px; if (px > maxx) maxx = px;
+          if (py < miny) miny = py; if (py > maxy) maxy = py;
+          for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+            if (!dx && !dy) continue;
+            const nx = px + dx, ny = py + dy;
+            if (nx < 0 || nx >= w || ny < 0 || ny >= h) continue;
+            const q = ny * w + nx;
+            if (strong[q] && !labels[q]) { labels[q] = id; st.push(q); }
+          }
+        }
+        comps.push({ id, size, minx, miny, maxx, maxy });
+      }
+      if (!comps.length) return;
+
+      // ノイズと「全体を囲うダイカット枠」だけ除外し、
+      // それ以外の連結成分（複数人・複数モチーフでも）はすべて採用する
+      const noiseFloor = Math.max(18, n * 0.0003);
+      const bigFill = n * 0.001;
+      const keptIds = [];
+      for (const c of comps) {
+        if (c.size < noiseFloor) continue;
+        const bboxA = (c.maxx - c.minx + 1) * (c.maxy - c.miny + 1);
+        const spansFrame = c.minx < 0.10 * w && c.maxx > 0.90 * w &&
+                           c.miny < 0.10 * h && c.maxy > 0.90 * h;
+        const isFrameRing = spansFrame && c.size / bboxA < 0.35;      // ダイカット枠そのもの
+        const isBigArc = bboxA > 0.25 * n && c.size / bboxA < 0.08;   // 枠の大きな弧
+        if (isFrameRing || isBigArc) continue;
+        keptIds.push(c.id);
+      }
+      if (!keptIds.length) return;
+
+      // 成分ごとに：細い隙間を閉じる → 内側の穴を埋める → 合成
+      // （膨張を各成分内で完結させるので、離れた被写体どうしは繋がらない）
+      let sil = new Uint8Array(n);
+      const cm = new Uint8Array(n);
+      for (const id of keptIds) {
+        if (comps[id - 1].size < bigFill) {
+          for (let i = 0; i < n; i++) if (labels[i] === id) sil[i] = 1; // 小さいモチーフはそのまま
+          continue;
+        }
+        cm.fill(0);
+        for (let i = 0; i < n; i++) if (labels[i] === id) cm[i] = 1;
+        const f = fillHoles(erode(dilate(cm, 2), 2));
+        for (let i = 0; i < n; i++) if (f[i]) sil[i] = 1;
+      }
+      sil = dilate(erode(sil, 1), 1); // 1pxのヒゲ取り（オープニング＝被写体は繋がらない）
+
+      // --- 距離変換（各画素から最も近い「0の画素」までの距離）
+      function edt(mask) {
+        const d = new Float32Array(n);
+        const S = Math.SQRT2;
+        for (let i = 0; i < n; i++) d[i] = mask[i] ? 1e9 : 0;
+        for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+          const i = y*w+x; if (d[i] === 0) continue; let m = d[i];
+          if (x > 0)            { const v = d[i-1]   + 1; if (v < m) m = v; }
+          if (y > 0)            { const v = d[i-w]   + 1; if (v < m) m = v; }
+          if (x > 0 && y > 0)   { const v = d[i-w-1] + S; if (v < m) m = v; }
+          if (x < w-1 && y > 0) { const v = d[i-w+1] + S; if (v < m) m = v; }
+          d[i] = m;
+        }
+        for (let y = h-1; y >= 0; y--) for (let x = w-1; x >= 0; x--) {
+          const i = y*w+x; if (d[i] === 0) continue; let m = d[i];
+          if (x < w-1)            { const v = d[i+1]   + 1; if (v < m) m = v; }
+          if (y < h-1)            { const v = d[i+w]   + 1; if (v < m) m = v; }
+          if (x < w-1 && y < h-1) { const v = d[i+w+1] + S; if (v < m) m = v; }
+          if (x > 0 && y < h-1)   { const v = d[i+w-1] + S; if (v < m) m = v; }
+          d[i] = m;
+        }
+        return d;
+      }
+      function inv(mask) { const o = new Uint8Array(n); for (let i = 0; i < n; i++) o[i] = mask[i] ? 0 : 1; return o; }
+      function dilate(mask, r) { const d = edt(inv(mask)); const o = new Uint8Array(n); for (let i = 0; i < n; i++) o[i] = d[i] <= r ? 1 : 0; return o; }
+      function erode(mask, r)  { const d = edt(mask);      const o = new Uint8Array(n); for (let i = 0; i < n; i++) o[i] = d[i] >  r ? 1 : 0; return o; }
+      function fillHoles(mask) {
+        const reached = new Uint8Array(n); const st = [];
+        for (let x = 0; x < w; x++) { const a = x, b = (h-1)*w+x;
+          if (!mask[a] && !reached[a]) { reached[a] = 1; st.push(a); }
+          if (!mask[b] && !reached[b]) { reached[b] = 1; st.push(b); } }
+        for (let y = 0; y < h; y++) { const a = y*w, b = y*w+w-1;
+          if (!mask[a] && !reached[a]) { reached[a] = 1; st.push(a); }
+          if (!mask[b] && !reached[b]) { reached[b] = 1; st.push(b); } }
+        while (st.length) {
+          const p = st.pop(), px = p % w;
+          if (px > 0     && !mask[p-1] && !reached[p-1]) { reached[p-1] = 1; st.push(p-1); }
+          if (px < w - 1 && !mask[p+1] && !reached[p+1]) { reached[p+1] = 1; st.push(p+1); }
+          if (p >= w     && !mask[p-w] && !reached[p-w]) { reached[p-w] = 1; st.push(p-w); }
+          if (p < n - w  && !mask[p+w] && !reached[p+w]) { reached[p+w] = 1; st.push(p+w); }
+        }
+        const o = new Uint8Array(n); for (let i = 0; i < n; i++) o[i] = (mask[i] || !reached[i]) ? 1 : 0; return o;
+      }
+
+      if (mode === "keep") {
+        const outer = dilate(sil, Math.max(1, borderPx));
+        const aDist = edt(dilate(outer, 1)); // シルエット内側＝境界からの距離、外側＝0
+        for (let i = 0; i < n; i++) {
+          const idx = i * 4;
+          if (!outer[i]) { data[idx + 3] = 0; continue; }
+          if (!sil[i]) { data[idx] = 255; data[idx + 1] = 255; data[idx + 2] = 255; } // 枠は白
+          data[idx + 3] = Math.round(255 * Math.min(1, aDist[i] / 1.4));
+        }
+        return;
+      }
+
+      // mode === "cut" : 枠を消し、フチに残る白かぶりを差し引く
+      const aDist = edt(dilate(sil, 1)); // シルエット内側＝境界からの距離、外側＝0
+      const rimInner = erode(sil, 3);
+      const lo = 10, hi = 42;
+      for (let i = 0; i < n; i++) {
+        const idx = i * 4;
+        let a = Math.min(1, aDist[i] / 1.4);
+        if (a <= 0) { data[idx + 3] = 0; continue; }
+        if (sil[i] && !rimInner[i]) {
+          const wm = Math.max(0, Math.min(1, (dev[i] - lo) / (hi - lo)));
+          a = Math.min(a, Math.max(wm, 0.12));
+        }
+        if (a > 0.02 && a < 0.9) {
+          const k = (1 - a) * 255, sfe = Math.max(a, 0.25);
+          data[idx]     = clamp255((data[idx]     - k) / sfe);
+          data[idx + 1] = clamp255((data[idx + 1] - k) / sfe);
+          data[idx + 2] = clamp255((data[idx + 2] - k) / sfe);
+        }
+        data[idx + 3] = Math.round(255 * a);
+      }
+    }
+
+    // ---- 不透明部分のバウンディングボックスで自動トリミング ----
+    let minX = w, minY = h, maxX = -1, maxY = -1;
+    for (let y = 0; y < h; y++) {
+      for (let x = 0; x < w; x++) {
+        if (data[(y * w + x) * 4 + 3] > 10) {
+          if (x < minX) minX = x;
+          if (x > maxX) maxX = x;
+          if (y < minY) minY = y;
+          if (y > maxY) maxY = y;
+        }
+      }
+    }
+
+    // イラスト部分が見つからなかった場合（真っ白な画像など）は
+    // 元画像全体をそのまま使う
+    if (maxX < 0) {
+      minX = 0; minY = 0; maxX = w - 1; maxY = h - 1;
+    }
+
+    // パディングを付けつつ、元画像の範囲内にクランプ
+    const cropX = Math.max(0, minX - padding);
+    const cropY = Math.max(0, minY - padding);
+    const cropX2 = Math.min(w, maxX + 1 + padding);
+    const cropY2 = Math.min(h, maxY + 1 + padding);
+    const cropW = Math.max(1, cropX2 - cropX);
+    const cropH = Math.max(1, cropY2 - cropY);
+
+    const outCanvas = document.createElement("canvas");
+    outCanvas.width = cropW;
+    outCanvas.height = cropH;
+    const outCtx = outCanvas.getContext("2d");
+    outCtx.drawImage(srcCanvas, cropX, cropY, cropW, cropH, 0, 0, cropW, cropH);
+
+    return { canvas: outCanvas };
+  }
+
+  // processImage の戻り値を Blob 化するラッパー（同期APIのように見せるため
+  // Promise を使わず toBlob のコールバックを内部で待たずに呼び出し側で処理）
+  // → 上の processAll では同期的に扱いたいので、ここで toDataURL を使い
+  //   Blob へ変換するユーティリティを用意する。
+  function canvasToBlobSync(canvas) {
+    // toBlob は非同期のみのため、ここでは toDataURL → Blob 変換で
+    // 実質同期的に扱えるようにする
+    const dataUrl = canvas.toDataURL("image/png");
+    const byteString = atob(dataUrl.split(",")[1]);
+    const arr = new Uint8Array(byteString.length);
+    for (let i = 0; i < byteString.length; i++) arr[i] = byteString.charCodeAt(i);
+    return new Blob([arr], { type: "image/png" });
+  }
+
+  // processImage の呼び出し部分をラップして blob を含めて返す
+  const _origProcessImage = processImage;
+  processImage = function (img, tolerance, padding, edgeMode, borderWidth) {
+    const { canvas } = _origProcessImage(img, tolerance, padding, edgeMode, borderWidth);
+    return { blob: canvasToBlobSync(canvas) };
+  };
+
+  // ---------------------------------------------------------------
+  // 描画
+  // ---------------------------------------------------------------
+  function renderGrid() {
+    previewGrid.innerHTML = "";
+    emptyHint.style.display = items.length ? "none" : "block";
+    items.forEach((it) => renderThumb(it));
+  }
+
+  function renderThumb(it) {
+    let card = document.getElementById("thumb-" + it.id);
+    if (!card) {
+      card = document.createElement("div");
+      card.className = "thumb-card";
+      card.id = "thumb-" + it.id;
+      previewGrid.appendChild(card);
+    }
+
+    const imgWrapContent = it.status === "done" && it.previewUrl
+      ? `<img src="${it.previewUrl}" alt="${escapeHtml(it.name)}">`
+      : it.status === "error"
+        ? `<div class="loading">⚠ 読み込み失敗</div>`
+        : `<div class="loading">処理中…</div>`;
+
+    card.innerHTML = `
+      <div class="thumb-img-wrap">
+        ${imgWrapContent}
+        ${it.status === "done" ? '<span class="thumb-badge">完了</span>' : ""}
+      </div>
+      <div class="thumb-info">
+        <span class="fname" title="${escapeHtml(it.name)}">${escapeHtml(it.name)}</span>
+      </div>
+      <button class="thumb-remove" title="この画像を削除">✕</button>
+    `;
+
+    card.querySelector(".thumb-remove").addEventListener("click", () => {
+      removeItem(it.id);
+    });
+  }
+
+  function removeItem(id) {
+    const idx = items.findIndex((it) => it.id === id);
+    if (idx === -1) return;
+    if (items[idx].previewUrl) URL.revokeObjectURL(items[idx].previewUrl);
+    items.splice(idx, 1);
+    const card = document.getElementById("thumb-" + id);
+    if (card) card.remove();
+    emptyHint.style.display = items.length ? "none" : "block";
+    updateStatus();
+    downloadBtn.disabled = !items.some((it) => it.status === "done");
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function updateStatus(overrideText) {
+    if (overrideText) {
+      statusText.textContent = overrideText;
+      return;
+    }
+    const total = items.length;
+    const done = items.filter((it) => it.status === "done").length;
+    statusText.textContent = total ? `${done} / ${total} 枚 処理済み` : "";
+    downloadBtn.disabled = done === 0;
+  }
+
+  // ---------------------------------------------------------------
+  // ZIPダウンロード
+  // ---------------------------------------------------------------
+  async function downloadZip() {
+    const doneItems = items.filter((it) => it.status === "done" && it.blob);
+    if (!doneItems.length) return;
+
+    downloadBtn.disabled = true;
+    const originalLabel = downloadBtn.textContent;
+    downloadBtn.textContent = "⏳ ZIPを作成中…";
+
+    try {
+      const zip = new JSZip();
+      const usedNames = new Set();
+
+      doneItems.forEach((it) => {
+        let name = it.name;
+        let n = 1;
+        while (usedNames.has(name)) {
+          name = it.name.replace(/\.png$/i, `_${n}.png`);
+          n++;
+        }
+        usedNames.add(name);
+        zip.file(name, it.blob);
+      });
+
+      const content = await zip.generateAsync({ type: "blob" });
+      saveAs(content, "transparent_images.zip");
+    } catch (err) {
+      console.error(err);
+      alert("ZIPの作成に失敗しました。もう一度お試しください。");
+    } finally {
+      downloadBtn.textContent = originalLabel;
+      downloadBtn.disabled = false;
+    }
+  }
+})();
+</script>
+
+</body>
+</html>
