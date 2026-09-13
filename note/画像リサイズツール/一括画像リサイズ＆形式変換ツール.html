@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一括画像リサイズ＆形式変換ツール</title>
+
+<!-- ZIP化・保存用ライブラリ（CDN経由。完全ローカル処理には影響しません） -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<style>
+  :root {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --accent: #6c5ce7;
+    --accent2: #00cec9;
+    --accent-grad: linear-gradient(135deg, #6c5ce7, #00cec9);
+    --text: #2d3436;
+    --text-sub: #636e72;
+    --border: #e3e7f1;
+    --danger: #ff6b6b;
+    --success: #00b894;
+    --radius: 16px;
+    --shadow: 0 8px 24px rgba(45, 52, 54, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  .wrap {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+
+  /* ---- 左右2カラムレイアウト ---- */
+  .main-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+  .col-left, .col-right {
+    min-width: 0;
+  }
+  .col-right {
+    position: sticky;
+    top: 20px;
+  }
+  @media (max-width: 900px) {
+    .main-grid { grid-template-columns: 1fr; }
+    .col-right { position: static; }
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  header h1 {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 8px;
+    background: var(--accent-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  header p {
+    color: var(--text-sub);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .panel {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+
+  /* ---- ドロップゾーン ---- */
+  #dropZone {
+    border: 3px dashed #c9cff5;
+    border-radius: var(--radius);
+    padding: 48px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fafbff;
+  }
+  #dropZone.dragover {
+    border-color: var(--accent);
+    background: #f0edff;
+    transform: scale(1.01);
+  }
+  #dropZone .icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+  #dropZone .main-text {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  #dropZone .sub-text {
+    font-size: 13px;
+    color: var(--text-sub);
+  }
+  #fileInput { display: none; }
+
+  /* ---- プリセット ---- */
+  .presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .preset-chip {
+    background: #fff;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 14px;
+    font-size: 12.5px;
+    border-radius: 999px;
+  }
+  .preset-chip:hover { border-color: var(--accent); color: var(--accent); background: #f6f4ff; }
+  .preset-chip.active { background: var(--accent-grad); color: #fff; border-color: transparent; }
+
+  /* ---- コントロール ---- */
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: flex-end;
+    margin-top: 20px;
+  }
+  .control-item {
+    flex: 1;
+    min-width: 160px;
+  }
+  .control-item label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-sub);
+    margin-bottom: 6px;
+  }
+  .control-item label span.val {
+    color: var(--accent);
+    font-weight: 800;
+  }
+  input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent);
+  }
+  input[type="number"], select {
+    width: 100%;
+    padding: 9px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 14px;
+    font-family: inherit;
+  }
+  .size-x {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .size-x .sep { color: var(--text-sub); font-weight: 700; padding-bottom: 9px; }
+
+  .hint-box {
+    font-size: 12px;
+    color: var(--text-sub);
+    background: #f8f9fd;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  /* ---- ボタン共通 ---- */
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.15s ease;
+  }
+  button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+  .btn-primary {
+    background: var(--accent-grad);
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 15px;
+    box-shadow: 0 6px 16px rgba(108, 92, 231, 0.35);
+  }
+  .btn-primary:hover:not(:disabled) { filter: brightness(1.06); transform: translateY(-1px); }
+  .btn-secondary {
+    background: #fff;
+    color: var(--text-sub);
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+  .btn-secondary:hover:not(:disabled) { background: #f4f6fb; }
+
+  /* ---- アクションバー ---- */
+  .action-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+  .action-bar .left-group,
+  .action-bar .right-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #statusText {
+    font-size: 13px;
+    color: var(--text-sub);
+  }
+
+  /* ---- プレビューグリッド ---- */
+  .preview-panel {
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+  }
+  .preview-panel h2 {
+    font-size: 15px;
+    margin: 0 0 4px;
+  }
+  .preview-panel .panel-sub {
+    font-size: 12px;
+    color: var(--text-sub);
+    margin: 0 0 16px;
+  }
+  #previewGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+  .thumb-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .thumb-img-wrap {
+    aspect-ratio: 1 / 1;
+    background-image:
+      linear-gradient(45deg, #eee 25%, transparent 25%),
+      linear-gradient(-45deg, #eee 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #eee 75%),
+      linear-gradient(-45deg, transparent 75%, #eee 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    position: relative;
+  }
+  .thumb-img-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .thumb-img-wrap .loading {
+    font-size: 12px;
+    color: var(--text-sub);
+  }
+  .thumb-info {
+    padding: 8px 10px;
+    font-size: 11px;
+    color: var(--text-sub);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .thumb-info .fname {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .thumb-info .dims {
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .thumb-remove {
+    position: absolute;
+    top: 6px; right: 6px;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: rgba(45,52,54,0.55);
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+  }
+  .thumb-remove:hover { background: var(--danger); }
+  .thumb-badge {
+    position: absolute;
+    bottom: 6px; left: 6px;
+    background: var(--success);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  .empty-hint {
+    text-align: center;
+    color: var(--text-sub);
+    font-size: 13px;
+    padding: 20px;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--text-sub);
+    font-size: 12px;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 560px) {
+    header h1 { font-size: 20px; }
+    #dropZone { padding: 32px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>一括画像リサイズ＆形式変換ツール</h1>
+    <p>画像をまとめて読み込み、指定サイズにリサイズ＆PNG/JPG/WebP/BMPへ変換。ブラウザ内だけで完結し、サーバーには送信されません。</p>
+  </header>
+
+  <div class="main-grid">
+    <!-- 左：ドロップゾーン＆設定 -->
+    <div class="col-left">
+      <div class="panel">
+        <div id="dropZone">
+          <div class="icon">🖼️</div>
+          <div class="main-text">ここに画像をドラッグ＆ドロップ</div>
+          <div class="sub-text">またはクリックしてファイルを選択（PNG / JPG / WEBP / BMP、複数選択可）</div>
+          <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp,image/bmp" multiple>
+        </div>
+
+        <div class="presets" id="presetRow">
+          <button type="button" class="preset-chip" data-w="1080" data-h="1080">Instagram正方形 1080×1080</button>
+          <button type="button" class="preset-chip" data-w="1280" data-h="720">YouTubeサムネ 1280×720</button>
+          <button type="button" class="preset-chip" data-w="1500" data-h="500">Xヘッダー 1500×500</button>
+          <button type="button" class="preset-chip" data-w="400" data-h="400">アイコン用 400×400</button>
+          <button type="button" class="preset-chip" data-w="370" data-h="320">LINEスタンプ枠 370×320</button>
+        </div>
+
+        <div class="controls">
+          <div class="control-item" style="flex:2; min-width:260px;">
+            <label>出力サイズ（必ずこのピクセルサイズで書き出します。縦横比は保持し、余白で調整）</label>
+            <div class="size-x">
+              <input type="number" id="widthInput" min="1" max="8000" value="1080">
+              <span class="sep">×</span>
+              <input type="number" id="heightInput" min="1" max="8000" value="1080">
+              <span class="sep" style="padding-bottom:0;">px</span>
+            </div>
+          </div>
+          <div class="control-item">
+            <label>出力形式</label>
+            <select id="formatSelect">
+              <option value="png">PNG（透明背景を維持）</option>
+              <option value="jpeg">JPG</option>
+              <option value="webp">WebP</option>
+              <option value="bmp">BMP</option>
+            </select>
+          </div>
+          <div class="control-item" id="qualityRow">
+            <label>画質<span class="val" id="qualityVal">85</span></label>
+            <input type="range" id="qualitySlider" min="1" max="100" value="85">
+          </div>
+        </div>
+
+        <div class="hint-box">
+          ※ 出力画像は必ず指定したピクセルサイズになります。元画像の縦横比と枠の形が違う場合、余白ができます（PNGは透明、それ以外は白で埋めます）。
+        </div>
+        <div class="hint-box" id="alphaHint" style="display:none;">
+          ※ PNG以外の形式は透明部分を保持できないため、余白を含めて白背景として書き出します。
+        </div>
+
+        <div class="action-bar">
+          <div class="left-group">
+            <button class="btn-secondary" id="reprocessBtn">🔄 この設定で再処理</button>
+            <button class="btn-secondary" id="clearBtn">🗑️ すべてクリア</button>
+          </div>
+          <div class="right-group">
+            <span id="statusText"></span>
+            <button class="btn-primary" id="downloadBtn" disabled>⬇ ZIPで一括ダウンロード</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右：プレビュー（アップロード状況がその場で見える） -->
+    <div class="col-right">
+      <div class="panel preview-panel">
+        <h2>プレビュー</h2>
+        <p class="panel-sub">アップロードした画像はここに表示されます</p>
+        <div id="previewGrid"></div>
+        <div class="empty-hint" id="emptyHint">まだ画像が読み込まれていません</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    すべての処理はこのブラウザ内（お使いのパソコン内）だけで完結します。画像が外部サーバーへ送信されることはありません。
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------------------------------------------------------------
+  // 状態管理
+  // items: [{ id, file, name(拡張子なし), img, status, blob, previewUrl, outW, outH }]
+  // ---------------------------------------------------------------
+  let items = [];
+  let itemSeq = 0;
+  let processQueueToken = 0;
+
+  const dropZone = document.getElementById("dropZone");
+  const fileInput = document.getElementById("fileInput");
+  const presetRow = document.getElementById("presetRow");
+  const widthInput = document.getElementById("widthInput");
+  const heightInput = document.getElementById("heightInput");
+  const formatSelect = document.getElementById("formatSelect");
+  const qualityRow = document.getElementById("qualityRow");
+  const qualitySlider = document.getElementById("qualitySlider");
+  const qualityVal = document.getElementById("qualityVal");
+  const alphaHint = document.getElementById("alphaHint");
+  const previewGrid = document.getElementById("previewGrid");
+  const emptyHint = document.getElementById("emptyHint");
+  const statusText = document.getElementById("statusText");
+  const downloadBtn = document.getElementById("downloadBtn");
+  const reprocessBtn = document.getElementById("reprocessBtn");
+  const clearBtn = document.getElementById("clearBtn");
+
+  const EXT = { png: "png", jpeg: "jpg", webp: "webp", bmp: "bmp" };
+  const MIME = { png: "image/png", jpeg: "image/jpeg", webp: "image/webp", bmp: "image/bmp" };
+
+  // ---------------------------------------------------------------
+  // ドラッグ＆ドロップ / ファイル選択
+  // ---------------------------------------------------------------
+  dropZone.addEventListener("click", () => fileInput.click());
+
+  ["dragenter", "dragover"].forEach((evt) => {
+    dropZone.addEventListener(evt, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropZone.classList.add("dragover");
+    });
+  });
+  ["dragleave", "drop"].forEach((evt) => {
+    dropZone.addEventListener(evt, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropZone.classList.remove("dragover");
+    });
+  });
+  dropZone.addEventListener("drop", (e) => {
+    const files = Array.from(e.dataTransfer.files || []).filter(isImageFile);
+    if (files.length) addFiles(files);
+  });
+  fileInput.addEventListener("change", (e) => {
+    const files = Array.from(e.target.files || []).filter(isImageFile);
+    if (files.length) addFiles(files);
+    fileInput.value = "";
+  });
+
+  function isImageFile(file) {
+    return /^image\/(png|jpe?g|webp|bmp)$/i.test(file.type);
+  }
+
+  // ---------------------------------------------------------------
+  // プリセット・サイズ・形式・画質
+  // ---------------------------------------------------------------
+  presetRow.addEventListener("click", (e) => {
+    const btn = e.target.closest(".preset-chip");
+    if (!btn) return;
+    widthInput.value = btn.dataset.w;
+    heightInput.value = btn.dataset.h;
+    presetRow.querySelectorAll(".preset-chip").forEach((c) => c.classList.remove("active"));
+    btn.classList.add("active");
+    if (items.length) processAll();
+  });
+  [widthInput, heightInput].forEach((el) => {
+    el.addEventListener("change", () => {
+      presetRow.querySelectorAll(".preset-chip").forEach((c) => c.classList.remove("active"));
+      if (items.length) processAll();
+    });
+  });
+  formatSelect.addEventListener("change", () => {
+    updateFormatUI();
+    if (items.length) processAll();
+  });
+  qualitySlider.addEventListener("input", () => {
+    qualityVal.textContent = qualitySlider.value;
+  });
+  qualitySlider.addEventListener("change", () => {
+    if (items.length) processAll();
+  });
+
+  function updateFormatUI() {
+    const fmt = formatSelect.value;
+    qualityRow.style.display = (fmt === "jpeg" || fmt === "webp") ? "" : "none";
+    alphaHint.style.display = (fmt === "png") ? "none" : "block";
+  }
+  updateFormatUI();
+
+  reprocessBtn.addEventListener("click", () => {
+    if (items.length) processAll();
+  });
+  clearBtn.addEventListener("click", () => {
+    items.forEach((it) => it.previewUrl && URL.revokeObjectURL(it.previewUrl));
+    items = [];
+    renderGrid();
+    updateStatus();
+  });
+  downloadBtn.addEventListener("click", downloadZip);
+
+  // ---------------------------------------------------------------
+  // ファイル追加 → 画像読み込み → 自動処理
+  // ---------------------------------------------------------------
+  function addFiles(files) {
+    const newItems = files.map((file) => ({
+      id: ++itemSeq,
+      file,
+      baseName: file.name.replace(/\.[^.]+$/, ""),
+      img: null,
+      status: "loading",
+      blob: null,
+      previewUrl: null,
+      outW: 0,
+      outH: 0,
+      srcW: 0,
+      srcH: 0,
+    }));
+    items = items.concat(newItems);
+    renderGrid();
+    updateStatus();
+
+    let loadedCount = 0;
+    newItems.forEach((it) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          it.img = img;
+          it.srcW = img.naturalWidth;
+          it.srcH = img.naturalHeight;
+          loadedCount++;
+          if (loadedCount === newItems.length) processAll();
+        };
+        img.onerror = () => {
+          it.status = "error";
+          loadedCount++;
+          renderGrid();
+          if (loadedCount === newItems.length) processAll();
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(it.file);
+    });
+  }
+
+  // ---------------------------------------------------------------
+  // 全画像を現在の設定で（再）処理
+  // ---------------------------------------------------------------
+  function processAll() {
+    const myToken = ++processQueueToken;
+    const boxW = Math.max(1, parseInt(widthInput.value, 10) || 1);
+    const boxH = Math.max(1, parseInt(heightInput.value, 10) || 1);
+    const format = formatSelect.value;
+    const quality = Math.max(1, Math.min(100, parseInt(qualitySlider.value, 10) || 85)) / 100;
+
+    reprocessBtn.disabled = true;
+    downloadBtn.disabled = true;
+
+    const targets = items.filter((it) => it.img);
+    let done = 0;
+
+    function step(i) {
+      if (myToken !== processQueueToken) return;
+      if (i >= targets.length) {
+        reprocessBtn.disabled = false;
+        downloadBtn.disabled = items.every((it) => it.status !== "done");
+        updateStatus();
+        return;
+      }
+      const it = targets[i];
+      try {
+        const fitted = computeFitSize(it.srcW, it.srcH, boxW, boxH);
+        const canvas = resizeToCanvas(it.img, it.srcW, it.srcH, fitted.w, fitted.h, boxW, boxH);
+        const blob = encodeCanvas(canvas, format, quality);
+        if (it.previewUrl) URL.revokeObjectURL(it.previewUrl);
+        it.blob = blob;
+        it.previewUrl = URL.createObjectURL(blob);
+        it.outW = boxW;
+        it.outH = boxH;
+        it.status = "done";
+      } catch (err) {
+        console.error("処理失敗:", it.file.name, err);
+        it.status = "error";
+      }
+      done++;
+      updateStatus(`処理中… (${done}/${targets.length})`);
+      renderThumb(it);
+      requestAnimationFrame(() => step(i + 1));
+    }
+    step(0);
+  }
+
+  // ---------------------------------------------------------------
+  // サイズ計算：指定した枠(boxW×boxH)に収まる「中身」のサイズを、縦横比を保持して算出
+  // ---------------------------------------------------------------
+  function computeFitSize(srcW, srcH, boxW, boxH) {
+    const scale = Math.min(boxW / srcW, boxH / srcH);
+    return {
+      w: Math.max(1, Math.round(srcW * scale)),
+      h: Math.max(1, Math.round(srcH * scale)),
+    };
+  }
+
+  // ---------------------------------------------------------------
+  // リサイズ本体：
+  //   1. 縦横比を保持したまま fittedW×fittedH に縮小・拡大（画質重視で段階的に縮小）
+  //   2. 指定サイズ(boxW×boxH)のキャンバスの中央に配置し、余白は透明のまま残す
+  //      → 出力キャンバスは常に指定したピクセルサイズ（boxW×boxH）になる
+  // ---------------------------------------------------------------
+  function resizeToCanvas(img, srcW, srcH, fittedW, fittedH, boxW, boxH) {
+    let cur = document.createElement("canvas");
+    cur.width = srcW;
+    cur.height = srcH;
+    cur.getContext("2d").drawImage(img, 0, 0, srcW, srcH);
+    let curW = srcW, curH = srcH;
+
+    while (curW > fittedW * 2 && curH > fittedH * 2) {
+      const nw = Math.max(fittedW, Math.floor(curW / 2));
+      const nh = Math.max(fittedH, Math.floor(curH / 2));
+      const tmp = document.createElement("canvas");
+      tmp.width = nw;
+      tmp.height = nh;
+      const tctx = tmp.getContext("2d");
+      tctx.imageSmoothingEnabled = true;
+      tctx.imageSmoothingQuality = "high";
+      tctx.drawImage(cur, 0, 0, curW, curH, 0, 0, nw, nh);
+      cur = tmp;
+      curW = nw;
+      curH = nh;
+    }
+
+    const content = document.createElement("canvas");
+    content.width = fittedW;
+    content.height = fittedH;
+    const cctx = content.getContext("2d");
+    cctx.imageSmoothingEnabled = true;
+    cctx.imageSmoothingQuality = "high";
+    cctx.drawImage(cur, 0, 0, curW, curH, 0, 0, fittedW, fittedH);
+
+    const boxCanvas = document.createElement("canvas");
+    boxCanvas.width = boxW;
+    boxCanvas.height = boxH;
+    const bctx = boxCanvas.getContext("2d");
+    const offsetX = Math.floor((boxW - fittedW) / 2);
+    const offsetY = Math.floor((boxH - fittedH) / 2);
+    bctx.drawImage(content, offsetX, offsetY);
+    return boxCanvas;
+  }
+
+  // ---------------------------------------------------------------
+  // 透明背景を白で塗りつぶす（JPEG/WebP/BMPなど透過非対応形式向け）
+  // ---------------------------------------------------------------
+  function flattenToWhite(canvas) {
+    const out = document.createElement("canvas");
+    out.width = canvas.width;
+    out.height = canvas.height;
+    const ctx = out.getContext("2d");
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, out.width, out.height);
+    ctx.drawImage(canvas, 0, 0);
+    return out;
+  }
+
+  // ---------------------------------------------------------------
+  // 形式ごとのエンコード（PNG/JPEG/WebPはcanvas標準、BMPは自前エンコーダ）
+  // ---------------------------------------------------------------
+  function encodeCanvas(canvas, format, quality) {
+    if (format === "bmp") {
+      return canvasToBMPBlob(flattenToWhite(canvas));
+    }
+    const target = format === "png" ? canvas : flattenToWhite(canvas);
+    const dataUrl = target.toDataURL(MIME[format], (format === "jpeg" || format === "webp") ? quality : undefined);
+    return dataUrlToBlob(dataUrl, MIME[format]);
+  }
+
+  function dataUrlToBlob(dataUrl, mime) {
+    const byteString = atob(dataUrl.split(",")[1]);
+    const arr = new Uint8Array(byteString.length);
+    for (let i = 0; i < byteString.length; i++) arr[i] = byteString.charCodeAt(i);
+    return new Blob([arr], { type: mime });
+  }
+
+  // ---------------------------------------------------------------
+  // BMP（24bit, 無圧縮）を手動でエンコード
+  // Canvasのtoblob/toDataURLはBMPに対応していないため自前で組み立てる
+  // ---------------------------------------------------------------
+  function canvasToBMPBlob(canvas) {
+    const w = canvas.width, h = canvas.height;
+    const ctx = canvas.getContext("2d", { willReadFrequently: true });
+    const data = ctx.getImageData(0, 0, w, h).data;
+
+    const rowSize = Math.floor((24 * w + 31) / 32) * 4; // 4byte境界にパディング
+    const pixelArraySize = rowSize * h;
+    const fileSize = 54 + pixelArraySize;
+    const buffer = new ArrayBuffer(fileSize);
+    const view = new DataView(buffer);
+
+    // ---- BITMAPFILEHEADER (14 bytes) ----
+    view.setUint8(0, 0x42); // 'B'
+    view.setUint8(1, 0x4d); // 'M'
+    view.setUint32(2, fileSize, true);
+    view.setUint32(6, 0, true);
+    view.setUint32(10, 54, true); // ピクセルデータのオフセット
+
+    // ---- BITMAPINFOHEADER (40 bytes) ----
+    view.setUint32(14, 40, true);
+    view.setInt32(18, w, true);
+    view.setInt32(22, h, true); // 正の値＝ボトムアップ格納
+    view.setUint16(26, 1, true); // planes
+    view.setUint16(28, 24, true); // bpp
+    view.setUint32(30, 0, true); // 無圧縮
+    view.setUint32(34, pixelArraySize, true);
+    view.setInt32(38, 2835, true); // 解像度 約72dpi
+    view.setInt32(42, 2835, true);
+    view.setUint32(46, 0, true);
+    view.setUint32(50, 0, true);
+
+    // ---- ピクセルデータ：下から上、BGR順、行末は0パディング ----
+    let offset = 54;
+    for (let y = h - 1; y >= 0; y--) {
+      for (let x = 0; x < w; x++) {
+        const idx = (y * w + x) * 4;
+        view.setUint8(offset++, data[idx + 2]); // B
+        view.setUint8(offset++, data[idx + 1]); // G
+        view.setUint8(offset++, data[idx]);     // R
+      }
+      const pad = rowSize - w * 3;
+      for (let p = 0; p < pad; p++) view.setUint8(offset++, 0);
+    }
+
+    return new Blob([buffer], { type: "image/bmp" });
+  }
+
+  // ---------------------------------------------------------------
+  // 描画
+  // ---------------------------------------------------------------
+  function renderGrid() {
+    previewGrid.innerHTML = "";
+    emptyHint.style.display = items.length ? "none" : "block";
+    items.forEach((it) => renderThumb(it));
+  }
+
+  function renderThumb(it) {
+    let card = document.getElementById("thumb-" + it.id);
+    if (!card) {
+      card = document.createElement("div");
+      card.className = "thumb-card";
+      card.id = "thumb-" + it.id;
+      previewGrid.appendChild(card);
+    }
+
+    const imgWrapContent = it.status === "done" && it.previewUrl
+      ? `<img src="${it.previewUrl}" alt="${escapeHtml(it.baseName)}">`
+      : it.status === "error"
+        ? `<div class="loading">⚠ 読み込み失敗</div>`
+        : `<div class="loading">処理中…</div>`;
+
+    const dimsText = it.status === "done"
+      ? `${it.srcW}×${it.srcH} → ${it.outW}×${it.outH}`
+      : (it.srcW ? `${it.srcW}×${it.srcH}` : "");
+
+    card.innerHTML = `
+      <div class="thumb-img-wrap">
+        ${imgWrapContent}
+        ${it.status === "done" ? '<span class="thumb-badge">完了</span>' : ""}
+      </div>
+      <div class="thumb-info">
+        <span class="fname" title="${escapeHtml(it.baseName)}">${escapeHtml(it.baseName)}</span>
+        <span class="dims">${dimsText}</span>
+      </div>
+      <button class="thumb-remove" title="この画像を削除">✕</button>
+    `;
+
+    card.querySelector(".thumb-remove").addEventListener("click", () => {
+      removeItem(it.id);
+    });
+  }
+
+  function removeItem(id) {
+    const idx = items.findIndex((it) => it.id === id);
+    if (idx === -1) return;
+    if (items[idx].previewUrl) URL.revokeObjectURL(items[idx].previewUrl);
+    items.splice(idx, 1);
+    const card = document.getElementById("thumb-" + id);
+    if (card) card.remove();
+    emptyHint.style.display = items.length ? "none" : "block";
+    updateStatus();
+    downloadBtn.disabled = !items.some((it) => it.status === "done");
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function updateStatus(overrideText) {
+    if (overrideText) {
+      statusText.textContent = overrideText;
+      return;
+    }
+    const total = items.length;
+    const done = items.filter((it) => it.status === "done").length;
+    statusText.textContent = total ? `${done} / ${total} 枚 処理済み` : "";
+    downloadBtn.disabled = done === 0;
+  }
+
+  // ---------------------------------------------------------------
+  // ZIPダウンロード
+  // ---------------------------------------------------------------
+  async function downloadZip() {
+    const doneItems = items.filter((it) => it.status === "done" && it.blob);
+    if (!doneItems.length) return;
+
+    downloadBtn.disabled = true;
+    const originalLabel = downloadBtn.textContent;
+    downloadBtn.textContent = "⏳ ZIPを作成中…";
+
+    try {
+      const ext = EXT[formatSelect.value];
+      const zip = new JSZip();
+      const usedNames = new Set();
+
+      doneItems.forEach((it) => {
+        let name = `${it.baseName}.${ext}`;
+        let n = 1;
+        while (usedNames.has(name)) {
+          name = `${it.baseName}_${n}.${ext}`;
+          n++;
+        }
+        usedNames.add(name);
+        zip.file(name, it.blob);
+      });
+
+      const content = await zip.generateAsync({ type: "blob" });
+      saveAs(content, "resized_images.zip");
+    } catch (err) {
+      console.error(err);
+      alert("ZIPの作成に失敗しました。もう一度お試しください。");
+    } finally {
+      downloadBtn.textContent = originalLabel;
+      downloadBtn.disabled = false;
+    }
+  }
+})();
+</script>
+
+</body>
+</html>
