@@ -83,7 +83,28 @@ dark aggressive electronic instrumental, cowbell-driven percussion groove, heavi
 
 Lyrics欄: `[Instrumental]`のみ + Instrumentalトグル ON。**140〜145付近のBPMは避ける**（トラップの定番テンポ域でボーカル連想が強い）。低めのBPMを狙う曲では`no trap beat, no rap, no hip-hop vocals, no R&B, no soul`を標準装備にする。
 
-### Gemini画像プロンプト（未生成）
+### Gemini画像プロンプト（生成済み。透かしは`cv2.inpaint`で除去）
 ```
 A massive hollow cutaway engine rotor under extreme compressive strain inside a dark industrial press chamber, deep black void background, dramatic crimson red and amber light glowing from stress fractures and the hollow core, heavy metal groaning under load, thick scratched steel and carbon texture, sparks and embers falling, cinematic movie-poster lighting, hyper-detailed photorealistic render, monumental and crushing atmosphere, no text, no people, no hands, no silhouettes, no logos, square 1:1 aspect ratio, ultra high detail, 8k quality
+```
+
+---
+
+## #4 `Firing Order`（確定・2026-09-14、音源・画像とも完成）
+
+動かす変数はBPM（150→155）と②カウベル処理（密に）。**当初はTrack #1の808表現を土台にしたが3テイク連続で声混入し、Track #3の確定版（808=crushing/pitch drops＋trap/rap/R&B除外）を土台に変えたら初回テイクで解消した。** 詳細は[master.md](./master.md)5章を参照。
+
+### ❌ 試行錯誤（すべて155bpm、Track #1ベースの808表現、3テイクとも声混入）
+1. `relentless dense 16th-note cowbell pattern` + Track #1の808表現そのまま → 3テイク連続で声混入
+
+### ✅ 確定版（Style of Music、Track #3ベースに切替。初回テイクで声なしを確認）
+```
+dark aggressive electronic instrumental, relentless dense 16th-note cowbell pattern, heavily distorted crushing sub-bass with deep pitch drops, punchy kick, sharp snare, busy hi-hat rolls, gritty lo-fi tape and vinyl texture, hypnotic repetitive loop, relentless mechanical energy, tempo 155bpm, explosive full-volume start from 0:00, no long intro, seamless loop, purely instrumental track, absolutely no vocal content, no voice of any kind, no human voice, no singing, no vocal samples, no trap beat, no rap, no hip-hop vocals, no R&B, no soul
+```
+
+Lyrics欄: `[Instrumental]`のみ + Instrumentalトグル ON。**この一件以降、Track #5・#6もTrack #3の確定版（808=crushing/pitch drops＋trap/rap/R&B除外）を土台にし、副変数だけ載せる方式に統一する。**
+
+### Gemini画像プロンプト（生成済み、透かしなし）
+```
+A hollow cutaway engine rotor captured in rapid strobe-like multiple exposure showing repeated pulses of motion, dark industrial chamber, deep black void background, dramatic crimson red and amber light flashing in rhythmic bursts from the hollow core, sharp mechanical repetition, scratched brushed steel and carbon texture, sparks firing in quick successive bursts, cinematic movie-poster lighting, hyper-detailed photorealistic render, intense rapid-fire atmosphere, no text, no people, no hands, no silhouettes, no logos, square 1:1 aspect ratio, ultra high detail, 8k quality
 ```
