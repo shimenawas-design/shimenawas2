@@ -65,13 +65,22 @@ im.resize((3000, 3000), Image.LANCZOS).save(dst, 'JPEG', quality=92)
 | Sound Recording Copyright | 西暦 / `Satoshi Kawakami` |
 | **Record Label Name** | **アーティスト名義と同じ** |
 | Originally Released | 入稿日 |
-| Pre Order / Sales Start Date | 空欄（審査完了後すぐ配信） |
+| Pre Order / Sales Start Date | **指定する**（2026-09-17〜。下記参照） |
 | Explicit Content | Not Explicit |
 | Manage Stores | Select all stores、**YouTube Content ID だけチェックを外す**（AI楽曲は対象外） |
 | Territories | 空欄＝全世界 |
 | 配信モデル | Distribute **Free** |
 
-リリース目安は入稿日+49日。
+リリース目安は入稿日+49日（Sales Start Dateを指定しない場合）。
+
+### ⚠️ 2026-09-17〜：入稿はまとめて、公開日だけ分散させる運用に変更
+
+在庫消化を早めるため、**Pre Order / Sales Start Date を空欄にせず、明示的に指定する**運用に変更した（詳細・背景は[policy.md 5章](../../../docs/policy.md)）。
+
+- 各`docs/<名義>/master.md`の入稿カレンダー・曲一覧に記載されたSales Start Dateをそのままこの項目に入力する
+- **Level Trim / Ongaku Toshokan / Hollow Rotorは、在庫にある曲を一度にまとめて入稿してよい**（従来の週2〜3件という入稿側の縛りは撤廃。ただしSales Start Date自体は各masterに書かれた分散スケジュール通りに設定し、公開ペースは変えない）
+- **Vermilion Gateは名義重複確認が完了した曲から、他名義とは別の高速レーンでまとめて入稿してよい**（週2〜3件の縛り対象外。ただし公開日は他名義と同日に集中させない）
+- ⚠️ **未検証**：審査完了より早いSales Start Dateを指定した場合の挙動は未確認のまま本番投入している（2026-09-17、ユーザー判断で検証省略）。想定外の挙動（エラー、即時公開されてしまう等）が起きたら直ちに作業を止め、`policy.md`とこのスキルに追記すること
 
 ## 3. 手順
 

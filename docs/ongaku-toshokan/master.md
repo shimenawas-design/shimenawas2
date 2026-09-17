@@ -38,16 +38,16 @@
 
 **04〜06の入稿は、音源アップロードのみユーザーが実施し、それ以外（リリース作成〜Album Details〜ジャケット〜ストア設定〜規約同意〜配信申請）はアシスタントがブラウザ自動操作で代行した（2026-09-12）。** 手順は `.claude/skills/routenote-release/SKILL.md` に集約。
 
-## 3. 入稿カレンダー（2026-08-24時点の最新版）
+## 3. 入稿カレンダー（2026-09-17更新：入稿はまとめて、公開日だけ分散）
 
-Level Trimと合算で週2〜3件、土曜バッチ予約投稿。詳細は [Level Trimのmaster](../level-trim/master.md) と合わせて管理。
+在庫解消のため運用変更（[../policy.md](../policy.md) 5章）。**07〜10は次回のRouteNote作業で一括入稿し、Sales Start Dateを指定して公開日だけ従来ペース（週2〜3件、Level Trim/Hollow Rotorと合算）で分散させる。**
 
-| 入稿（土曜） | Ongaku Toshokan | リリース目安 |
+| 公開予定（Sales Start Date） | Ongaku Toshokan | 入稿 |
 |---|---|---|
 | ~~8/29~~ | ~~02 Morning Kyoto／03 Late Night Kyoto~~ | 10/17（**入稿済み**） |
-| ~~9/12~~ | ~~04 Ryokan Night／05 Morning Bamboo Forest／06 Cherry Blossom Kyoto~~ | 10/31（**入稿済み、当初計画の9/5+9/12分を1回にまとめて実施**） |
-| 9/19 | 07 Snowy Kyoto／08 Autumn Kyoto | 11/7 |
-| 9/26 | 09 Summer Veranda／10 Fresh Green（最終） | 11/14 |
+| ~~9/12~~ | ~~04 Ryokan Night／05 Morning Bamboo Forest／06 Cherry Blossom Kyoto~~ | 10/31（**入稿済み**） |
+| 11/7 | 07 Snowy Kyoto／08 Autumn Kyoto | 一括入稿予定（未実施） |
+| 11/14 | 09 Summer Veranda／10 Fresh Green（最終） | 一括入稿予定（未実施） |
 
 ## 3.5 入稿時の実務メモ（2026-09-12 実地で判明）
 
@@ -64,7 +64,7 @@ Level Trimと合算で週2〜3件、土曜バッチ予約投稿。詳細は [Lev
 2. ~~05のタイトル表記を確定~~ → **完了（2026-09-12）**：`Morning Bamboo Forest`
 3. ~~04〜06の入稿~~ → **完了（2026-09-12）**：Ryokan Night・Morning Bamboo Forest・Cherry Blossom Kyoto
 4. 01 Rainy Kyotoの審査結果確認（承認／リジェクト理由）
-5. 07〜10の入稿（[../policy.md](../policy.md)のチェックリスト参照。手順は [routenote-release スキル](../../.claude/skills/routenote-release/SKILL.md)）
+5. **07〜10の一括入稿**（2026-09-17方針変更：週またぎで待たず4曲まとめて入稿し、Sales Start Dateで公開日だけ上記3章の通り分散させる。[../policy.md](../policy.md) 5章・[routenote-release スキル](../../.claude/skills/routenote-release/SKILL.md)参照）
 
 ※「RouteNoteの高頻度入稿は拒否」情報は、2026-08-24の一次情報検索では確認できず**未確認のまま撤回済み**（[../policy.md](../policy.md) 第2章参照）。裏取りタスクとしては解消。
 

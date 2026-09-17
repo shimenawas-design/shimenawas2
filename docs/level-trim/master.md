@@ -37,10 +37,21 @@ Long Pollの入稿ではジャケットが当初PNGでリジェクトされ、JP
 ## 3. 残タスク（優先順）
 
 1. ~~ジャケット画像を3000×3000にリサイズ~~ → **全6曲完了（2026-09-08）**
-2. **Thread Poolを再生成するか判断**（4:30と短尺。3ヶ月の余裕があるため再生成も選択肢）
+2. **Thread Poolを再生成するか判断**（4:30と短尺。3ヶ月の余裕があるため再生成も選択肢）。再生成しないと決めた場合、下記スケジュールに合流させる
 3. RouteNoteへの入稿（[../policy.md](../policy.md)のチェックリスト参照）。Long Pollまで完了、残りBackpressure・Hot Path・Thread Poolが未入稿
 
 全曲リスニング確認済み（2026-08-24、問題なし）。
+
+### 3.1 入稿スケジュール（2026-09-17決定：入稿はまとめて、公開日だけ分散）
+
+在庫解消のため、Backpressure・Hot Pathは**次回のRouteNote作業でまとめて入稿**する。Sales Start Dateを指定し、公開ペースは従来の週2〜3件を維持する（[../policy.md](../policy.md) 5章、[routenote-release スキル](../../.claude/skills/routenote-release/SKILL.md)参照）。
+
+| # | 曲名 | Sales Start Date（公開予定） |
+|---|---|---|
+| 5 | Backpressure | 2026-11-21 |
+| 6 | Hot Path | 2026-11-28 |
+
+Thread Poolは再生成判断が済み次第、12月分に追加する。
 
 ## 4. ファイル配置
 

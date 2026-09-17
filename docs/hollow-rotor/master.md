@@ -89,8 +89,19 @@ Hollow Rotorの音響シグネチャ（カウベル・歪んだ808・dark/hypnot
 
 1. ~~名義の重複確認~~ → **完了（2026-09-13）**。Spotify/Apple Musicで直接検索、アーティスト名の衝突なし
 2. ~~Track #1〜4のリスニング確認~~ → **完了（2026-09-14）**。Track #2は声がわずかに残るがユーザー判断でそのまま採用、Track #1・#3・#4は問題なし
-3. **入稿は土曜バッチでまとめて実施**（ユーザー決定、2026-09-08）。`routenote-release`スキルを使用予定。RouteNote登録は他3プロジェクトと同一アカウント、名義のみ分離。Track #1〜4は入稿可能な状態
+3. **Track #1〜4の一括入稿**（2026-09-17方針変更：在庫解消のため週次バッチを待たず4曲まとめて入稿し、Sales Start Dateで公開日だけ下記6.1の通り分散させる。[../policy.md](../policy.md) 5章・[routenote-release スキル](../../.claude/skills/routenote-release/SKILL.md)参照）
 4. Track #5〜6の設計・生成（4.1節の修正済みラダー案に沿って副変数を1つずつ割り当てる。プロンプトはTrack #3の確定版を土台にすること）
+
+### 6.1 入稿スケジュール（Sales Start Date）
+
+| # | 曲名 | Sales Start Date（公開予定） |
+|---|---|---|
+| 1 | Torque Lock | 2026-11-21 |
+| 2 | Rev Limiter | 2026-11-21 |
+| 3 | Dead Weight | 2026-11-28 |
+| 4 | Firing Order | 2026-11-28 |
+
+Ongaku Toshokan（11/7・11/14）・Level Trim（11/21・11/28）と合算して週2〜3件ペースを維持。Track #5・#6は生成完了後、12月分に追加する。
 
 ## 7. ファイル配置
 
