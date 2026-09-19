@@ -133,7 +133,9 @@ Transparency Tags を2026年3月開始（artwork / track audio / composition / m
 
 週2〜3件という入稿ペースは、Spotifyのアルゴリズム的な「同一ジャンルで3〜5リリースを安定分類、初速のために新譜を出し過ぎない」という配慮から来ている（4章参照）。これは**新曲**であるLevel Trim / Ongaku Toshokan / Hollow Rotorには当てはまるが、**Vermilion Gateは既にYouTubeで公開済みの楽曲をストリーミングにも展開するだけのカタログ移植**であり、初速配慮の対象ではない。
 
-よって、**Vermilion Gate（名義重複確認が完了した曲から）は他3名義の週2〜3件レーンとは別に、まとめて多数を一括入稿してよい**。ただし以下は維持する：
+よって、**Vermilion Gate（名義重複確認が完了した曲から）は他3名義の週2〜3件レーンとは別に、まとめて多数を一括入稿してよい**。> **2026-09-19：ユーザー決定により、Vermilion Gate は一括入稿せず1曲ずつ入稿する**（Sales Start Dateは12/5から毎週土曜1曲）。上記の高速レーンは、認められているが現時点では使わない。
+
+ただし以下は維持する：
 - 公開日（Sales Start Date）は他名義の公開日と同日に重ねすぎない（Spotifyのスパムフィルタが「大量アップロード」を検知する仕組みは確認済みだが、RouteNote側が同様の運用をしているかは未確認〈2章参照〉。念のため分散させておく）
 - YouTube Content ID解除の徹底など、Vermilion Gate固有のリスク管理（[vermilion-gate/master.md](./vermilion-gate/master.md) 4章）は変更なし
 
