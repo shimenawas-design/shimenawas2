@@ -17,7 +17,7 @@
 
 配信戦略・規約確認は [../policy.md](../policy.md)、リリースカレンダーは [../ongaku-toshokan/master.md](../ongaku-toshokan/master.md) を参照。
 
-## 2. 曲一覧・現在の状態（2026-09-12更新）
+## 2. 曲一覧・現在の状態（2026-09-19更新）
 
 | # | 曲名 | BPM | 最終尺 | 音源 | 画像 | 状態 |
 |---|---|---|---|---|---|---|
@@ -25,8 +25,8 @@
 | 2 | Warm Cache | 82 | 5:12 | `.flac`変換済み | 3000×3000済み | **審査中**（入稿 8/29） |
 | 3 | Long Poll | 62 | 7:59 | `.flac`変換済み | 3000×3000済み | **審査中**（入稿 9/12） |
 | 4 | Thread Pool | 90 | 4:30 | `.flac`変換済み | 3000×3000済み | リスニング確認OK・再生成要否は未決定 |
-| 5 | Backpressure | 76 | 7:53 | `.flac`変換済み | 3000×3000済み（2026-09-08） | リスニング確認OK |
-| 6 | Hot Path | 100 | 7:59 | `.flac`変換済み | 3000×3000済み（2026-09-08） | リスニング確認OK |
+| 5 | Backpressure | 76 | 7:53 | `.flac`変換済み | 3000×3000済み（2026-09-08） | **入稿完了・審査中**（2026-09-19、UPC 5064140279851、Sales Start Date 2026-11-21） |
+| 6 | Hot Path | 100 | 7:59 | `.flac`変換済み | 3000×3000済み（2026-09-08） | **入稿完了・審査中**（2026-09-19、UPC 5064140790288、Sales Start Date 2026-11-28） |
 
 音源はすべて2テイクを組み合わせ／選定して作成（`#<番号> <曲名> (combined).wav`＝48kHz、`#<番号> <曲名>.flac`＝44.1kHz入稿用）。組み合わせ方の詳細・変更履歴は [changelog.md](./changelog.md) を参照。
 
@@ -38,18 +38,18 @@ Long Pollの入稿ではジャケットが当初PNGでリジェクトされ、JP
 
 1. ~~ジャケット画像を3000×3000にリサイズ~~ → **全6曲完了（2026-09-08）**
 2. **Thread Poolを再生成するか判断**（4:30と短尺。3ヶ月の余裕があるため再生成も選択肢）。再生成しないと決めた場合、下記スケジュールに合流させる
-3. RouteNoteへの入稿（[../policy.md](../policy.md)のチェックリスト参照）。Long Pollまで完了、残りBackpressure・Hot Path・Thread Poolが未入稿
+3. RouteNoteへの入稿（[../policy.md](../policy.md)のチェックリスト参照）。**Backpressure・Hot Pathは2026-09-19に入稿完了**。残りはThread Poolのみ
 
 全曲リスニング確認済み（2026-08-24、問題なし）。
 
 ### 3.1 入稿スケジュール（2026-09-17決定：入稿はまとめて、公開日だけ分散）
 
-在庫解消のため、Backpressure・Hot Pathは**次回のRouteNote作業でまとめて入稿**する。Sales Start Dateを指定し、公開ペースは従来の週2〜3件を維持する（[../policy.md](../policy.md) 5章、[routenote-release スキル](../../.claude/skills/routenote-release/SKILL.md)参照）。
+在庫解消のため、Backpressure・Hot Pathは**2026-09-19に入稿済み**（Sales Start Dateを指定。公開ペースは従来の週2〜3件を維持）（[../policy.md](../policy.md) 5章、[routenote-release スキル](../../.claude/skills/routenote-release/SKILL.md)参照）。
 
-| # | 曲名 | Sales Start Date（公開予定） |
-|---|---|---|
-| 5 | Backpressure | 2026-11-21 |
-| 6 | Hot Path | 2026-11-28 |
+| # | 曲名 | Sales Start Date（公開予定） | 入稿 |
+|---|---|---|---|
+| 5 | Backpressure | 2026-11-21 | 2026-09-19完了 |
+| 6 | Hot Path | 2026-11-28 | 2026-09-19完了 |
 
 Thread Poolは再生成判断が済み次第、12月分に追加する。
 
