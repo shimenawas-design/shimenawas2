@@ -42,7 +42,7 @@ im.resize((3000, 3000), Image.LANCZOS).save(dst, 'JPEG', quality=92)
 |---|---|
 | Ongaku Toshokan | Instrumental |
 | Level Trim | Electronic |
-| Hollow Rotor | Hip Hop/Rap（Phonk） |
+| Hollow Rotor | **Fitness & Workout**（ユーザー決定、2026-09-19） |
 | Vermilion Gate | Instrumental |
 
 ### 名義の表記ゆれに注意
@@ -65,22 +65,14 @@ im.resize((3000, 3000), Image.LANCZOS).save(dst, 'JPEG', quality=92)
 | Sound Recording Copyright | 西暦 / `Satoshi Kawakami` |
 | **Record Label Name** | **アーティスト名義と同じ** |
 | Originally Released | 入稿日 |
-| Pre Order / Sales Start Date | **指定する**（2026-09-17〜。下記参照） |
+| Pre Order Date | 空欄 |
+| **Sales Start Date** | **曲ごとに指定**（2026-09-17方針。日付は `docs/<名義>/master.md` の入稿スケジュール参照）。審査前の指定でも保存・受理される。画面上は「Release Date」と表示される。**指定日まで保留されるかは最初の承認が出るまで未確認**（`docs/policy.md` 5.1） |
 | Explicit Content | Not Explicit |
 | Manage Stores | Select all stores、**YouTube Content ID だけチェックを外す**（AI楽曲は対象外） |
 | Territories | 空欄＝全世界 |
 | 配信モデル | Distribute **Free** |
 
-リリース目安は入稿日+49日（Sales Start Dateを指定しない場合）。
-
-### ⚠️ 2026-09-17〜：入稿はまとめて、公開日だけ分散させる運用に変更
-
-在庫消化を早めるため、**Pre Order / Sales Start Date を空欄にせず、明示的に指定する**運用に変更した（詳細・背景は[policy.md 5章](../../../docs/policy.md)）。
-
-- 各`docs/<名義>/master.md`の入稿カレンダー・曲一覧に記載されたSales Start Dateをそのままこの項目に入力する
-- **Level Trim / Ongaku Toshokan / Hollow Rotorは、在庫にある曲を一度にまとめて入稿してよい**（従来の週2〜3件という入稿側の縛りは撤廃。ただしSales Start Date自体は各masterに書かれた分散スケジュール通りに設定し、公開ペースは変えない）
-- **Vermilion Gateは名義重複確認が完了した曲から、他名義とは別の高速レーンでまとめて入稿してよい**（週2〜3件の縛り対象外。ただし公開日は他名義と同日に集中させない）
-- ⚠️ **未検証**：審査完了より早いSales Start Dateを指定した場合の挙動は未確認のまま本番投入している（2026-09-17、ユーザー判断で検証省略）。想定外の挙動（エラー、即時公開されてしまう等）が起きたら直ちに作業を止め、`policy.md`とこのスキルに追記すること
+公開日は入稿日ではなくSales Start Dateで決める（入稿と公開を切り離す方針、2026-09-17）。
 
 ## 3. 手順
 
@@ -92,20 +84,27 @@ im.resize((3000, 3000), Image.LANCZOS).save(dst, 'JPEG', quality=92)
    - Artist Name は入力後、ドロップダウン最下部の **「Create a new profile」** を実クリックして確定する。選ばないと保存が弾かれる。
    - Genre は読み取り専用のカスタムUI。`#genre` のリスト項目を実クリックする。
    - 保存後20秒以上待ってから再読み込みして検証する。
-3. **Add Audio** — 音源は100MB超のため `file_upload`（10MB上限）では送れない。**ユーザーに依頼して待つ。**
-   アップロード後、Track Parameters（トラック側のアーティスト名・Composer・C/Pライン）も埋める。
-4. **Add Artwork** — JPGを `file_upload` で送る。
-5. **Manage Stores** — Select all stores → YouTube Content ID のチェックを外す。
+3. **Add Audio** — 音源は100MB超のため `file_upload`（10MB上限）では送れない。**ユーザーに依頼して待つ。** 複数曲あるときは、先に全曲の Album Details・Artwork・Manage Stores まで済ませてから、音源をまとめて依頼する（各曲のUPCと `addaudiomp3/form/<UPC>` を伝える）。
+   - **トラック情報画面（Track Parameters）で「Save and Continue」を押さない**（ユーザーにも伝える）。下記の末尾欠落が起きる。
+   - 音源が入ったら、配信申請の前に**全曲のトラック情報を読み取りで照合**する（[automation.md](automation.md)の照合スクリプト）。照合項目は、トラック側アーティスト・作曲者（Satoshi Kawakami）・制作者・役割（Producer）・タイトル。
+4. **Add Artwork** — JPGを `file_upload` で送る。**Chromeが画面に見えていないとアップロードが止まる**（[automation.md](automation.md)）。
+5. **Manage Stores** — Select all stores → YouTube Content ID のチェックを外す。全選択で外れたまま残る店が2つある（内部ID did48・did50。Amazonや韓国系ストアなどAI楽曲の対象外の店と思われるが未確認）。
 6. **Finish: Distribute** — Terms のチェックボックス → Distribute Free → **確認モーダルの「Complete Release」を必ずクリック**。
 
 ### ⚠️ Complete Release モーダルを押し忘れると80%で止まる
 「Distribute Free」を押しただけでは配信申請が完了しない。直後に出る確認モーダルの「Complete Release」を押して初めて In Review になる。押し忘れてもエラーは出ず、Discography 上で静かに80%のまま残る。
 
-### ⚠️ トラックメタデータの末尾1文字欠落
-過去に `Satosh` / `Kawakam` / `Ongaku Toshoka` と末尾1文字が欠けて保存された事例がある（原因未特定）。
-配信直前に RouteNote 側が "Publishing Information" 警告モーダルで教えてくれることがあるが、出ないこともある。
-**Add Audio のあと、トラックメタデータを必ず目視確認する。**
-修正URL：`https://www.routenote.com/rn/audiometadata/<node_id>/edit`
+### ⚠️ トラックメタデータの末尾1文字欠落（原因判明、2026-09-19）
+トラック情報画面（`/rn/audiometadata/<node_id>/edit`）で「Save and Continue」を押すたびに、**作曲者・制作者・役割が末尾1文字ずつ削られる**（`Satoshi`→`Satosh`→`Satos`、`Producer`→`Produce`）。ブラウザ自動操作（プログラム経由の入力・送信）で起きる。ユーザー本人の手動操作では、9/19の10曲とも起きなかった。
+サーバーは画面の入力欄ではなく、隠し項目 `composer_value`／`composer2_value`／`contributors_name`／`contributors_role` を正として保存する。
+**直し方**：画面操作ではなくフォームを直接POSTし、各値の**末尾に捨て文字を1つ足して**送る（サーバーが末尾1文字を落とすため、`Satoshix`→`Satoshi`になる）。手順は [automation.md](automation.md)。
+"Publishing Information" 警告モーダルは、この食い違いを知らせるものだが、出ないこともある。
+
+### ⚠️ トラック側アーティストが別名義になることがある（2026-09-19）
+音源を入れた後、トラック側のアーティスト欄（読み取り専用）に、**直近に作った別名義**が入ったことがある（Fresh Green が Hollow Rotor になった）。アルバム側は正しいままで、配信申請後は直せない。**音源を入れたら必ず全曲を照合する。** 直すには、トラック情報画面で、Artist欄に名義を入力し「Create a new profile」を選んで保存する（ここでも末尾欠落が起きるので、続けて直接POSTで直す）。
+
+### ⚠️ 「Duplicate audio file loaded」（2026-09-19）
+音源は最初のアップロードで登録済みで、「Save and continue」が重複として拒否される状態。トラック情報画面から保存しても Step 2 は完了にならない。**リリース画面の「Delete Track」でトラックを削除し、音源を1回だけ入れ直す**と解決する。削除するのはRouteNote上の下書きトラックだけで、手元の音源には影響しない。
 
 ## 4. 完了確認
 
