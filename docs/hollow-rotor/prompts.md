@@ -108,3 +108,41 @@ Lyrics欄: `[Instrumental]`のみ + Instrumentalトグル ON。**この一件以
 ```
 A hollow cutaway engine rotor captured in rapid strobe-like multiple exposure showing repeated pulses of motion, dark industrial chamber, deep black void background, dramatic crimson red and amber light flashing in rhythmic bursts from the hollow core, sharp mechanical repetition, scratched brushed steel and carbon texture, sparks firing in quick successive bursts, cinematic movie-poster lighting, hyper-detailed photorealistic render, intense rapid-fire atmosphere, no text, no people, no hands, no silhouettes, no logos, square 1:1 aspect ratio, ultra high detail, 8k quality
 ```
+
+---
+
+## #5 `Direct Drive`（2026-09-19、音源完成・ジャケット未生成）
+
+当初は⑤空間処理（ドライで近接感）を副変数にする計画だったが、声が混入。副変数を外したBPMのみ版でも声が残り、**非歌詞のボーカライズ（「だだだだ」系）が残るままユーザー判断で採用**。詳細は[master.md](./master.md)5章を参照。
+
+### ❌ 副変数あり（声混入）
+Track #3確定版に `dry and tight mix with minimal reverb, close and immersive in-your-face presence` を追加、`tempo 152bpm`。
+
+### 採用版（Track #3確定版のテンポのみ変更、非歌詞ボーカライズが残る）
+```
+dark aggressive electronic instrumental, cowbell-driven percussion groove, heavily distorted crushing sub-bass with deep pitch drops, punchy kick, sharp snare, busy hi-hat rolls, gritty lo-fi tape and vinyl texture, hypnotic repetitive loop, relentless mechanical energy, tempo 152bpm, explosive full-volume start from 0:00, no long intro, seamless loop, purely instrumental track, absolutely no vocal content, no voice of any kind, no human voice, no singing, no vocal samples, no trap beat, no rap, no hip-hop vocals, no R&B, no soul
+```
+
+### Gemini画像プロンプト案（未生成）
+```
+Extreme macro close-up on the interlocking teeth of a hollow rotor gear mechanism, shallow depth of field with only the foreground teeth in sharp focus, deep black void background, intense crimson red and amber light glowing from between the gear teeth, tight and claustrophobic framing, scratched brushed steel and carbon texture, cinematic movie-poster lighting, hyper-detailed photorealistic render, focused and intense atmosphere, no text, no people, no hands, no silhouettes, no logos, square 1:1 aspect ratio, ultra high detail, 8k quality
+```
+
+---
+
+## #6 `Oxide Layer`（2026-09-19、音源完成・ジャケット未生成）
+
+当初は④ローファイ質感の強化を副変数にする計画だったが、声が混入。#5と同様、副変数を外したBPMのみ版でも声が残り、非歌詞のボーカライズが残るままユーザー判断で採用。
+
+### ❌ 副変数あり（声混入）
+Track #3確定版の `gritty lo-fi tape and vinyl texture` を `heavily saturated lo-fi tape hiss and crackling vinyl noise, degraded warm analog grit` に置換、`tempo 158bpm`。
+
+### 採用版（Track #3確定版のテンポのみ変更、非歌詞ボーカライズが残る）
+```
+dark aggressive electronic instrumental, cowbell-driven percussion groove, heavily distorted crushing sub-bass with deep pitch drops, punchy kick, sharp snare, busy hi-hat rolls, gritty lo-fi tape and vinyl texture, hypnotic repetitive loop, relentless mechanical energy, tempo 158bpm, explosive full-volume start from 0:00, no long intro, seamless loop, purely instrumental track, absolutely no vocal content, no voice of any kind, no human voice, no singing, no vocal samples, no trap beat, no rap, no hip-hop vocals, no R&B, no soul
+```
+
+### Gemini画像プロンプト案（未生成）
+```
+A weathered hollow cutaway rotor covered in warm rust and oxidation patina, dark dusty workshop background, deep black void, warm amber and muted crimson light glowing softly through the hollow, worn scratched surface with age and grime, soft warm haze and dust particles drifting in the light, cinematic moody lighting, hyper-detailed photorealistic render, nostalgic weathered atmosphere, no text, no people, no hands, no silhouettes, no logos, square 1:1 aspect ratio, ultra high detail, 8k quality
+```
