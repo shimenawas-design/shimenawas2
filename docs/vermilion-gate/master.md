@@ -28,6 +28,19 @@ Level Trim / Ongaku Toshokan は`no build-up, no climax`が設計DNAだが、**�
 
 ⚠️ **これは検索エンジン経由の簡易確認にとどまる。RouteNote入稿画面またはSpotify/Apple Musicアプリ内検索での直接確認はまだ済んでいない。入稿前に必ず実施すること。**
 
+**✅ 直接確認を実施（2026-09-19、アシスタントが公開検索で実施）**：同名のアーティストは見つからなかった。
+
+| サービス | 方法 | 結果 |
+|---|---|---|
+| Spotify | Web検索（アーティスト絞り込み）の全結果を確認 | 「Vermilion Gate」なし。近い表記は `Vermilion-D Alice Syndrome` のみ（別名義） |
+| Apple Music | iTunes Search API（アーティスト） | 0件 |
+| Apple Music | iTunes Search API（アルバム） | 別人のアルバム `Beyond The Vermilion Gate (A Musical Journey Through Japan)`（Dan Wees）が1件。アーティスト名は別なので衝突しない |
+| Deezer | 検索API（アーティスト） | 0件 |
+| MusicBrainz | 検索API（アーティスト） | 0件 |
+| Bandcamp | 検索ページ | 結果を解析できず**未確認** |
+
+**残る未確認**：YouTube・SoundCloud・Bandcamp。RouteNote入稿画面のアーティスト候補（Spotifyのアーティスト一覧）は、リリース作成時に「Vermilion Gate」を入力した際に再確認できる。
+
 ---
 
 ## 3. ボーカルテクスチャの扱い（決定事項）
@@ -171,7 +184,7 @@ Ongaku Toshokanと同じ「English (原題)」方式。ソースは各シリー�
 
 ## 6. 残タスク（優先順）
 
-1. **アーティスト名の直接重複確認**（RouteNote入稿画面 or Spotify/Apple Musicアプリ）。**これが完了次第、D1・D2（20曲）を他3名義とは別の高速レーンでまとめて一括入稿する**（2026-09-17方針決定：Vermilion Gateは既存YouTube公開済み楽曲の移植であり新曲の初速配慮が不要なため、週2〜3件の縛り対象外。[../policy.md](../policy.md) 5.2章参照）。公開日（Sales Start Date）は他名義の公開日と重ねすぎないよう分散させる
+1. ~~アーティスト名の直接重複確認~~ → **Spotify・Apple Music・Deezer・MusicBrainzで実施済み（2026-09-19、同名なし）**。YouTube・SoundCloud・Bandcampは未確認。**確認が済んだので、D1・D2（20曲）を他3名義とは別の高速レーンでまとめて一括入稿する**（2026-09-17方針決定：Vermilion Gateは既存YouTube公開済み楽曲の移植であり新曲の初速配慮が不要なため、週2〜3件の縛り対象外。[../policy.md](../policy.md) 5.2章参照）。公開日（Sales Start Date）は他名義の公開日と重ねすぎないよう分散させる
 2. ~~既存YouTube楽曲の棚卸し~~ → **完了（上記5章、全70曲）**。ヴォーカルテクスチャの有無は曲ごとに確認せず、全曲そのまま出す方針
 3. ~~英語タイトルの用意~~ → **完了（上記5章、全70曲）**。Ongaku Toshokanと同じ「英語 (原題)」併記方式を採用
 4. ~~音源フォーマット確認~~ → **完了（2026-09-06）**。全70曲を44.1kHzに変換、`RouteNote/Vermilion Gate/<シリーズ>-<番号>_<英語タイトル>/`に配置
