@@ -249,3 +249,89 @@ A photorealistic interior of a traditional Japanese wa-modern room beside a sunk
 > `with no warm colour beyond the embers — only deep blue and grey` を消さないこと。47と48は同じ「暖色を抑える」方針だが、48だけ熾火の暖色を画面内の唯一のアクセントとして残す設計（37・38が同じ縁側で色を対比させたのと同様、47＝寒色のみ／48＝熾火の暖色1点だけ許容）。
 
 ---
+
+## 49 ｜ 集中の派生・着手スイッチ「はじめの5分」（雪の朝の書斎・30分）🆕追加枠
+
+> 2026-09-19 新ジャンル調査（`chamaru_新ジャンル調査_260919.md`）の結果、**「先延ばし対策・着手スイッチ」を集中の派生として1本だけ試作**する決定。39〜48の10本は差し替えず、**11本目として追加**（音源生成済みの10本を無駄にしないため）。アドレナリン系（強い興奮）にはしない。反応（維持率）が良ければ12月以降に増やす。
+
+| 項目 | 内容 |
+|---|---|
+| 状態 / 時間帯 | 集中（着手スイッチ）/ 朝 |
+| 尺 | 30分 |
+| 舞台 | 書斎（雪の朝の文机） |
+| 主役楽器 | 小さな和太鼓・拍子木のパルス（最初の5分）＋尺八・篠笛 |
+| 茶丸 | 片目（集中系テンプレ） |
+| 公開時刻 | 7:00（集中の公開時刻ルールに合わせる）／公開日は未定 |
+| サムネ | 主ラベル `はじめの5分` ／ バッジ `30 MIN` |
+
+**設計**：冒頭〜5分は拍（70〜90BPM）がはっきり聞こえる。その後パルスを少しずつ薄くして、通常の静かな集中用の持続音に移る。**「拍が強く始まり、薄れていく」構造なので、Suno の Exclude の `buildup`（盛り上がり）は外さなくてよい。**
+
+**① タイトル【日本語】**
+```
+はじめの5分を静かに乗り切る30分｜和の作業BGM ‑ 取りかかる前に
+```
+
+**① タイトル【English】**
+```
+30 Min Japanese Ambient to Get Started | Soft Taiko Pulse Fading into Calm Focus
+```
+
+**② 概要【日本語】**
+```
+手が動かないときの、最初の5分のために。
+雪の朝の書斎に、小さな和太鼓の拍が、静かに始まりを知らせます。
+動き出せたら、音は少しずつ薄れて、静かな集中に移っていきます。
+
+最初の5分だけ、拍が少し立ちます。
+そのあとは、盛り上がりを作らず、一定の静けさが続きます。
+机に向かう前に、再生を押してみてください。
+
+茶丸の間 / Chamaru
+和の集中・休息・安眠BGMを届けるチャンネルです。
+茶丸は、この部屋にいるだるまです。
+
+#作業用BGM #集中BGM #和風BGM #作業開始 #和太鼓 #篠笛 #japaneseambient
+```
+
+**② 概要【English】**
+```
+For the first five minutes, when your hands will not start.
+In a study on a snowy morning, a small taiko pulse quietly marks the beginning.
+Once you are moving, the sound gently thins out and settles into calm focus.
+
+Only for the first five minutes, the beat stands out a little.
+After that, no build-ups — a steady stillness continues.
+Press play before you sit down at the desk.
+
+Chamaru / 茶丸の間
+Japanese ambient for focus, rest and sleep.
+Chamaru is the daruma who lives in this room.
+
+#japaneseambient #focusmusic #gettingstarted #taiko #shinobue
+```
+
+**③ タグ**（集中系の既存タグ方針は統合マスターを確認して合わせること）
+```
+作業用BGM, 集中BGM, 和風BGM, 作業開始, 取りかかる, 和太鼓, 篠笛, 雪, japanese ambient, focus music, task initiation, get started, procrastination
+```
+※ `先延ばし` は日本語のタイトル・ラベルには出さず、英語タグと英語側の説明に置く（聴く人を責める印象を避けるため）。
+
+**④ Suno — Style**（未検証・要生成確認）
+```
+Japanese ambient, soft taiko heartbeat pulse around 80 BPM with light wooden clapper accents, gentle shakuhachi and shinobue entering within the first minute, clear and steady start, then the pulse gradually thins out and dissolves into a still sustained drone with sparse notes, calm snowy morning atmosphere, warm and clear, no melody hooks
+```
+**④ Suno — Exclude**
+```
+vocals, drum kit, electronic drums, bass drop, epic, cinematic build, aggressive, dramatic climax, bright synths, high frequencies, crickets, insects
+```
+**制作メモ**：30分は「拍あり曲（冒頭5分）→ 拍なしの静かな曲」を連結して作る。ビルド方式（`chamaru_build.py` への新モード追加か手動連結か）は音源が揃ってから決める。冒頭の拍が既存の集中回と大きく違うため、生成後に**冒頭5分を実際に聴いて確認**すること。
+
+**⑤ Gemini — 動画用背景**（39と同じ雪の朝の世界観・書斎の文机）
+```
+A photorealistic interior of a traditional Japanese study room on a clear snowy winter morning, shot at eye level, front view. A worn dark wooden writing desk surface fills the foreground, with an empty clear space in the center foreground where a small object will sit — nothing placed in the center. Soft clear cold morning light comes from a shoji window on the left. Beyond the window, a snow-covered garden with bare branches dusted with fresh snow is visible, softly blurred, quiet and still. In the blurred background: a tokonoma alcove with a single hanging scroll and a small ink stone, out of focus, very few objects. Muted white and pale blue-grey against dark wood, crisp and serene. Shallow depth of field, gentle natural lighting, fine grain, high-detail craft photography style. 16:9.
+```
+**⑤ Gemini — サムネ用背景**
+```
+A photorealistic interior of a traditional Japanese study room on a clear snowy winter morning, shot at eye level, front view, 16:9. A worn dark wooden writing desk surface fills the lower foreground, with an empty clear space in the center foreground where a small object will sit — nothing placed in the center. Soft clear cold morning light comes from a shoji window on the left. Beyond the window, a snow-covered garden is visible on the left, softly blurred. The right third of the frame is a plain shoji screen in shadow, simple and uncluttered. Muted white and pale blue-grey against dark wood, high contrast between the bright window on the left and the shadowed right side. Shallow depth of field, gentle natural lighting, fine grain, high-detail craft photography style.
+```
+**⑦ 茶丸座標（動画背景）**：39（集中）と同じ片目版の座標を使用（生成後に確認）
