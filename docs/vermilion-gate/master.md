@@ -39,7 +39,9 @@ Level Trim / Ongaku Toshokan は`no build-up, no climax`が設計DNAだが、**�
 | MusicBrainz | 検索API（アーティスト） | 0件 |
 | Bandcamp | 検索ページ | 結果を解析できず**未確認** |
 
-**残る未確認**：YouTube・SoundCloud・Bandcamp。RouteNote入稿画面のアーティスト候補（Spotifyのアーティスト一覧）は、リリース作成時に「Vermilion Gate」を入力した際に再確認できる。
+**RouteNote入稿画面のアーティスト候補も確認済み（2026-09-19）**：「Vermilion Gate」と入力すると、Spotifyのアーティスト51件が候補に出るが、名称に `Vermilion` を含むのは `Vermilion-D Alice Syndrome`（別名義）の1件のみ。同名の既存アーティストはなく、新規プロフィールとして作成された。
+
+**残る未確認**：YouTube・SoundCloud・Bandcamp。
 
 ---
 
@@ -184,7 +186,9 @@ Ongaku Toshokanと同じ「English (原題)」方式。ソースは各シリー�
 
 ## 6. 残タスク（優先順）
 
-1. ~~アーティスト名の直接重複確認~~ → **Spotify・Apple Music・Deezer・MusicBrainzで実施済み（2026-09-19、同名なし）**。YouTube・SoundCloud・Bandcampは未確認。**確認が済んだので、D1・D2（20曲）を他3名義とは別の高速レーンでまとめて一括入稿する**（2026-09-17方針決定：Vermilion Gateは既存YouTube公開済み楽曲の移植であり新曲の初速配慮が不要なため、週2〜3件の縛り対象外。[../policy.md](../policy.md) 5.2章参照）。公開日（Sales Start Date）は他名義の公開日と重ねすぎないよう分散させる
+1. ~~アーティスト名の直接重複確認~~ → **Spotify・Apple Music・Deezer・MusicBrainz・RouteNote候補一覧で実施済み（2026-09-19、同名なし）**。YouTube・SoundCloud・Bandcampは未確認。
+   - **入稿方針（2026-09-19、ユーザー決定）：一括入稿はせず、1曲ずつ入稿する。** 9/17方針（[../policy.md](../policy.md) 5.2章）で認められた高速レーンは使わない。公開日（Sales Start Date）は **2026-12-05から毎週土曜に1曲ずつ**（D1から順に）。11月の他名義の公開日（毎週2〜3曲）とは重ならない
+   - RouteNoteのジャンルは **Soundtrack**（全曲共通）。Label・Artist・Producerは `Vermilion Gate`。手順は [routenote-release スキル](../../.claude/skills/routenote-release/SKILL.md)
 2. ~~既存YouTube楽曲の棚卸し~~ → **完了（上記5章、全70曲）**。ヴォーカルテクスチャの有無は曲ごとに確認せず、全曲そのまま出す方針
 3. ~~英語タイトルの用意~~ → **完了（上記5章、全70曲）**。Ongaku Toshokanと同じ「英語 (原題)」併記方式を採用
 4. ~~音源フォーマット確認~~ → **完了（2026-09-06）**。全70曲を44.1kHzに変換、`RouteNote/Vermilion Gate/<シリーズ>-<番号>_<英語タイトル>/`に配置
@@ -196,3 +200,14 @@ Ongaku Toshokanと同じ「English (原題)」方式。ソースは各シリー�
    - **3000×3000化まで完了**：D1・D2・D3・D4（動シリーズ全40曲）。既存YouTubeサムネの黒帯／レターボックスを自動検出して正方形に切り出し（`jacket_3000.png`として`RouteNote/Vermilion Gate/`各曲フォルダに配置済み。入稿カレンダーへの反映はD1・D2の3週分のみ済み、D3・D4はまだ入稿カレンダー未作成のため未反映）
    - **静シリーズは棚卸し完了（2026-09-08）・画像は未生成**：S1（雨の書庫）・S2（神々の温泉宿）は生成済み画像0/10、S3（異界列車）はサムネ3/10（①〜③のみ生成済み、④〜⑩は未生成）。**Gemini画像プロンプトは全曲分がソース側`.md`に用意済み**（S1・S2は各曲フォルダの本体`.md`内に「画像5枚」セットとして内包、S3は`異界列車_プロンプト集.md`）ため、プロンプト作成の追加作業は不要。生成自体（Geminiでの画像作成）はユーザー操作待ち
    - Canvaでの人手リサイズは不要になった（動シリーズは自動切り出しで代替）
+
+### 6.1 入稿スケジュール（1曲ずつ、2026-09-19開始）
+
+| # | 曲 | Sales Start Date | UPC | 状態 |
+|---|---|---|---|---|
+| D1-01 | Sealed Gate | 2026-12-05 | 5064140725624 | Album Details保存済み（2026-09-19）。ジャケット・ストア設定・音源・配信申請は未 |
+| D1-02 | Drawing the Blade | 2026-12-12 | — | 未着手 |
+| D1-03 | Strike of the Swift Wind | 2026-12-19 | — | 未着手 |
+| D1-04 | Blade Lock | 2026-12-26 | — | 未着手 |
+
+D1-05以降は、同じ間隔（毎週土曜）で続ける。`RouteNote/入稿予定/2026-09-26/` 以降の日付フォルダは旧計画（週5曲）のまま。**実際の入稿は1曲ずつなので、フォルダの日付は目安にすぎない。**
