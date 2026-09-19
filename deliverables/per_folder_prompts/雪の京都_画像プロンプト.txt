@@ -1,0 +1,22 @@
+■ 雪の京都｜動画用 画像プロンプト（5枚）
+Geminiに1つずつ貼って生成 → この曲のフォルダに保存してください。
+─────────────────────────────
+
+【1】
+snow-covered Kyoto machiya street, soft falling snow, warm lantern light against pale blue-grey snow, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【2】
+close view of snow settling on a wooden lattice window with warm glow behind, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【3】
+quiet temple garden under fresh snow, stone lantern capped with snow, one warm light in the distance, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【4】
+snowy stone path with footprints, cool white and blue tones, a warm-lit doorway ahead, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【5】
+snow falling over Kyoto rooftops at dusk, blue-grey sky and warm window lights below, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+─────────────────────────────
+ネガティブプロンプト（対応ツールで併用）:
+people, person, human, character, text, watermark, logo, fantasy elements, glowing spirits, floating islands, oversaturated neon

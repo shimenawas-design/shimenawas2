@@ -1,0 +1,22 @@
+■ 新緑の庭｜動画用 画像プロンプト（5枚）
+Geminiに1つずつ貼って生成 → この曲のフォルダに保存してください。
+─────────────────────────────
+
+【1】
+Japanese garden with fresh green maple leaves (aomomiji), moss ground, dappled sunlight, cool and refreshing, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【2】
+close view of young green maple leaves backlit by warm sun, cool shade behind, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【3】
+stone path through a moss garden, clean green foliage, a warm sunbeam crossing, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【4】
+garden pond reflecting fresh green maples, still water, cool blue-green with warm highlights, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【5】
+wooden veranda looking onto a lush green garden after light rain, glistening leaves, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+─────────────────────────────
+ネガティブプロンプト（対応ツールで併用）:
+people, person, human, character, text, watermark, logo, fantasy elements, glowing spirits, floating islands, oversaturated neon

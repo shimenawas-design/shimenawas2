@@ -1,0 +1,22 @@
+■ 朝の京都｜動画用 画像プロンプト（5枚）
+Geminiに1つずつ貼って生成 → この曲のフォルダに保存してください。
+─────────────────────────────
+
+【1】
+morning Kyoto machiya alley, clear crisp air, low sunrise light between wooden houses, long soft shadows, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【2】
+sunrise over Kyoto rooftops, blue-grey morning haze with warm golden rim light on the tiles, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【3】
+a quiet tea-house entrance at dawn, noren curtain, dew on the stone step, gentle warm sunbeam, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【4】
+narrow lane with morning light streaming through, cool shadows and a warm patch of sun on the pavement, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【5】
+wooden veranda facing a small garden at early morning, mist lifting, warm sun touching the grass, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+─────────────────────────────
+ネガティブプロンプト（対応ツールで併用）:
+people, person, human, character, text, watermark, logo, fantasy elements, glowing spirits, floating islands, oversaturated neon

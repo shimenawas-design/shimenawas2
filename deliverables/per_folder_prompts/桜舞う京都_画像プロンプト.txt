@@ -1,0 +1,26 @@
+■ 桜舞う京都｜動画用 画像プロンプト（5枚）
+Geminiに1つずつ貼って生成 → この曲のフォルダに保存してください。
+─────────────────────────────
+
+【1】
+Kyoto machiya street lined with full-bloom cherry blossoms, falling petals, soft pink against blue-grey sky, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【2】
+close view of cherry blossom branches with warm afternoon light, petals drifting, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【3】
+stone path under a canopy of sakura, petals on the ground, distant warm-lit tea house, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【4】
+river bank with blooming cherry trees reflected in the water, pale pink and cool blue, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+【5】
+temple gate framed by cherry blossoms, warm light on the wood, soft pink and slate tones, Japanese lo-fi anime background art, no people, empty composition, clear negative space on the left third for title text, cool slate-blue and grey tones contrasted with warm amber light, painterly, soft grain, cozy nostalgic mood, 16:9, highly detailed
+
+─────────────────────────────
+ネガティブプロンプト（対応ツールで併用）:
+people, person, human, character, text, watermark, logo, fantasy elements, glowing spirits, floating islands, oversaturated neon
+
+─────────────────────────────
+※桜は「淡いピンク×灰青」で。ピンクが強すぎると集客サムネの統一感（灰青×暖色）から外れるので、
+　彩度は控えめ・背景は灰青ベースに桜のピンクを差す配分がおすすめ。
